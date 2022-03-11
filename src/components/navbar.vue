@@ -10,7 +10,7 @@
             <a href="#" class="NavLink  fw-light">Platform</a>
             <a href="#" class="NavLink  fw-light">Support</a>
             <a href="#" class="NavLink  fw-light">Login</a>
-            <a href="#" class="NavLink  fw-light">Sign Up</a>
+            <a href="#" class="NavLink NavSign  fw-light">Sign Up</a>
         </div>
 
     </nav>
@@ -39,11 +39,14 @@ export default {
     color: #093542;
     font-size: .8rem;
 }
-.NavLink:hover{
+.NavSign{
     border: 1px solid #00A99D;
     padding: 5px 10px;
     border-radius: 15px;
     background-color: #00A99D;
+    color: white;
+}
+.NavSign:hover{
     color: white;
 }
 </style>
