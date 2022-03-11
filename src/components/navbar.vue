@@ -39,6 +39,9 @@ export default {
     color: #093542;
     font-size: .8rem;
 }
+.NavLink:hover{
+    color: #093542;
+}
 .NavSign{
     border: 1px solid #00A99D;
     padding: 5px 10px;
