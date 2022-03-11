@@ -27,6 +27,29 @@
             </div>
         </div>
     </div>
+
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <p class="display-5 mb-4">Lorem Ipsum</p>
+            <p class="txt-card pb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</p>
+            <a href="#" class="content2-btn">Learn More</a>
+        </div>
+        <div class="col-md-6">
+            <img src="../assets/photo_2022-03-11_16-17-50.jpg" class="img-fluid" alt="">
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <img src="../assets/photo_2022-03-11_16-17-50.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-6">
+            <p class="display-5 mb-4">Lorem Ipsum</p>
+            <p class="txt-card pb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</p>
+            <a href="#" class="content2-btn">Learn More</a>
+        </div>
+    </div>
+
 </div>    
 </template>
 
@@ -77,5 +100,17 @@ export default {
 }
 .box:hover{
     transform: scale(1.1);
+}
+.content2-btn{
+    text-decoration: none;
+    color: white;
+    background-color: #00A99D;
+    border: 1px solid #00A99D;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: .8rem;
+}
+.content2-btn:hover{
+    color: white;
 }
 </style>
