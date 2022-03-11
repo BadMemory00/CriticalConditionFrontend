@@ -1,0 +1,81 @@
+<template>
+<div>
+    <div class="row mb-5">
+        <div class="col-md-8">
+            <p class="display-5">Risk and cyber security analysis for medical devices</p>
+            <p class="fw-light content-txt w-50 mb-5">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
+            <a href="#" class=" content-btn ">Mange Your Devices</a>
+        </div>
+        <div class="col-md-4">
+            <img src="../assets/photo_2022-03-11_16-17-50.jpg" class="img-fluid w-100" alt="">
+        </div>
+    </div><!-- first row -->
+    
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <div class=" box">
+                <h2 class=" fw-bold">Lorem Ipsum</h2>
+                <p class=" txt-card">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</p>
+                <a href="#" class="link-card">learn more →</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class=" box">
+                <h2 class=" fw-bold">Lorem Ipsum</h2>
+                <p class=" txt-card">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</p>
+                <a href="#" class="link-card">learn more →</a>
+            </div>
+        </div>
+    </div>
+</div>    
+</template>
+
+<script>
+export default {
+    name:'LandingContent'
+}
+</script>
+
+<style>
+.content-txt{
+    font-size: .8rem;
+}
+.content-btn{
+    color: white;
+    padding: 20px 35px;
+    border: 1px solid #00A99D;
+    background-color: #00A99D;
+    text-decoration: none;
+    border-radius: 35px 30px;
+    font-size: .7rem;
+}
+.content-btn:hover{
+    color: white;
+}
+.txt-card{
+    font-size: .8rem;
+    font-weight: 600;
+}
+.link-card{
+    color: #00A99D;
+    font-weight: 600;
+    font-size: .8rem;
+    text-decoration: none;
+}
+.link-card:hover{
+    color: #00A99D;
+}
+.box{
+    margin: 50px;
+    padding: 100px 50px;
+    border-top: 1px solid rgba(0, 0, 0, .3);
+    border-left: 1px solid rgba(0, 0, 0, .3);
+    color: black;
+    box-shadow: -5px -5px 15px 10px rgba(0, 0, 0, .3);
+    border-radius: 40px;
+    transition: 1s;
+}
+.box:hover{
+    transform: scale(1.1);
+}
+</style>

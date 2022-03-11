@@ -1,5 +1,5 @@
 <template>
-    <nav class="row">
+    <nav class="row mb-5 pb-3">
         <div class="col-md-5">
             <a href="#" class="heading-style fw-bold">CriticalCondition</a>
         </div>
