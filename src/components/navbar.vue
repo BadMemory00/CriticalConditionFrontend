@@ -28,9 +28,11 @@ export default {
 .heading-style{
     color: #093542;
     text-decoration: none;
-    
-    
 }
+.heading-style:hover{
+    color: #093542;
+}
+
 .NavLink{
     margin-left: 34px;
     text-decoration: none;
