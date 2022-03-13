@@ -5,7 +5,7 @@
         <div class="card caard">
           <form>
             <button type="submit" class="btn btn-sm add">
-              <font-awesome-icon icon="fa-solid fa-plus" class="icon-2" />
+              <font-awesome-icon icon="fa-solid fa-plus" class="icon-2 plus-icon" />
             </button>
           </form>
           <form class="input-group search2">
@@ -189,6 +189,13 @@ export default {
 .icon-2 {
   color: white;
   opacity: 0.85;
+}
+.plus-icon{
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    top: .5rem;
+    left: .46rem;
 }
 .main-card-text{
     position: absolute;
