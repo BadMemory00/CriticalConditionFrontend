@@ -8,11 +8,9 @@
               <font-awesome-icon icon="fa-solid fa-plus" class="icon-2" />
             </button>
           </form>
-          <form class="input-group">
-            <div class="input-group input-group-sm w-50 align-end">
+          <form class="input-group search2">
               <input
                 type="search"
-                class="form-control form-control-sm search"
                 placeholder="Search"
               />
               <button
@@ -21,15 +19,14 @@
               >
                 <font-awesome-icon
                   icon="fa-solid fa-magnifying-glass"
-                  class="icon-2"
+                  class="icon-2 "
                 />
               </button>
-            </div>
           </form>
-          <p class="card-title text-device mx-3">
+          <p class="card-title mx-3 main-card-text">
             Click on the device name to view its data!
           </p>
-          <div class="card-body">
+          <div class="card-body card-body2">
             <div class="row">
               <div class="col-md-6">
                 <div class="card card-2">
@@ -41,7 +38,8 @@
                         class="float-end icon-3"
                       />
                       <br />
-                      <span>____ Model</span>
+                        <span class="iammodel"> Model</span>
+                      <hr>
                     </div>
                     <!-- card-title -->
                     <p class="fw-light card-text card-text-edit">
@@ -68,7 +66,8 @@
                         class="float-end icon-3"
                       />
                       <br />
-                      <span>____ Model</span>
+                      <span class="iammodel"> Model</span>
+                      <hr>
                     </div>
                     <!-- card-title -->
                     <p class="fw-light card-text card-text-edit">
@@ -97,7 +96,8 @@
                         class="float-end icon-3"
                       />
                       <br />
-                      <span>____ Model</span>
+                      <span class="iammodel"> Model</span>
+                      <hr>                    
                     </div>
                     <!-- card-title -->
                     <p class="fw-light card-text card-text-edit">
@@ -124,7 +124,8 @@
                         class="float-end icon-3"
                       />
                       <br />
-                      <span>____ Model</span>
+                      <span class="iammodel"> Model</span>
+                      <hr>
                     </div>
                     <!-- card-title -->
                     <p class="fw-light card-text card-text-edit">
@@ -158,18 +159,29 @@ export default {
 <style>
 .add {
   background-color: #0a3440;
-  margin-left: 180px;
-  position: relative;
-  top: -15px;
-  margin-bottom: 10px;
+  position: absolute;
   border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  top: -1.5rem;
+  left: 46%;
+}
+.search2{
+    position: absolute;
+    right: 0.2rem;
+    top: 3%;
+    width: 12.7rem;
+}
+.search2 input{
+    width: 10rem;
+    border-radius: 7px;
+}
+.search2 button{
+    border-radius: 7px;
 }
 .align-end {
   margin-left: 193px;
   top: -20px;
-}
-.text-device {
-  font-weight: 400;
 }
 .btn-search {
   background-color: #0a3440;
@@ -178,22 +190,54 @@ export default {
   color: white;
   opacity: 0.85;
 }
+.main-card-text{
+    position: absolute;
+}
 .caard {
   background-color: #f7f9f8;
-  width: 400px;
-  height: 550px;
+  top: 3rem;
+  height: 33rem;
   border-radius: 25px;
+  width: 35rem;
+  position: relative;
+  box-shadow: 5px 5px 10px #888888;
+
   /* height: 400px; */
+}
+
+.main-card-text{
+    position: absolute;
+    top: 3.5rem;
+    left: 3rem;
+    font-weight: bolder;
+    color: #00a99d;
+}
+.card-body2{
+    position: absolute;
+    top: 4rem;
+    left: 2.3rem;
 }
 .card-2 {
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   color: black;
-  box-shadow: -1px -1px 20px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: -1px -1px 15px 1px rgba(0, 0, 0, 0.3);
   margin-top: 15px;
   font-size: 0.8;
   position: relative;
-  top: -20px;
+  width: 13.5rem;
+  height: 11rem;
+  margin: 20px 5px 0px 0px;
+  
+}
+.iammodel{
+    position: absolute;
+    right: 3rem;
+    top: 2rem;
+}
+.card-title hr{
+    width: 40%;
+    margin-left: 30%;
 }
 .card-text-edit {
   font-size: 0.8rem;
