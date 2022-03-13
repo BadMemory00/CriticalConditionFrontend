@@ -1,5 +1,15 @@
 <template>
-  <div class="about">
-    <h1>This is the sub users page</h1>
+  <div class="">
+    <NavSubuser/>
   </div>
 </template>
+
+<script>
+import NavSubuser from '@/components/NavSubuser.vue'
+export default {
+  components:{
+    NavSubuser,
+
+  }
+}
+</script>
