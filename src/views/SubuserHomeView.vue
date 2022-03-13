@@ -2,11 +2,11 @@
   <div class="pos-1">
     <div>
       <NavSubuser class="pos-2" />
-
     </div>
-    <div>
       <SubUsercontent class="pos-3" />
-    </div>
+
+      
+    
 
   </div>
 </template>
@@ -15,10 +15,12 @@
 import NavSubuser from '@/components/NavSubuser.vue';
 import SubUsercontent from '@/components/SubUserContent.vue';
 
+
 export default {
   components:{
     NavSubuser,
     SubUsercontent,
+
 
   }
 }
@@ -34,6 +36,6 @@ export default {
 .pos-3{
   position: relative;
   top: 65px;
-  left: -160px;
+  left: -200px;
 }
 </style>

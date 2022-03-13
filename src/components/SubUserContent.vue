@@ -33,10 +33,10 @@
                   <div class="card-body">
                     <div class="card-title color-txt-2">
                       Device Name
-                      <font-awesome-icon
+                      <a href=""><font-awesome-icon
                         icon="fa-solid fa-ellipsis-vertical"
                         class="float-end icon-3"
-                      />
+                      /></a>
                       <br />
                         <span class="iammodel"> Model</span>
                       <hr>
@@ -61,10 +61,10 @@
                   <div class="card-body">
                     <div class="card-title color-txt-2">
                       Device Name
-                      <font-awesome-icon
+                      <a href=""><font-awesome-icon
                         icon="fa-solid fa-ellipsis-vertical"
                         class="float-end icon-3"
-                      />
+                      /></a>
                       <br />
                       <span class="iammodel"> Model</span>
                       <hr>
@@ -91,10 +91,10 @@
                   <div class="card-body">
                     <div class="card-title color-txt-2">
                       Device Name
-                      <font-awesome-icon
+                      <a href=""><font-awesome-icon
                         icon="fa-solid fa-ellipsis-vertical"
                         class="float-end icon-3"
-                      />
+                      /></a>
                       <br />
                       <span class="iammodel"> Model</span>
                       <hr>                    
@@ -119,10 +119,10 @@
                   <div class="card-body">
                     <div class="card-title color-txt-2">
                       Device Name
-                      <font-awesome-icon
+                      <a href=""><font-awesome-icon
                         icon="fa-solid fa-ellipsis-vertical"
                         class="float-end icon-3"
-                      />
+                      /></a>
                       <br />
                       <span class="iammodel"> Model</span>
                       <hr>
@@ -138,6 +138,7 @@
                       Downtime: <span>12 days</span>
                     </p>
                   </div>
+                  
                   <!-- card-body -->
                 </div>
                 <!-- card -->
@@ -145,6 +146,152 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="col-md-6 Device-info">
+         <div class="card card-3">
+              <div class="card-body">
+                <div class="card-title color-txt-2 text-center">
+                      Device Name
+                      <a href=""><font-awesome-icon
+                        icon="fa-solid fa-ellipsis-vertical"
+                        class="float-end icon-3"
+                      /></a>
+                      <br />
+                        <span class="iammodel-2"> Model</span>
+                      <hr>
+                  </div>
+                  <div class="card card-4 ">
+                    <div class="card-body d-flex">
+                      <p class="card-title card-title-2 me-5">General Info</p>
+                      <div class="d-flex">
+                        <div class="General-Info">
+                          <span class=" General-Info-text">Brand</span>
+                          <form class="About">
+                            <input type="text" class=" search3">
+                          </form>
+                        </div>
+                        <div class="General-Info">
+                          <span class=" General-Info-text">Type of services</span>
+                          <form class="About">
+                            <input type="text" class=" search3">
+                          </form>
+                        </div>
+                        <div class="General-Info">
+                          <span class=" General-Info-text">Purashse Date</span>
+                          <form class="About">
+                            <input type="date" class=" search4">
+                          </form>
+                        </div>
+                      </div>  
+                    </div>
+                  </div>
+                  <div class="card card-4 marginTop">
+                    <div class="card-body d-flex">
+                      <p class="card-title card-title-2 me-5">Probability Info</p>
+                      <div class="d-flex">
+                        <div class="General-Info">
+                          <span class=" General-Info-text">Working Days</span>
+                          <form class="About">
+                            <input type="text" class=" search3">
+                            <span class="little">per year</span>
+                          </form>
+                        </div>
+                        <div class="General-Info">
+                          <span class=" General-Info-text">No.Failures</span>
+                          <form class="About">
+                            <input type="text" class=" search3">
+                            <span class="little">times</span>
+                          </form>
+                        </div>
+                        <div class="General-Info">
+                          <span class=" General-Info-text">Downtime</span>
+                          <form class="About">
+                            <input type="text" class=" search4">
+                            <span class="little">days</span>
+                          </form>
+                        </div>
+                      </div>  
+                    </div>
+                  </div>
+                  <div class="card card-4 marginTop">
+                    <div class="card-body d-flex">
+                      <p class="card-title card-title-2 me-5">Severity Info</p>
+                      <div class="d-flex">
+                        <div class="General-Info">
+                          <span class=" General-Info-text">Safety</span>
+                          <form class="About">
+                            <input type="text" class=" search3">
+                          </form>
+                        </div>
+                        <div class="General-Info">
+                          <span class=" General-Info-text">Function</span>
+                          <form class="About">
+                            <input type="text" class=" search3">
+                          </form>
+                        </div>
+                        <div class="General-Info">
+                          <span class=" General-Info-text">Area</span>
+                          <form class="About">
+                            <input type="text" class=" search4">
+                          </form>
+                        </div>
+                      </div>
+                        
+                    </div>
+                    <div class="card-body d-flex card-edit">
+                      <!-- <p class="card-title card-title-2 me-5">Severity Info</p> -->
+                      <div class="d-flex">
+                        <div class="General-Info">
+                          <span class=" General-Info-text">Service cost</span>
+                          <form class="About">
+                            <input type="text" class=" search3">
+                          </form>
+                        </div>
+                        <div class="General-Info">
+                          <span class=" General-Info-text">Operation cost</span>
+                          <form class="About">
+                            <input type="text" class=" search3">
+                          </form>
+                        </div>
+                        <div class="General-Info">
+                          <span class=" General-Info-text">Purashse cost</span>
+                          <form class="About">
+                            <input type="text" class=" search4">
+                          </form>
+                        </div>
+                      </div>
+                        
+                    </div>
+                  </div>
+                  <div class="card card-4 marginTop">
+                    <div class="card-body d-flex">
+                      <p class="card-title card-title-2 me-5">Detectability Info</p>
+                      <div class="d-flex">
+                        <div class="General-Info">
+                          <span class=" General-Info-text">Detection</span>
+                          <form class="About">
+                            <input type="text" class=" search4">
+                          </form>
+                        </div>
+                      </div>  
+                    </div>
+                  </div>
+                  <div class="card card-4 marginTop">
+                    <div class="card-body d-flex">
+                      <p class="card-title card-title-2 me-5">Risk Info</p>
+                      <div class="d-flex">
+                        <div class="General-Info">
+                          <span class=" General-Info-text">Detection</span>
+                          <form class="About-range ">
+                            <input type="range" min="0" max="710" value="250" class="search5">
+                          </form>
+                          
+                        </div>
+                      </div>  
+                    </div>
+                  </div>
+              </div>
+          </div>       
       </div>
     </div>
   </div>
@@ -207,7 +354,7 @@ export default {
   border-radius: 25px;
   width: 35rem;
   position: relative;
-  box-shadow: 5px 5px 10px #888888;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 
   /* height: 400px; */
 }
@@ -259,4 +406,91 @@ export default {
 .icon-3{
   color:#00a99d ;
 }
+.Device-info{
+  position: relative;
+  left: 270px;
+}
+.card-3{
+  background-color: #f7f9f8;
+  top: 3rem;
+  /* height: 33rem; */
+  border-radius: 25px;
+  width: 28.2rem;
+  position: relative;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.iammodel-2{
+
+    position: absolute;
+    right: 4rem;
+    top: 2rem;
+
+}
+.card-title-2{
+  position: absolute;
+  top: -12.8px;
+  background: linear-gradient(#f7f9f8,white);
+  font-size: .9rem;
+  font-weight: bold;
+
+}
+.card-4{
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  color: black;
+  box-shadow: 1px 10px 15px 1px rgba(0, 0, 0, 0.3);
+  margin-top: 15px;
+  font-size: 0.8;
+  position: relative;
+  margin: 20px 5px 0px 0px;
+}
+.General-Info{
+  width: 8rem;
+}
+.General-Info-text{
+  font-size: .8rem;
+  font-weight: 500;
+}
+.About{
+    width: 7.7rem;
+}
+.search3{
+    width: 7.7rem;
+    height: 1.2rem;
+    background-color: #f7f9f8;
+    border: white;
+}
+.search4{
+  width: 7.7rem;
+    height: 1.2rem;
+    background-color: #f7f9f8;
+    border: white;
+    font-size: .8rem;
+}
+.marginTop{
+  margin-top: 43px;
+}
+.little{
+  font-size: .7rem;
+  float: right;
+  margin-top: -4px;
+  font-weight: 300;
+  
+}
+.card-edit{
+  margin-top: -30px;
+}
+.About-range{
+  width: 24rem
+}
+.search5{
+  width: 80%;
+  outline: none;
+  border-radius: 3px;
+  
+}
+
+
+
+
 </style>
