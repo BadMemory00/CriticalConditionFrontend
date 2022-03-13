@@ -149,7 +149,7 @@
       </div>
       <div class="col-md-6 Device-info">
          <div class="card card-3">
-              <div class="card-body">
+              <div class="card-body pb-4">
                 <div class="card-title color-txt-2 text-center">
                       Device Name
                       <a href=""><font-awesome-icon
