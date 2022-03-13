@@ -5,8 +5,8 @@
 </template>
 
 <style>
-nav{
-  padding-top: 30px;
+body{
+  padding-top: 20px;
 }
 
 </style>
