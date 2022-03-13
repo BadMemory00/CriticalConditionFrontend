@@ -1,9 +1,9 @@
 <template>
   <div>
-    
-      <p class="HName fw-bold">HostpitalName</p>
-    
-    <div class="dropdown dDown">
+      <div class="HName text-start">
+      <router-link to="/" class=" fw-bold heading-link">HostpitalName</router-link>
+      </div>
+    <div class="dropdown dDown text-end">
       <button
         class="btn button btn-secondary dropdown-toggle"
         type="button"
@@ -11,14 +11,15 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        Dropdown button
+        Hello, <span>UserName</span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
         <li><a class="dropdown-item Log" href="#"><font-awesome-icon class="icon1" icon="fa-solid fa-right-from-bracket" />LogOut</a></li>
         
       </ul>
     </div>
-    
+
+     
   </div>
 </template>
 
@@ -32,7 +33,7 @@ export default {
 .HName{
   float: left;
   color: #00A99D;
-  /* font-weight: bold; */
+  display: flex;
   font-size: 1.3rem;
 }
 .dDown{
@@ -63,6 +64,13 @@ export default {
 }
 .Log:hover > .icon1{
   opacity: 1;
+  color: #00A99D;
+}
+.heading-link{
+  text-decoration: none;
+  color: #00A99D;
+}
+.heading-link:hover{
   color: #00A99D;
 }
 
