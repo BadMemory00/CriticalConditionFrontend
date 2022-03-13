@@ -26,69 +26,123 @@
               </button>
             </div>
           </form>
-           <p class="card-title text-device mx-3 ">Click on the device name to view its data!</p>
-           <div class="card-body">
-               <div class="row">
-                   <div class="col-md-6">
-                       <div class="card card-2">
-                           <div class="card-body">
-                         <div class="card-title color-txt-2 ">Device Name
-                              <font-awesome-icon icon="fa-solid fa-ellipsis-vertical" class="float-end" /> 
-                         <br>
-                         <span>____ Model</span> 
-                        </div><!-- card-title -->
-                        <p class="fw-light card-text card-text-edit">Area: <span>EmergencyICU</span></p>
-                        <p class="fw-light card-text card-text-edit">Number of failures: <span>12 times</span></p>
-                        <p class="fw-light card-text card-text-edit">Downtime: <span>12 days</span></p>
-                        </div><!-- card-body -->
-                       </div><!-- card -->
-                   </div>
-                   <div class="col-md-6">
-                       <div class="card  card-2">
-                           <div class="card-body">
-                         <div class="card-title color-txt-2 ">Device Name
-                              <font-awesome-icon icon="fa-solid fa-ellipsis-vertical" class="float-end" /> 
-                         <br>
-                         <span>____ Model</span> 
-                        </div><!-- card-title -->
-                        <p class="fw-light card-text card-text-edit">Area: <span>EmergencyICU</span></p>
-                        <p class="fw-light card-text card-text-edit">Number of failures: <span>12 times</span></p>
-                        <p class="fw-light card-text card-text-edit">Downtime: <span>12 days</span></p>
-                        </div><!-- card-body -->
-                       </div><!-- card -->
-                   </div>
-               </div>
-               <div class="row">
-                   <div class="col-md-6">
-                       <div class="card card-2">
-                           <div class="card-body">
-                         <div class="card-title color-txt-2">Device Name
-                              <font-awesome-icon icon="fa-solid fa-ellipsis-vertical" class="float-end" /> 
-                         <br>
-                         <span>____ Model</span> 
-                        </div><!-- card-title -->
-                        <p class="fw-light card-text card-text-edit">Area: <span>EmergencyICU</span></p>
-                        <p class="fw-light card-text card-text-edit">Number of failures: <span>12 times</span></p>
-                        <p class="fw-light card-text card-text-edit">Downtime: <span>12 days</span></p>
-                        </div><!-- card-body -->
-                       </div><!-- card -->
-                   </div>
-                   <div class="col-md-6">
-                       <div class="card card-2">
-                           <div class="card-body ">
-                         <div class="card-title color-txt-2">Device Name
-                              <font-awesome-icon icon="fa-solid fa-ellipsis-vertical" class="float-end" /> 
-                         <br>
-                         <span>____ Model</span> 
-                        </div><!-- card-title -->
-                        <p class="fw-light card-text card-text-edit">Area: <span>EmergencyICU</span></p>
-                        <p class="fw-light card-text card-text-edit">Number of failures: <span>12 times</span></p>
-                        <p class="fw-light card-text card-text-edit">Downtime: <span>12 days</span></p>
-                        </div><!-- card-body -->
-                       </div><!-- card -->
-                   </div>
-               </div>
-           </div>
+          <p class="card-title text-device mx-3">
+            Click on the device name to view its data!
+          </p>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card card-2">
+                  <div class="card-body">
+                    <div class="card-title color-txt-2">
+                      Device Name
+                      <font-awesome-icon
+                        icon="fa-solid fa-ellipsis-vertical"
+                        class="float-end icon-3"
+                      />
+                      <br />
+                      <span>____ Model</span>
+                    </div>
+                    <!-- card-title -->
+                    <p class="fw-light card-text card-text-edit">
+                      Area: <span>EmergencyICU</span>
+                    </p>
+                    <p class="fw-light card-text card-text-edit">
+                      Number of failures: <span>12 times</span>
+                    </p>
+                    <p class="fw-light card-text card-text-edit">
+                      Downtime: <span>12 days</span>
+                    </p>
+                  </div>
+                  <!-- card-body -->
+                </div>
+                <!-- card -->
+              </div>
+              <div class="col-md-6">
+                <div class="card card-2">
+                  <div class="card-body">
+                    <div class="card-title color-txt-2">
+                      Device Name
+                      <font-awesome-icon
+                        icon="fa-solid fa-ellipsis-vertical"
+                        class="float-end icon-3"
+                      />
+                      <br />
+                      <span>____ Model</span>
+                    </div>
+                    <!-- card-title -->
+                    <p class="fw-light card-text card-text-edit">
+                      Area: <span>EmergencyICU</span>
+                    </p>
+                    <p class="fw-light card-text card-text-edit">
+                      Number of failures: <span>12 times</span>
+                    </p>
+                    <p class="fw-light card-text card-text-edit">
+                      Downtime: <span>12 days</span>
+                    </p>
+                  </div>
+                  <!-- card-body -->
+                </div>
+                <!-- card -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card card-2">
+                  <div class="card-body">
+                    <div class="card-title color-txt-2">
+                      Device Name
+                      <font-awesome-icon
+                        icon="fa-solid fa-ellipsis-vertical"
+                        class="float-end icon-3"
+                      />
+                      <br />
+                      <span>____ Model</span>
+                    </div>
+                    <!-- card-title -->
+                    <p class="fw-light card-text card-text-edit">
+                      Area: <span>EmergencyICU</span>
+                    </p>
+                    <p class="fw-light card-text card-text-edit">
+                      Number of failures: <span>12 times</span>
+                    </p>
+                    <p class="fw-light card-text card-text-edit">
+                      Downtime: <span>12 days</span>
+                    </p>
+                  </div>
+                  <!-- card-body -->
+                </div>
+                <!-- card -->
+              </div>
+              <div class="col-md-6">
+                <div class="card card-2">
+                  <div class="card-body">
+                    <div class="card-title color-txt-2">
+                      Device Name
+                      <font-awesome-icon
+                        icon="fa-solid fa-ellipsis-vertical"
+                        class="float-end icon-3"
+                      />
+                      <br />
+                      <span>____ Model</span>
+                    </div>
+                    <!-- card-title -->
+                    <p class="fw-light card-text card-text-edit">
+                      Area: <span>EmergencyICU</span>
+                    </p>
+                    <p class="fw-light card-text card-text-edit">
+                      Number of failures: <span>12 times</span>
+                    </p>
+                    <p class="fw-light card-text card-text-edit">
+                      Downtime: <span>12 days</span>
+                    </p>
+                  </div>
+                  <!-- card-body -->
+                </div>
+                <!-- card -->
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -104,23 +158,21 @@ export default {
 <style>
 .add {
   background-color: #0a3440;
-  margin-left: 185px;
+  margin-left: 180px;
   position: relative;
   top: -15px;
   margin-bottom: 10px;
   border-radius: 50%;
 }
 .align-end {
-  margin-left: 190px;
+  margin-left: 193px;
   top: -20px;
 }
-.text-device{
-    font-weight: 400;
-    
+.text-device {
+  font-weight: 400;
 }
 .btn-search {
   background-color: #0a3440;
-  
 }
 .icon-2 {
   color: white;
@@ -133,27 +185,27 @@ export default {
   border-radius: 25px;
   /* height: 400px; */
 }
-.card-2{
-    border-radius: 15px;
-    border: 1px solid rgba(0, 0, 0, .3);
-    color: black;
-    box-shadow: -1px -1px 20px 1px rgba(0, 0, 0, .3);
-    margin-top: 15px;
-    font-size: .8;
-    position: relative;
-    top: -20px;
-
-    
+.card-2 {
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  color: black;
+  box-shadow: -1px -1px 20px 1px rgba(0, 0, 0, 0.3);
+  margin-top: 15px;
+  font-size: 0.8;
+  position: relative;
+  top: -20px;
 }
-.card-text-edit{
-    font-size: .8rem;
+.card-text-edit {
+  font-size: 0.8rem;
 }
-.color-txt{
-    color: #00A99D;
+.color-txt {
+  color: #00a99d;
 }
-.color-txt-2{
-    color: #0a3440;
-    font-weight: 700;
-
+.color-txt-2 {
+  color: #0a3440;
+  font-weight: 700;
+}
+.icon-3{
+  color:#00a99d ;
 }
 </style>

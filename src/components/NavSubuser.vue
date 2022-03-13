@@ -1,7 +1,7 @@
 <template>
   <div>
       <div class="HName text-start">
-      <p class=" fw-bold">HostpitalName</p>
+      <router-link to="/" class=" fw-bold heading-link">HostpitalName</router-link>
       </div>
     <div class="dropdown dDown text-end">
       <button
@@ -64,6 +64,13 @@ export default {
 }
 .Log:hover > .icon1{
   opacity: 1;
+  color: #00A99D;
+}
+.heading-link{
+  text-decoration: none;
+  color: #00A99D;
+}
+.heading-link:hover{
   color: #00A99D;
 }
 
