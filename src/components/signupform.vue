@@ -96,7 +96,6 @@ body{
 
 
 .leftside{
-    background-image: url('/images/1.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
