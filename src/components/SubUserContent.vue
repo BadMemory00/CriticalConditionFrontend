@@ -308,7 +308,7 @@ export default {
   font-size: 0.8;
   position: relative;
   width: 13.5rem;
-  height: 11rem;
+  height: 11.4rem;
   margin: 20px 5px 0px 0px;
   
 }
