@@ -1,68 +1,67 @@
 <template>
  <div class="row no-gutters">
 
-            <div class="col-md-6  no-gutters">
-                <div class="leftside">
-                    <template>
-                        <SignupPhotoIcon />
-                    </template>
-                </div>
+        <div class="col-md-6  no-gutters">
+            <div class="leftside">
+                <template>
+                    <SignupPhotoIcon />
+                </template>
             </div>
-            <div class="col-md-6 no-gutters">
+        </div>
+
+        <div class="col-md-6 no-gutters">
                 <div class="rightside">
-                    <div>
-                        <h2>write your hospital's details</h2>
-                      </div>          
-                      
-                    <div class="row">
-                        <div class="col-md-5" style="margin-top: 70px;">
 
-                                <label for="hospital_name">Hospital name </label><br>
-                                     <input  type="text" name="hostital_name" id="hospital_name"   /><br>
-                               <label for="email" >Email</label><br>
-                                  <input  type="email" id="email" name="email"   /><br>
-                                <label for="hospital_pecialty">Hospital Specialty</label><br>
-                                    <select class="select" id="hospital_pecialty" name="hospital_pecialty">
-                                        <option value=""></option>                                        
-                                    </select><br>
+                            <div>
+                                <h2>write your hospital's details</h2>
+                            </div>          
+                                
+                            <div class="row">
 
-                                 <label for="phone number" >Phone number</label><br>
-                                      <input  type="text" id="phone_number" name="phone_number"  >
-                           
-                        </div>
+                                        <div class="col-md-5"  >
+                                            <label for="hospital_name">Hospital name </label><br>
+                                                    <input  type="text" name="hostital_name" id="hospital_name"   /><br>
+                                            <label for="email" >Email</label><br>
+                                                <input  type="email" id="email" name="email"   /><br>
+                                            <label for="hospital_pecialty">Hospital Specialty</label><br>
+                                                <select class="select" id="hospital_pecialty" name="hospital_pecialty">
+                                                    <option value=""></option>                                        
+                                                </select><br>
+                                            <label for="phone number" >Phone number</label><br>
+                                                <input  type="text" id="phone_number" name="phone_number"  >
+                                            
+                                        </div>
 
-                        <div class="col-md-6">
-                            <fieldset style="border:2px solid black; padding:20px; ">
+                                        <div class="col-md-6">
+                                            <form>
+                                                <fieldset class="form-group border p-0">
+                                                    <legend class="w-auto px-2" style="margin-right:20px; margin-bottom:20px">User's Credentials</legend>
+                                                    <div class="form-group">
+                                                        <label for="username">Username:</label>
+                                                        
+                                                    </div>
+                                                </fieldset>
+                                            </form>
 
-                                <legend style="text-align: left; margin-top:-15px; font-weight:bold">Address</legend>
+                                            
+                                        </div>     
+                                        
+                                                <!----footer ----->
+                                        <div class="footer">
+                                            <div>
+                                            <button class="button"  type="submit" > Sign Up</button><br>
+                                            <h5 class="l-login">Already a member?<a href="#" style="color: #00a89c ">login</a></h5>
+                                            </div>  
 
-                                <label for="country" >Country</label><br>
-                                   <input  type="text" id="country" name="country"><br>
-                               <label for="state" >state</label><br>
-                                   <input  type="text" id="stste" name="state"><br>
-                                <label for="city" >city</label><br>
-                                    <input  type="text" id="city" name="city"><br>
-                                <label for="street">street</label><br>
-                                    <input  type="text" id="'street" name="street">
-                                     
-                                   
-                            </fieldset>    
-                        </div>
-                    </div>     
+                                        </div>
+                                            <!---- end og the footer ----->
+
+                            </div>
                     
-                <div class="footer">
-                    <div>
-                       <button class="button"  type="submit" > Sign Up</button>
-                       <br>
-                       <h5 class="l-login">Already a member?<a href="#" style="color: #00a89c ">login</a></h5>
-                
                 </div>
-                </div>
-                 
-                
-            </div>
-     </div>
-     </div>
+        </div>
+ </div>
+
 </template>
 
 
@@ -99,30 +98,35 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-size: 97% 100%;
+    background-size: 100% 100%;
     
 
-
+ 
  
 }
 
 .rightside{
+    background-color: 	#F5FFFA;
+     background-size: 100% 100%;
+     background-size: cover;
+    
     
     
     
 }
 h2{
     text-align: center;
-    margin-top:80px ;
-    font-size:60px ;
+    
+    font-size:30px ;
     padding-bottom:100px
 }
 .row{
-    display: flex;
+    display : flex; 
     justify-content: center;
+   
 }
 label{
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
 }
  
@@ -130,32 +134,33 @@ input{
     width: 90%;
     height: 12%;
     background-color: #d1d1d1;
-    border: none
-  }
-  .select{
-    width: 90%;
-    height: 12%;
-    background-color: #d1d1d1;
-    border: none
-  }
- 
+    border: none;
+}
 
+.select{
+width: 90%;
+height: 12%;
+background-color: #d1d1d1;
+border: none
+}
+ 
 .footer{
     display: flex;
     justify-content: center;
 }
 .button{
-    width: 600px ;
+    width: 350px ;
     border-radius : 20px;
-    height: 50px;
+    height: 40px;
     font-size: 20px;
-    margin-top: 150px;
+    margin-top: 80px;
     background-color: #00a89c;
 }
 .l-login{
-    margin-top: 30px;
-    margin-left: 200px;
-}
+    margin-top: 17px;
+    margin-left: 80px;
+     font-size: 17px;
+} 
  
  
     
