@@ -43,9 +43,7 @@
                 <SubUserContentDeviceCard/>
               </div>
             </div>
-            <li class="text-center ">
-              
-            </li>
+
           </div>
         </div>
       </div>
@@ -193,6 +191,7 @@
           </div>       
       </div>
     </div>
+    
   </div>
 </template>
 
