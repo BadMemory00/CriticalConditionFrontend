@@ -1,5 +1,5 @@
 <template>
-    <svg width="" height="" data-name="Layer 1" version="1.1" viewBox="0 0 1027.5 696.05" xmlns="http://www.w3.org/2000/svg">
+    <svg width="" height="70%" data-name="Layer 1" version="1.1" viewBox="0 0 1027.5 696.05" xmlns="http://www.w3.org/2000/svg">
  <title>experience design</title>
  <circle cx="696.25" cy="355.7" r="76.752" fill="#00a89c" opacity=".4"/>
  <rect x="270" y="461.9" width="428" height="116" fill="#3f3d56"/>
