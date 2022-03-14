@@ -10,7 +10,8 @@
                 <a href="#" class="NavLink fw-light">Discover</a>
                 <a href="#" class="NavLink fw-light">Platform</a>
                 <a href="#" class="NavLink fw-light">Support</a>
-                <a href="#" class="NavLink fw-light">Login</a>
+                <router-link to="/login" class="NavLink fw-light">Login</router-link>
+                <!-- <a href="#" class="NavLink fw-light">Login</a> -->
                 <!-- <a href="#" class="NavLink NavSign fw-light">Sign Up</a> -->
                 <router-link to="/signup" class="NavLink NavSign fw-light">Sign Up</router-link>
             </div>
