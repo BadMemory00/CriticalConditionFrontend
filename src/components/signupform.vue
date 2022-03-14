@@ -4,9 +4,7 @@
             <div class="col-md-6  no-gutters">
                 <div class="leftside">
                     
-
                 </div>
-
             </div>
             <div class="col-md-6 no-gutters">
                 <div class="rightside">
@@ -57,8 +55,11 @@
                        <h5 class="l-login">Already a member?<a href="#" style="color: #00a89c ">login</a></h5>
                 
                 </div>
+                </div>
                  
                 
+     </div>
+     </div>
      </div>
 </template>
 <script>

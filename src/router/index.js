@@ -15,6 +15,13 @@ const routes = [{
         name: 'subuser',
         component: () =>
             import ('../views/SubuserHomeView.vue')
+    },
+
+    {
+        path: '/signup',
+        name: 'signup',
+        component: () =>
+            import ('../views/SignUpView.vue')
     }
 ]
 

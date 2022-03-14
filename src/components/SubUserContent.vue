@@ -409,6 +409,7 @@ export default {
 .Device-info{
   position: relative;
   left: 270px;
+  display: none;
 }
 .card-3{
   background-color: #f7f9f8;
