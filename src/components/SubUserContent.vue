@@ -1,5 +1,5 @@
 <template>
-  <div class="Content">
+  <div class="Content ">
     <div class="row">
       <div class="col-md-6">
         <div class="card caard">
@@ -29,135 +29,31 @@
           <div class="card-body card-body2">
             <div class="row">
               <div class="col-md-6">
-                <div class="card card-2">
-                  <div class="card-body">
-                    <div class="card-title color-txt-2">
-                      Device Name
-                      <a href=""><font-awesome-icon
-                        icon="fa-solid fa-ellipsis-vertical"
-                        class="float-end icon-3"
-                      /></a>
-                      <br />
-                        <span class="iammodel"> Model</span>
-                      <hr>
-                    </div>
-                    <!-- card-title -->
-                    <p class="fw-light card-text card-text-edit">
-                      Area: <span>EmergencyICU</span>
-                    </p>
-                    <p class="fw-light card-text card-text-edit">
-                      Number of failures: <span>12 times</span>
-                    </p>
-                    <p class="fw-light card-text card-text-edit">
-                      Downtime: <span>12 days</span>
-                    </p>
-                  </div>
-                  <!-- card-body -->
-                </div>
-                <!-- card -->
+                <SubUserContentDeviceCard />
               </div>
               <div class="col-md-6">
-                <div class="card card-2">
-                  <div class="card-body">
-                    <div class="card-title color-txt-2">
-                      Device Name
-                      <a href=""><font-awesome-icon
-                        icon="fa-solid fa-ellipsis-vertical"
-                        class="float-end icon-3"
-                      /></a>
-                      <br />
-                      <span class="iammodel"> Model</span>
-                      <hr>
-                    </div>
-                    <!-- card-title -->
-                    <p class="fw-light card-text card-text-edit">
-                      Area: <span>EmergencyICU</span>
-                    </p>
-                    <p class="fw-light card-text card-text-edit">
-                      Number of failures: <span>12 times</span>
-                    </p>
-                    <p class="fw-light card-text card-text-edit">
-                      Downtime: <span>12 days</span>
-                    </p>
-                  </div>
-                  <!-- card-body -->
-                </div>
-                <!-- card -->
+                <SubUserContentDeviceCard/>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
-                <div class="card card-2">
-                  <div class="card-body">
-                    <div class="card-title color-txt-2">
-                      Device Name
-                      <a href=""><font-awesome-icon
-                        icon="fa-solid fa-ellipsis-vertical"
-                        class="float-end icon-3"
-                      /></a>
-                      <br />
-                      <span class="iammodel"> Model</span>
-                      <hr>                    
-                    </div>
-                    <!-- card-title -->
-                    <p class="fw-light card-text card-text-edit">
-                      Area: <span>EmergencyICU</span>
-                    </p>
-                    <p class="fw-light card-text card-text-edit">
-                      Number of failures: <span>12 times</span>
-                    </p>
-                    <p class="fw-light card-text card-text-edit">
-                      Downtime: <span>12 days</span>
-                    </p>
-                  </div>
-                  <!-- card-body -->
-                </div>
-                <!-- card -->
+                <SubUserContentDeviceCard/>
               </div>
               <div class="col-md-6">
-                <div class="card card-2">
-                  <div class="card-body">
-                    <div class="card-title color-txt-2">
-                      Device Name
-                      <a href=""><font-awesome-icon
-                        icon="fa-solid fa-ellipsis-vertical"
-                        class="float-end icon-3"
-                      /></a>
-                      <br />
-                      <span class="iammodel"> Model</span>
-                      <hr>
-                    </div>
-                    <!-- card-title -->
-                    <p class="fw-light card-text card-text-edit">
-                      Area: <span>EmergencyICU</span>
-                    </p>
-                    <p class="fw-light card-text card-text-edit">
-                      Number of failures: <span>12 times</span>
-                    </p>
-                    <p class="fw-light card-text card-text-edit">
-                      Downtime: <span>12 days</span>
-                    </p>
-                  </div>
-                  
-                  <!-- card-body -->
-                </div>
-                <!-- card -->
+                <SubUserContentDeviceCard/>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6 Device-info">
+      <div class="col-md-6 Device-info" id="box1">
          <div class="card card-3">
               <div class="card-body pb-4">
                 <div class="card-title color-txt-2 text-center">
-                      Device Name
-                      <a href=""><font-awesome-icon
-                        icon="fa-solid fa-ellipsis-vertical"
-                        class="float-end icon-3"
-                      /></a>
+                      {{DeviceName}}
+                      <SubUserContentDropDown class="bg-color"/>
                       <br />
-                        <span class="iammodel-2"> Model</span>
+                        <span class="iammodel-2"> {{Model}}</span>
                       <hr>
                   </div>
                   <div class="card card-4 ">
@@ -166,21 +62,21 @@
                       <div class="d-flex">
                         <div class="General-Info">
                           <span class=" General-Info-text">Brand</span>
-                          <form class="About">
-                            <input type="text" class=" search3">
-                          </form>
+                          <div class="About">
+                            <label class="search3"></label>
+                          </div>
                         </div>
                         <div class="General-Info">
                           <span class=" General-Info-text">Type of services</span>
-                          <form class="About">
-                            <input type="text" class=" search3">
-                          </form>
+                          <div class="About">
+                            <label class="search3"></label>
+                          </div>
                         </div>
                         <div class="General-Info">
                           <span class=" General-Info-text">Purashse Date</span>
-                          <form class="About">
-                            <input type="date" class=" search4">
-                          </form>
+                          <div class="About">
+                            <label class="search3"><font-awesome-icon icon="fa-solid fa-calendar" class="calender" /></label>
+                          </div>
                         </div>
                       </div>  
                     </div>
@@ -191,24 +87,24 @@
                       <div class="d-flex">
                         <div class="General-Info">
                           <span class=" General-Info-text">Working Days</span>
-                          <form class="About">
-                            <input type="text" class=" search3">
+                          <div class="About">
+                            <label class="search3"></label>
                             <span class="little">per year</span>
-                          </form>
+                          </div>
                         </div>
                         <div class="General-Info">
                           <span class=" General-Info-text">No.Failures</span>
-                          <form class="About">
-                            <input type="text" class=" search3">
+                          <div class="About">
+                            <label class="search3"></label>
                             <span class="little">times</span>
-                          </form>
+                          </div>
                         </div>
                         <div class="General-Info">
                           <span class=" General-Info-text">Downtime</span>
-                          <form class="About">
-                            <input type="text" class=" search4">
+                          <div class="About">
+                            <label class="search3"></label>
                             <span class="little">days</span>
-                          </form>
+                          </div>
                         </div>
                       </div>  
                     </div>
@@ -219,9 +115,9 @@
                       <div class="d-flex">
                         <div class="General-Info">
                           <span class=" General-Info-text">Safety</span>
-                          <form class="About">
-                            <input type="text" class=" search3">
-                          </form>
+                          <div class="About">
+                            <label class="search3"></label>
+                          </div>
                         </div>
                         <div class="General-Info">
                           <span class=" General-Info-text">Function</span>
@@ -231,9 +127,9 @@
                         </div>
                         <div class="General-Info">
                           <span class=" General-Info-text">Area</span>
-                          <form class="About">
-                            <input type="text" class=" search4">
-                          </form>
+                          <div class="About">
+                            <label class="search3"></label>
+                          </div>
                         </div>
                       </div>
                         
@@ -243,21 +139,21 @@
                       <div class="d-flex">
                         <div class="General-Info">
                           <span class=" General-Info-text">Service cost</span>
-                          <form class="About">
-                            <input type="text" class=" search3">
-                          </form>
+                          <div class="About">
+                            <label class="search3"></label>
+                          </div>
                         </div>
                         <div class="General-Info">
                           <span class=" General-Info-text">Operation cost</span>
-                          <form class="About">
-                            <input type="text" class=" search3">
-                          </form>
+                          <div class="About">
+                            <label class="search3"></label>
+                          </div>
                         </div>
                         <div class="General-Info">
                           <span class=" General-Info-text">Purashse cost</span>
-                          <form class="About">
-                            <input type="text" class=" search4">
-                          </form>
+                          <div class="About">
+                            <label class="search3"></label>
+                          </div>
                         </div>
                       </div>
                         
@@ -269,9 +165,9 @@
                       <div class="d-flex">
                         <div class="General-Info">
                           <span class=" General-Info-text">Detection</span>
-                          <form class="About">
-                            <input type="text" class=" search4">
-                          </form>
+                          <div class="About">
+                            <label class="search3"></label>
+                          </div>
                         </div>
                       </div>  
                     </div>
@@ -283,7 +179,7 @@
                         <div class="General-Info">
                           <span class=" General-Info-text">Detection</span>
                           <form class="About-range ">
-                            <input type="range" min="0" max="710" value="250" class="search5">
+                            <input type="range" min="0" max="710" value="250" class="search5 ">
                           </form>
                           
                         </div>
@@ -298,8 +194,24 @@
 </template>
 
 <script>
+import SubUserContentDeviceCard from './SubUserContentDeviceCard.vue'
+import SubUserContentDropDown from './SubUserContentDropDown.vue'
 export default {
   name: "SubUsercontent",
+   components:{
+     SubUserContentDeviceCard,
+     SubUserContentDropDown,
+   },
+    data() {
+    return {
+      DeviceName: "Device name",
+      Model: "Model",
+      AreaMsg: "EmergencyICU",
+      NumberOfFailures: 12,
+      DownTime: 12,
+    };
+  },
+  
 };
 </script>
 
@@ -312,6 +224,7 @@ export default {
   width: 3rem;
   top: -1.5rem;
   left: 46%;
+  
 }
 .search2{
     position: absolute;
@@ -409,6 +322,8 @@ export default {
 .Device-info{
   position: relative;
   left: 270px;
+  visibility: hidden;
+  
 }
 .card-3{
   background-color: #f7f9f8;
@@ -488,6 +403,17 @@ export default {
   outline: none;
   border-radius: 3px;
   
+}
+.bg-color{
+  background-color: #f7f9f8;
+  color: #f7f9f8;
+}
+.calender{
+  opacity: .7;
+  font-size: 80%;
+  float: right;
+  margin-top: 2px;
+  margin-right: 7px;
 }
 
 
