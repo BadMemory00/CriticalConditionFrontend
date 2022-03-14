@@ -1,84 +1,71 @@
 <template>
   <div>
-      <div class="HName text-start">
-      <router-link to="/" class=" fw-bold heading-link">{{hospitalName}}</router-link>
-      </div>
+    <div class="HName text-start">
+      <router-link to="/" class="fw-bold heading-link">{{hospitalName}}</router-link>
+    </div>
     <div class="dropdown dDown text-end">
-      <button
-        class="btn button btn-secondary dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton1"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Hello, <span>{{userName}}</span>
+      <button class="btn button btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" >
+        Hello, <span>{{ userName }}</span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item Log" href="#"><font-awesome-icon class="icon1" icon="fa-solid fa-right-from-bracket" />LogOut</a></li>
-        
+        <li>
+          <a class="dropdown-item Log" href="#" ><font-awesome-icon class="icon1" icon="fa-solid fa-right-from-bracket" />LogOut</a>
+        </li>
       </ul>
     </div>
-
-     
   </div>
 </template>
 
 <script>
 export default {
   name: "navbar",
-  data(){
-    return{
-      hospitalName:"HospitalName",
-      userName:"UserName",
-
-    }
-  }
+  data() {
+    return {
+      hospitalName: "HospitalName",
+      userName: "UserName",
+    };
+  },
 };
 </script>
 
 <style>
-.HName{
+.HName {
   float: left;
-  color: #00A99D;
+  color: #00a99d;
   display: flex;
   font-size: 1.3rem;
 }
-.dDown{
+.dDown {
   float: right;
-  
 }
-.button{
+.button {
   background-color: white;
   color: black;
   border: 0;
 }
-.button:hover{
-  background-color: #00A99D;
+.button:hover {
+  background-color: #00a99d;
   color: black;
   border: 0;
-
 }
-.button:focus{
-  background-color: #00A99D;
+.button:focus {
+  background-color: #00a99d;
   color: black;
   border: 0;
-
-
 }
-.icon1{
+.icon1 {
   margin-right: 10px;
-  opacity: .5;
+  opacity: 0.5;
 }
-.Log:hover > .icon1{
+.Log:hover > .icon1 {
   opacity: 1;
-  color: #00A99D;
+  color: #00a99d;
 }
-.heading-link{
+.heading-link {
   text-decoration: none;
-  color: #00A99D;
+  color: #00a99d;
 }
-.heading-link:hover{
-  color: #00A99D;
+.heading-link:hover {
+  color: #00a99d;
 }
-
 </style>

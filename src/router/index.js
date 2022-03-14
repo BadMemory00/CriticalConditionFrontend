@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
+
 Vue.use(VueRouter)
 
 const routes = [{
@@ -22,6 +23,13 @@ const routes = [{
         name: 'signup',
         component: () =>
             import ('../views/SignUpView.vue')
+    },
+
+    {
+        path: '/adddevice',
+        name: 'AddNewDevice',
+        component:()=>
+        import ('../views/AddNewDevice.vue')
     }
 ]
 

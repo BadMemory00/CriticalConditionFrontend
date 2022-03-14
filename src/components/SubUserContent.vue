@@ -4,9 +4,9 @@
       <div class="col-md-6">
         <div class="card caard">
           <form>
-            <button type="submit" class="btn btn-sm add">
+            <router-link to="/adddevice" class="btn btn-sm add">
               <font-awesome-icon icon="fa-solid fa-plus" class="icon-2 plus-icon" />
-            </button>
+            </router-link>
           </form>
           <form class="input-group search2">
               <input
