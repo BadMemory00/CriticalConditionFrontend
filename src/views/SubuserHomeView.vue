@@ -5,6 +5,10 @@
     </div>
       <SubUsercontent class="pos-3" />
 
+      <WarningMsg/>
+
+
+
       
     
 
@@ -14,15 +18,17 @@
 <script>
 import NavSubuser from '@/components/NavSubuser.vue';
 import SubUsercontent from '@/components/SubUserContent.vue';
+import WarningMsg from '@/components/WarningMsg.vue'
 
 
 export default {
   components:{
     NavSubuser,
     SubUsercontent,
-
-
-  }
+    WarningMsg,
+  },
+ 
+  
 }
 </script>
 
