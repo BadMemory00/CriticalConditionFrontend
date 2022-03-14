@@ -14,6 +14,7 @@
               </li>
               <li class="text-center">
                 <button class="dropdown-item Log-1" @click="changeVisibility2()" ><font-awesome-icon icon="fa-solid fa-box-archive" class="icon-4 float-start" />Archive</button>
+                
               </li>
             </ul>
           </div>
@@ -27,6 +28,7 @@ export default {
     changeVisibility2() {
       document.getElementById("box2").style.visibility = "visible";
     },
+    
   },
   
 }

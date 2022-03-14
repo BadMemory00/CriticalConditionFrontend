@@ -1,10 +1,10 @@
 <template >
     <nav class="row mb-5 pb-3 ">
-        <div class="col-md-6 ">
+        <div class="col-lg-6 col-md-3 ">
                 <a href="/" class="heading-style fw-bold ">CriticalCondition</a>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-lg-6 col-md-9  ">
             <div class="">                
                 <router-link to="/subuser" class="NavLink fw-light">Sub Users</router-link>
                 <a href="#" class="NavLink fw-light">Discover</a>

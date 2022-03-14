@@ -1,7 +1,7 @@
 <template>
   <div>
       <div class="HName text-start">
-      <router-link to="/" class=" fw-bold heading-link">HostpitalName</router-link>
+      <router-link to="/" class=" fw-bold heading-link">{{hospitalName}}</router-link>
       </div>
     <div class="dropdown dDown text-end">
       <button
@@ -11,7 +11,7 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        Hello, <span>UserName</span>
+        Hello, <span>{{userName}}</span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
         <li><a class="dropdown-item Log" href="#"><font-awesome-icon class="icon1" icon="fa-solid fa-right-from-bracket" />LogOut</a></li>
@@ -26,6 +26,13 @@
 <script>
 export default {
   name: "navbar",
+  data(){
+    return{
+      hospitalName:"HospitalName",
+      userName:"UserName",
+
+    }
+  }
 };
 </script>
 
