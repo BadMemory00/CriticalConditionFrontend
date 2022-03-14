@@ -144,7 +144,7 @@ border: none
 .legend{
     position: absolute;
     top: -1rem;
-    background-color: white;
+    background-color: #fdfdfd;
 }
 .fieldset{
     display: block;
