@@ -1,54 +1,58 @@
 <template>
  <div class="row no-gutters">
-    <Navbar />
-        <div class="col-md-6  no-gutters">
+     <Navbar />
+        <div class="col-md-5  no-gutters">
             <div class="leftside">
                 <SignupPhotoIcon />
             </div>
         </div>
-        <div class="col-md-6 no-gutters">
-                <div class="rightside">
-                    <div>
-                        <h2>write your hospital's details</h2>
-                    </div>          
-                    <div class="row">
-                        <div class="col-md-5"  >
-                            <label for="hospital_name">Hospital name </label><br>
+    <div class="col-md-7 no-gutters">
+        <div class="rightside">
+            <div>
+                <h2>Write your Hosptail's details</h2>
+            </div>          
+        <div class="row">
+            <div class="col-md-5">
+                    <label for="hospital_name">Hospital name </label><br>
                                     <input  type="text" name="hostital_name" id="hospital_name"   /><br>
                             <label for="email" >Email</label><br>
                                 <input  type="email" id="email" name="email"   /><br>
                             <label for="hospital_pecialty">Hospital Specialty</label><br>
                                 <select class="select" id="hospital_pecialty" name="hospital_pecialty">
-                                    <option value=""></option>                                        
+                                        <option value=""></option>                                        
                                 </select><br>
                             <label for="phone number" >Phone number</label><br>
-                                <input  type="text" id="phone_number" name="phone_number"  >
-                            
-                        </div>
-                        <div class="col-md-6">
-                            <form>
-                                <fieldset class="fieldset">
-                                    <p class="legend">Personalia:</p>
-                                      Name: <input type="text"><br>
-                                      Email: <input type="text"><br>
-                                      Date of birth: <input type="text">
-                                </fieldset>
-                            </form>
-                        </div>     
-                                <!----footer ----->
-                        <div class="footer">
-                            <div>
-                            <button class="button"  type="submit" > Sign Up</button><br>
-                            <h5 class="l-login">Already a member?<a href="#" style="color: #00a89c ">login</a></h5>
-                            </div>  
-                        </div>
-                            <!---- end og the footer ----->
-                    </div>
-                </div>
-        </div>
- </div>
+                                <input  type="text" id="phone_number" name="phone_number">
+            </div>
+               
+            <div class="col-md-6">
+                    <fieldset class="fieldset">
+                        <p class="legend">Address</p>
+                            <label for="country">Country</label><br>
+                                <input  type="text" name="country" id="country"   /><br>
+                            <label for="state" >State</label><br>
+                                <input  type="text" id="state" name="state"   /><br>
+                            <label for="city">city</label><br>
+                                <input  type="text" id="city" name="city"   /><br>
+                            <label for="street" >Street</label><br>
+                                <input  type="text" id="street" name="street"  >
+                    </fieldset>
+            </div>     
+                    <!----footer ----->
+            <div class="footer">
+                <div>
+                <button class="button"  type="submit" > Sign Up</button><br>
+                <h5 class="l-login">Already a member?<a href="#" style="color: #00a89c ">login</a></h5>
+                </div>  
+            </div>
+                <!---- end og the footer ----->
 
-</template>
+</div>
+    </div>
+         </div>
+                </div>
+
+    </template>
 
 
 <script>
@@ -107,21 +111,21 @@ h2{
 }
 label{
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 200;
 }
  
 input{
     width: 90%;
     height: 12%;
-    background-color: #d1d1d1;
+    background-color: rgb(245, 246, 248);
     border: none;
 }
 
 .select{
 width: 90%;
 height: 12%;
-background-color: #d1d1d1;
-border: none
+background-color: rgb(245, 246, 248);
+border: none;
 }
  
 .footer{
@@ -129,12 +133,14 @@ border: none
     justify-content: center;
 }
 .button{
-    width: 350px ;
+    width: 400px ;
     border-radius : 20px;
-    height: 40px;
+    height: 45px;
     font-size: 20px;
     margin-top: 80px;
     background-color: #00a89c;
+    color: #F8F8FF;
+    border: none;
 }
 .l-login{
     margin-top: 17px;
@@ -160,5 +166,6 @@ border: none
     border-color: threedface;
     border-image: initial;
     position: relative;
+    padding: 10px;
 }
 </style>
