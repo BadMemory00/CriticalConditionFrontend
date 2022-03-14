@@ -1,6 +1,6 @@
 <template>
     
-        <div class="dropdown dDown-2 text-end">
+        <div class="dropdown button6 dDown-2 text-end">
             <button class="btn button1  btn-secondary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 <font-awesome-icon icon="fa-solid fa-ellipsis-vertical" class="float-end icon-3"/>
             </button>
@@ -28,7 +28,5 @@ export default {
 </script>
 
 <style>
-    .button1{
-        background-color: transparent;
-    }
+
 </style>

@@ -63,19 +63,19 @@
                         <div class="General-Info">
                           <span class=" General-Info-text">Brand</span>
                           <div class="About">
-                            <label class="search3"></label>
+                            <label class="search3">{{label1}}</label>
                           </div>
                         </div>
                         <div class="General-Info">
                           <span class=" General-Info-text">Type of services</span>
                           <div class="About">
-                            <label class="search3"></label>
+                            <label class="search3">{{label2}}</label>
                           </div>
                         </div>
                         <div class="General-Info">
                           <span class=" General-Info-text">Purashse Date</span>
                           <div class="About">
-                            <label class="search3"><font-awesome-icon icon="fa-solid fa-calendar" class="calender" /></label>
+                            <label class="search3"><font-awesome-icon icon="fa-solid fa-calendar" class="calender" />{{label3}}</label>
                           </div>
                         </div>
                       </div>  
@@ -88,21 +88,21 @@
                         <div class="General-Info">
                           <span class=" General-Info-text">Working Days</span>
                           <div class="About">
-                            <label class="search3"></label>
+                            <label class="search3">{{label4}}</label>
                             <span class="little">per year</span>
                           </div>
                         </div>
                         <div class="General-Info">
                           <span class=" General-Info-text">No.Failures</span>
                           <div class="About">
-                            <label class="search3"></label>
+                            <label class="search3">{{label5}}</label>
                             <span class="little">times</span>
                           </div>
                         </div>
                         <div class="General-Info">
                           <span class=" General-Info-text">Downtime</span>
                           <div class="About">
-                            <label class="search3"></label>
+                            <label class="search3">{{label6}}</label>
                             <span class="little">days</span>
                           </div>
                         </div>
@@ -116,19 +116,19 @@
                         <div class="General-Info">
                           <span class=" General-Info-text">Safety</span>
                           <div class="About">
-                            <label class="search3"></label>
+                            <label class="search3">{{label7}}</label>
                           </div>
                         </div>
                         <div class="General-Info">
                           <span class=" General-Info-text">Function</span>
-                          <form class="About">
-                            <input type="text" class=" search3">
-                          </form>
+                          <div class="About">
+                            <label class="search3">{{label8}}</label>
+                          </div>
                         </div>
                         <div class="General-Info">
                           <span class=" General-Info-text">Area</span>
                           <div class="About">
-                            <label class="search3"></label>
+                            <label class="search3">{{label9}}</label>
                           </div>
                         </div>
                       </div>
@@ -140,19 +140,19 @@
                         <div class="General-Info">
                           <span class=" General-Info-text">Service cost</span>
                           <div class="About">
-                            <label class="search3"></label>
+                            <label class="search3">{{label10}}</label>
                           </div>
                         </div>
                         <div class="General-Info">
                           <span class=" General-Info-text">Operation cost</span>
                           <div class="About">
-                            <label class="search3"></label>
+                            <label class="search3">{{label11}}</label>
                           </div>
                         </div>
                         <div class="General-Info">
                           <span class=" General-Info-text">Purashse cost</span>
                           <div class="About">
-                            <label class="search3"></label>
+                            <label class="search3">{{label12}}</label>
                           </div>
                         </div>
                       </div>
@@ -166,7 +166,7 @@
                         <div class="General-Info">
                           <span class=" General-Info-text">Detection</span>
                           <div class="About">
-                            <label class="search3"></label>
+                            <label for="" class="search3">{{label13}}</label>
                           </div>
                         </div>
                       </div>  
@@ -209,6 +209,19 @@ export default {
       AreaMsg: "EmergencyICU",
       NumberOfFailures: 12,
       DownTime: 12,
+      label1:"a",
+      label2:"b",
+      label3:"c",
+      label4:"d",
+      label5:"e",
+      label6:"f",
+      label7:"g",
+      label8:"h",
+      label9:"j",
+      label10:"k",
+      label11:"l",
+      label12:"m",
+      label13:"n",
     };
   },
   
@@ -269,7 +282,7 @@ export default {
   position: relative;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 
-  /* height: 400px; */
+
 }
 
 .main-card-text{
@@ -328,7 +341,7 @@ export default {
 .card-3{
   background-color: #f7f9f8;
   top: 3rem;
-  /* height: 33rem; */
+ 
   border-radius: 25px;
   width: 28.2rem;
   position: relative;
@@ -374,6 +387,8 @@ export default {
     height: 1.2rem;
     background-color: #f7f9f8;
     border: white;
+    font-size: .8rem;
+    font-weight: 400;
 }
 .search4{
   width: 7.7rem;
@@ -404,10 +419,7 @@ export default {
   border-radius: 3px;
   
 }
-.bg-color{
-  background-color: #f7f9f8;
-  color: #f7f9f8;
-}
+
 .calender{
   opacity: .7;
   font-size: 80%;
@@ -415,7 +427,9 @@ export default {
   margin-top: 2px;
   margin-right: 7px;
 }
-
+.button1{
+  background-color: transparent;
+}
 
 
 
