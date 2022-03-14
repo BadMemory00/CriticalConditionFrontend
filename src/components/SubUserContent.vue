@@ -323,7 +323,7 @@ export default {
   position: relative;
   left: 270px;
   visibility: hidden;
-  
+
 }
 .card-3{
   background-color: #f7f9f8;
