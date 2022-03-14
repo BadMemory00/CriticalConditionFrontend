@@ -3,7 +3,9 @@
 
             <div class="col-md-6  no-gutters">
                 <div class="leftside">
-                    
+                    <template>
+                        <SignupPhotoIcon />
+                    </template>
                 </div>
             </div>
             <div class="col-md-6 no-gutters">
@@ -58,12 +60,22 @@
                 </div>
                  
                 
-     </div>
+            </div>
      </div>
      </div>
 </template>
+
+
 <script>
+    import SignupPhotoIcon from './icons/IconSignupPhoto.vue'
+    export default {
+        components:{
+            SignupPhotoIcon
+        }
+    }
 </script>
+
+
 <style >
 body{
     overflow: hidden;
