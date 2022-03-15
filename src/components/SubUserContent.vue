@@ -191,13 +191,13 @@
           </div>       
       </div>
     </div>
-    
   </div>
 </template>
 
 <script>
 import SubUserContentDeviceCard from './SubUserContentDeviceCard.vue'
 import SubUserContentDropDown from './SubUserContentDropDown.vue'
+
 export default {
   name: "SubUsercontent",
    components:{
