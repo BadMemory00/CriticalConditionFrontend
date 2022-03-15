@@ -6,7 +6,7 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li class="text-center">
-                <button class="dropdown-item Log-1"><font-awesome-icon icon="fa-solid fa-screwdriver-wrench" class="float-start icon-4" />Quick edit</button>
+                <button class="dropdown-item Log-1" @click="changeVisibility7()"><font-awesome-icon icon="fa-solid fa-screwdriver-wrench" class="float-start icon-4" />Quick edit</button>
               </li>
               
               <li class="text-center">
@@ -30,6 +30,9 @@ export default {
     },
     changeVisibility4(){
       document.getElementById("edit-1").style.visibility = "visible";
+    },
+    changeVisibility7(){
+      document.getElementById("edit-2").style.visibility = "visible";
     }
     
   },

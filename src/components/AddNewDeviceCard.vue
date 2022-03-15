@@ -62,11 +62,21 @@ export default {
   border-radius: 10px;
   color: #0a3440;
 }
+.card-button:hover{
+  background-color: #0a3440;
+color: white;
+}
+.card-button:hover > .button-icon{
+  background-color: #0a3440;
+color: white;
+}
 .button-icon {
   margin-right: 7px;
   opacity: 0.7;
   color: #0a3440;
 }
+
+
 .card-edit{
   margin-top: 30px;
    box-shadow: 1px 10px 15px 1px rgba(0, 0, 0, 0.3);
