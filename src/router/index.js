@@ -26,17 +26,16 @@ const routes = [{
     },
 
     {
-<<<<<<< HEAD
         path: '/adddevice',
         name: 'AddNewDevice',
         component:()=>
         import ('../views/AddNewDevice.vue')
-=======
+    },
+        {
         path: '/login',
         name: 'login',
         component: () =>
             import ('../views/LoginView.vue')
->>>>>>> ac1ddda7764bb78f2557c469c621d19dae91742d
     }
 ]
 
