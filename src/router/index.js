@@ -26,12 +26,18 @@ const routes = [{
     },
 
     {
+        path: '/superuser',
+        name: 'superuser',
+        component: () =>
+            import ('../views/SuperuserHomeView.vue')
+    },
+    {
         path: '/adddevice',
         name: 'AddNewDevice',
         component:()=>
         import ('../views/AddNewDevice.vue')
     },
-        {
+    {
         path: '/login',
         name: 'login',
         component: () =>
