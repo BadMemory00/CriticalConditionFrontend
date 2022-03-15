@@ -6,6 +6,7 @@
       <SubUsercontent class="pos-3" />
 
       <WarningMsg/>
+      <EditDevice class="hide"/>
 
 
 
@@ -19,6 +20,7 @@
 import NavSubuser from '@/components/NavSubuser.vue';
 import SubUsercontent from '@/components/SubUserContent.vue';
 import WarningMsg from '@/components/WarningMsg.vue'
+import EditDevice from '@/components/EditDevice.vue'
 
 
 export default {
@@ -26,6 +28,7 @@ export default {
     NavSubuser,
     SubUsercontent,
     WarningMsg,
+    EditDevice,
   },
  
   
@@ -44,4 +47,12 @@ export default {
   top: 65px;
   left: -200px;
 }
+.hide{
+  visibility: hidden;
+  position: relative;
+  top: -775px;
+  left: 40px;
+  
+}
+
 </style>
