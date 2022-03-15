@@ -1,7 +1,7 @@
 <template>
 <div class="">
     <div class="row mb-5">
-        <div class="col-md-8 text-left ">
+        <div class="col-md-8  text-left ">
             <p class="display-6 heading-txt">Risk and cyber security analysis for medical devices</p>
             <p class="fw-light content-txt w-50 mb-5">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
             <a href="#" class=" content-btn ">Mange Your Devices</a>

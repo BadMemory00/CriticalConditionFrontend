@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
+
 Vue.use(VueRouter)
 
 const routes = [{
@@ -29,6 +30,18 @@ const routes = [{
         name: 'superuser',
         component: () =>
             import ('../views/SuperuserHomeView.vue')
+    },
+    {
+        path: '/adddevice',
+        name: 'AddNewDevice',
+        component:()=>
+        import ('../views/AddNewDevice.vue')
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: () =>
+            import ('../views/LoginView.vue')
     }
 ]
 

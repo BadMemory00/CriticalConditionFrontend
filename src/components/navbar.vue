@@ -1,16 +1,17 @@
 <template >
     <nav class="row mb-5 pb-3 ">
-        <div class="col-md-6 ">
+        <div class="col-lg-6 col-md-3 ">
                 <a href="/" class="heading-style fw-bold ">CriticalCondition</a>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-lg-6 col-md-9  ">
             <div class="">                
                 <router-link to="/subuser" class="NavLink fw-light">Sub Users</router-link>
                 <a href="#" class="NavLink fw-light">Discover</a>
                 <a href="#" class="NavLink fw-light">Platform</a>
                 <a href="#" class="NavLink fw-light">Support</a>
-                <a href="#" class="NavLink fw-light">Login</a>
+                <router-link to="/login" class="NavLink fw-light">Login</router-link>
+                <!-- <a href="#" class="NavLink fw-light">Login</a> -->
                 <!-- <a href="#" class="NavLink NavSign fw-light">Sign Up</a> -->
                 <router-link to="/signup" class="NavLink NavSign fw-light">Sign Up</router-link>
             </div>

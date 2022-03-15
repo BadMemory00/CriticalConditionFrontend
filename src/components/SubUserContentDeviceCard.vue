@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pb-2">
     <div class="card card-2 ">
       <div class="card-body ">
         <div class="card-title color-txt-2">
@@ -18,7 +18,7 @@
         <p class="fw-light card-text card-text-edit">
           Number of failures: <span>{{ NumberOfFailures }} times</span>
         </p>
-        <p class="fw-light card-text card-text-edit">
+        <p class="fw-light card-text card-text-edit ">
           Downtime: <span>{{ DownTime }} Days</span>
         </p>
       </div>

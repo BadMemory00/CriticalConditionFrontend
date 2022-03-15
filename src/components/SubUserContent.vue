@@ -4,9 +4,9 @@
       <div class="col-md-6">
         <div class="card caard">
           <form>
-            <button type="submit" class="btn btn-sm add">
+            <router-link to="/adddevice" class="btn btn-sm add">
               <font-awesome-icon icon="fa-solid fa-plus" class="icon-2 plus-icon" />
-            </button>
+            </router-link>
           </form>
           <form class="input-group search2">
               <input
@@ -43,6 +43,7 @@
                 <SubUserContentDeviceCard/>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -190,6 +191,7 @@
           </div>       
       </div>
     </div>
+    
   </div>
 </template>
 
@@ -306,7 +308,7 @@ export default {
   font-size: 0.8;
   position: relative;
   width: 13.5rem;
-  height: 11rem;
+  height: 11.4rem;
   margin: 20px 5px 0px 0px;
   
 }
@@ -430,6 +432,7 @@ export default {
 .button1{
   background-color: transparent;
 }
+
 
 
 
