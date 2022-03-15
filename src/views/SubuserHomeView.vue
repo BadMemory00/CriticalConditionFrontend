@@ -59,7 +59,7 @@ export default {
   
 }
 .quick-edit{
-  /* visibility: hidden; */
+  visibility: hidden;
   position: relative;
   top: -1570px;
   left: 350px;
