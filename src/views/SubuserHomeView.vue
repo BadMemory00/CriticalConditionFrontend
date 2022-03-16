@@ -1,12 +1,14 @@
 <template>
-  <div class="pos-1">
+  <div class="pos-1 ">
     <div>
       <NavSubuser class="pos-2" />
     </div>
       <SubUsercontent class="pos-3" />
 
       <WarningMsg/>
-      <EditDevice class="hide"/>
+      <EditDevice class="edit"/>
+      <QuickEdit class="quick-edit"/>
+
 
 
 
@@ -21,6 +23,7 @@ import NavSubuser from '@/components/NavSubuser.vue';
 import SubUsercontent from '@/components/SubUserContent.vue';
 import WarningMsg from '@/components/WarningMsg.vue'
 import EditDevice from '@/components/EditDevice.vue'
+import QuickEdit from '@/components/QuickEdit.vue'
 
 
 export default {
@@ -29,6 +32,7 @@ export default {
     SubUsercontent,
     WarningMsg,
     EditDevice,
+    QuickEdit
   },
  
   
@@ -38,7 +42,9 @@ export default {
 <style>
 .pos-1{
   position: relative;
-}
+  height: 900px;
+  /* width: 700px; */
+  }
 .pos-2{
   position: relative;
 }
@@ -47,12 +53,17 @@ export default {
   top: 65px;
   left: -200px;
 }
-.hide{
-  visibility: hidden;
+.edit{
   position: relative;
   top: -775px;
   left: 40px;
   
+}
+.quick-edit{
+  visibility: hidden;
+  position: relative;
+  top: -1570px;
+  left: 350px;
 }
 
 </style>

@@ -336,7 +336,7 @@ export default {
 }
 .Device-info{
   position: relative;
-  left: 270px;
+  left: 190px;
   visibility: hidden;
 
 }

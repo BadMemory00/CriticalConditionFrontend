@@ -1,6 +1,6 @@
 <template >
     <div id="edit-1">
-        <div class="card w-75  edit-card">
+        <div class="card w-100 edit-card">
             <div class="card-body">
             <p class="card-title title-card">
                 <font-awesome-icon icon="fa-solid fa-pen-to-square" class="icon-edit"/>
@@ -8,10 +8,10 @@
                 <button @click="ChangeVisibility5()" class="exit"><font-awesome-icon icon="fa-solid fa-xmark"/></button>
             </p>
             <hr>
-            <div class="card mt-4 edit-card-2">
-                <div class="card-body">
+            <div class="card mt-4 edit-card-2 ">
+                <div class="card-body ">
                     <p class="card-title card-title-info">General Info</p>
-                    <div class="d-flex inner-card">
+                    <div class="d-flex inner-card ">
                         <div class="card-margin">
                             <span class="inner-card-text">Name</span>
                             <input type="text" class="d-block inner-card-input">
@@ -137,17 +137,24 @@
 export default {
     name:'EditDevice',
     components:{
-
+        
     },
+
     methods:{
         ChangeVisibility5(){
             document.getElementById("edit-1").style.visibility = "hidden";
-        }
+        },
+
     },
 }
+
 </script>
 
 <style>
+#edit-1{
+    visibility: hidden;
+    width: 700px;
+}
 .edit-card{
     background-color: #f7f9f8;
     border-radius: 25px;
@@ -194,7 +201,7 @@ export default {
     font-weight: 400;
 }
 .inner-card-input{
-    width: 11.5rem;
+    width: 11rem;
     height: 1.4rem;
     border: 0;
     background-color: #f7f9f8;
@@ -238,4 +245,3 @@ export default {
 }
 
 </style>
-

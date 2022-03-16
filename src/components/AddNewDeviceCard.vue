@@ -43,6 +43,7 @@ export default {
 </script>
 
 <style>
+
 .card-shadow {
   background-color: #f7f9f8;
   border-radius: 25px;
@@ -62,11 +63,21 @@ export default {
   border-radius: 10px;
   color: #0a3440;
 }
+.card-button:hover{
+  background-color: #0a3440;
+color: white;
+}
+.card-button:hover > .button-icon{
+  background-color: #0a3440;
+color: white;
+}
 .button-icon {
   margin-right: 7px;
   opacity: 0.7;
   color: #0a3440;
 }
+
+
 .card-edit{
   margin-top: 30px;
    box-shadow: 1px 10px 15px 1px rgba(0, 0, 0, 0.3);
@@ -81,7 +92,7 @@ export default {
   margin-left: 30px;
   font-size: 1rem;
   background: linear-gradient(#f7f9f8,white);
-  width: 15%;
+  width: 12%;
   padding: 0;
 }
 .card-title-5{
@@ -91,7 +102,7 @@ export default {
   margin-left: 30px;
   font-size: 1rem;
   background: linear-gradient(#f7f9f8,white);
-  width: 19%;
+  width: 15%;
   padding: 0;
 }
 .card-title-6{
@@ -101,7 +112,7 @@ export default {
   margin-left: 30px;
   font-size: 1rem;
   background: linear-gradient(#f7f9f8,white);
-  width: 16%;
+  width: 12%;
   padding: 0;
 }
 .card-title-7{
@@ -111,7 +122,7 @@ export default {
   margin-left: 30px;
   font-size: 1rem;
   background: linear-gradient(#f7f9f8,white);
-  width: 21%;
+  width: 16.5%;
   padding: 0;
 }
 .porbability-info{
@@ -132,16 +143,14 @@ export default {
   border: 0;
   background-color: #f7f9f8;
   height: 1.2rem;
-  width: 10rem;
+  width: 11rem;
   font-size: .8rem;
 }
 .card-body-edit-2{
   position: relative;
   top: -30px;
 }
-/* .MarginTop-2{
-  margin-top: 60px;
-} */
+
 .card-edit-2{
   margin-top: 30px;
    box-shadow: 1px 10px 15px 1px rgba(0, 0, 0, 0.3);
@@ -154,8 +163,8 @@ font-size: .7rem;
 font-weight: 300;
 float: right;
 position: relative;
-top: -5px;
-right: 8px;
+top: 22px;
+right: 39px;
 color: #0a3440;
 }
 .button-box{
@@ -188,7 +197,7 @@ font-weight: 600;
 .HomeButton{
   position: relative;
   top: -420px;
-  left: -150px;
+  left: -60px;
 
 }
 .HomeButton-btn{
