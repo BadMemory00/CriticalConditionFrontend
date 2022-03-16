@@ -1,12 +1,12 @@
 <template>
-  <div class="pos-1">
+  <div class="pos-1 ">
     <div>
       <NavSubuser class="pos-2" />
     </div>
       <SubUsercontent class="pos-3" />
 
       <WarningMsg/>
-      <EditDevice class="hide"/>
+      <EditDevice class="edit"/>
       <QuickEdit class="quick-edit"/>
 
 
@@ -51,8 +51,7 @@ export default {
   top: 65px;
   left: -200px;
 }
-.hide{
-  visibility: hidden;
+.edit{
   position: relative;
   top: -775px;
   left: 40px;

@@ -1,6 +1,6 @@
 <template >
     <div id="edit-1">
-        <div class="card w-75  edit-card">
+        <div class="card w-75 edit-card">
             <div class="card-body">
             <p class="card-title title-card">
                 <font-awesome-icon icon="fa-solid fa-pen-to-square" class="icon-edit"/>
@@ -137,17 +137,23 @@
 export default {
     name:'EditDevice',
     components:{
-
+        
     },
+
     methods:{
         ChangeVisibility5(){
             document.getElementById("edit-1").style.visibility = "hidden";
-        }
+        },
+
     },
 }
+
 </script>
 
 <style>
+#edit-1{
+    visibility: hidden;
+}
 .edit-card{
     background-color: #f7f9f8;
     border-radius: 25px;
@@ -238,4 +244,3 @@ export default {
 }
 
 </style>
-
