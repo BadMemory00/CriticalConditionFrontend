@@ -43,9 +43,7 @@ export default {
 </script>
 
 <style>
-.content{
 
-}
 .card-shadow {
   background-color: #f7f9f8;
   border-radius: 25px;
@@ -94,7 +92,7 @@ color: white;
   margin-left: 30px;
   font-size: 1rem;
   background: linear-gradient(#f7f9f8,white);
-  width: 15%;
+  width: 12%;
   padding: 0;
 }
 .card-title-5{
@@ -104,7 +102,7 @@ color: white;
   margin-left: 30px;
   font-size: 1rem;
   background: linear-gradient(#f7f9f8,white);
-  width: 19%;
+  width: 15%;
   padding: 0;
 }
 .card-title-6{
@@ -114,7 +112,7 @@ color: white;
   margin-left: 30px;
   font-size: 1rem;
   background: linear-gradient(#f7f9f8,white);
-  width: 16%;
+  width: 12%;
   padding: 0;
 }
 .card-title-7{
@@ -124,7 +122,7 @@ color: white;
   margin-left: 30px;
   font-size: 1rem;
   background: linear-gradient(#f7f9f8,white);
-  width: 21%;
+  width: 16.5%;
   padding: 0;
 }
 .porbability-info{
@@ -145,16 +143,14 @@ color: white;
   border: 0;
   background-color: #f7f9f8;
   height: 1.2rem;
-  width: 10rem;
+  width: 11rem;
   font-size: .8rem;
 }
 .card-body-edit-2{
   position: relative;
   top: -30px;
 }
-/* .MarginTop-2{
-  margin-top: 60px;
-} */
+
 .card-edit-2{
   margin-top: 30px;
    box-shadow: 1px 10px 15px 1px rgba(0, 0, 0, 0.3);
@@ -167,8 +163,8 @@ font-size: .7rem;
 font-weight: 300;
 float: right;
 position: relative;
-top: -5px;
-right: 8px;
+top: 22px;
+right: 39px;
 color: #0a3440;
 }
 .button-box{
