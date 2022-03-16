@@ -92,13 +92,14 @@
   content: '\25CF';
   margin-right: 15px;
   font-size: 18px;
+  color:  #00a89c ;
 }
 .bar>li:after {
   position: absolute;
   left: 0;
   top: 0;
   content: '';
-  border-left: 3px solid  #00a89c;;
+  border-left: 3px solid  #00a89c;
   margin-left: 5px;
   height: 100%;
 }
