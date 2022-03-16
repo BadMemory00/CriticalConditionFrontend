@@ -40,7 +40,7 @@
 </template>
 <style >
 #card1{
-    margin-top: 40px;
+    margin-top: 35px;
     margin-left:400px;
     width: 450px;
     height: 520px;
