@@ -42,6 +42,8 @@ export default {
   background-color: white;
   color: black;
   border: 0;
+  position: relative;
+  /* left: 200px; */
 }
 .button:hover {
   background-color: #00a99d;

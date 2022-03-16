@@ -43,8 +43,8 @@ export default {
 .pos-1{
   position: relative;
   height: 900px;
-  width: 690px;
-}
+  /* width: 700px; */
+  }
 .pos-2{
   position: relative;
 }

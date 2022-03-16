@@ -153,6 +153,7 @@ export default {
 <style>
 #edit-1{
     visibility: hidden;
+    width: 700px;
 }
 .edit-card{
     background-color: #f7f9f8;
