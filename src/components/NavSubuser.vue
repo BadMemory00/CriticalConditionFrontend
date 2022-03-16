@@ -3,7 +3,7 @@
     <div class="HName text-start">
       <router-link to="/" class="fw-bold heading-link">{{hospitalName}}</router-link>
     </div>
-    <div class="dropdown dDown text-end">
+    <div class="dDown text-end">
       <button class="btn button btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" >
         Hello, <span>{{ userName }}</span>
       </button>
@@ -36,7 +36,8 @@ export default {
   font-size: 1.3rem;
 }
 .dDown {
-  float: right;
+  position: fixed;
+  right: 10rem;
 }
 .button {
   background-color: white;
