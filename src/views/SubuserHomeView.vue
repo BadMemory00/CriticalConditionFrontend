@@ -7,6 +7,8 @@
 
       <WarningMsg/>
       <EditDevice class="hide"/>
+      <QuickEdit class="quick-edit"/>
+
 
 
 
@@ -21,6 +23,7 @@ import NavSubuser from '@/components/NavSubuser.vue';
 import SubUsercontent from '@/components/SubUserContent.vue';
 import WarningMsg from '@/components/WarningMsg.vue'
 import EditDevice from '@/components/EditDevice.vue'
+import QuickEdit from '@/components/QuickEdit.vue'
 
 
 export default {
@@ -29,6 +32,7 @@ export default {
     SubUsercontent,
     WarningMsg,
     EditDevice,
+    QuickEdit
   },
  
   
@@ -53,6 +57,12 @@ export default {
   top: -775px;
   left: 40px;
   
+}
+.quick-edit{
+  visibility: hidden;
+  position: relative;
+  top: -1570px;
+  left: 350px;
 }
 
 </style>
