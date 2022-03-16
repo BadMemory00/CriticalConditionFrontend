@@ -42,6 +42,8 @@ export default {
 <style>
 .pos-1{
   position: relative;
+  height: 900px;
+  width: 690px;
 }
 .pos-2{
   position: relative;
