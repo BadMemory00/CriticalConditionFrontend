@@ -1,7 +1,8 @@
 <template>
   <div class="">
+    <SuperuserNavbar />
     <SuperuserSidebar />
-    <SuperuserProfile />
+     <SuperuserProfile />
     
   </div>
 </template>
@@ -10,6 +11,7 @@
 // @ is an alias to /src
 import SuperuserSidebar from '@/components/SuperuserSidebar.vue'
 import SuperuserProfile from '@/components/SuperuserProfile.vue'
+import SuperuserNavbar from '@/components/SuperuserNavbar.vue'
  
 
 export default {
@@ -17,6 +19,7 @@ export default {
   components: {
     SuperuserSidebar,
     SuperuserProfile,
+    SuperuserNavbar,
      
   }
 }
