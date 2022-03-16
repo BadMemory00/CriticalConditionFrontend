@@ -43,6 +43,9 @@ export default {
 </script>
 
 <style>
+.content{
+
+}
 .card-shadow {
   background-color: #f7f9f8;
   border-radius: 25px;
@@ -198,7 +201,7 @@ font-weight: 600;
 .HomeButton{
   position: relative;
   top: -420px;
-  left: -150px;
+  left: -60px;
 
 }
 .HomeButton-btn{

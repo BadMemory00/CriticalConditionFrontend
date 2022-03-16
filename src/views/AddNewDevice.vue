@@ -23,7 +23,7 @@ export default {
 }
 .pos-3{
   position: relative;
-  top: 55px;
-  left: 50px;
+  top: 70px;
+  left: -40px;
 }
 </style>
