@@ -1,7 +1,7 @@
 <template >
     <nav class="row mb-5 pb-3 ">
         <div class="col-lg-6 col-md-3 ">
-                <a href="/" class="heading-style fw-bold ">CriticalCondition</a>
+                <a href="/" class="heading-style fw-bold "><img src="../assets/LandingLogo.png" height="55rem"  /></a>
         </div>
 
         <div class="col-lg-6 col-md-9  ">
