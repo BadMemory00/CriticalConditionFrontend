@@ -49,7 +49,14 @@ const routes = [{
         name: 'superuserprofile',
         component: () =>
             import ('../views/SuperuserProfileView.vue')
-    }
+    },
+    {
+        path: '/superuser/devices',
+        name: 'superuserdevices',
+        component: () =>
+            import ('../views/SuperuserDevicesView.vue')
+    },
+    
 ]
 
 const router = new VueRouter({
