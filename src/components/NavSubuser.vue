@@ -1,15 +1,28 @@
 <template>
-  <div>
+  <div class="fixedNav py-4">
     <div class="HName text-start">
-      <router-link to="/" class="fw-bold heading-link">{{hospitalName}}</router-link>
+      <router-link to="/" class="fw-bold heading-link">{{
+        hospitalName
+      }}</router-link>
     </div>
     <div class="dDown text-end">
-      <button class="btn button btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" >
+      <button
+        class="btn btn-transparent dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton1"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
         Hello, <span>{{ userName }}</span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
         <li>
-          <a class="dropdown-item Log" href="#" ><font-awesome-icon class="icon1" icon="fa-solid fa-right-from-bracket" />LogOut</a>
+          <router-link class="dropdown-item Log" to="/"
+            ><font-awesome-icon
+              class="icon1"
+              icon="fa-solid fa-right-from-bracket"
+            />LogOut</router-link
+          >
         </li>
       </ul>
     </div>

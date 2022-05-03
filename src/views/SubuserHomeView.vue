@@ -1,10 +1,10 @@
 <template>
   <div class="">
-    <NavSubuser class="fixedNav py-4" />
+    <NavSubuser />
     <SubUsercontent class="" @open="openModal" />
-    <EditDevice class="edit overlay" />
-    <WarningMsg />
-    <QuickEdit />
+    <EditDevice class="edit overlay" v-if="false"/>
+    <WarningMsg v-if="false"/>
+    <QuickEdit v-if="false"/>
   </div>
 </template>
 
