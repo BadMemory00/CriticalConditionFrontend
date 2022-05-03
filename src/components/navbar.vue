@@ -1,22 +1,20 @@
 <template >
-    <nav class="row mb-5 pb-3 ">
-        <div class="col-lg-6 col-md-3 ">
-                <a href="/" class="heading-style fw-bold "><img src="../assets/LandingLogo.png" height="55rem"  /></a>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/"><img src="../assets/LandingLogo.png" height="55rem"  /></a>
         </div>
-
-        <div class="col-lg-6 col-md-9  ">
-            <div class="">                
-                <router-link to="/subuser" class="NavLink fw-light">Sub Users</router-link>
-                <a href="#" class="NavLink fw-light">Discover</a>
-                <a href="#" class="NavLink fw-light">Platform</a>
-                <a href="#" class="NavLink fw-light">Support</a>
-                <router-link to="/login" class="NavLink fw-light">Login</router-link>
-                <!-- <a href="#" class="NavLink fw-light">Login</a> -->
-                <!-- <a href="#" class="NavLink NavSign fw-light">Sign Up</a> -->
-                <router-link to="/signup" class="NavLink NavSign fw-light">Sign Up</router-link>
-            </div>
+        <a v-on:click="toggleNav" href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="links">
+            <ul>
+                <li><router-link to="/subuser">Sub Users</router-link></li>
+                <li><router-link to="/login">Login</router-link></li>
+                <li><router-link to="/signup">Sign Up</router-link></li>
+            </ul>
         </div>
-
     </nav>
 </template>
 
@@ -24,41 +22,99 @@
 
 
 export default {
-    name:'NavBar'
+    name:'NavBar',
+    methods:{
+        toggleNav(){
+            const toggleButton = document.getElementsByClassName('toggle-button')[0]
+            const navbarLinks = document.getElementsByClassName('links')[0]
+            const navbar = document.getElementsByClassName('navbar')[0]
+
+            toggleButton.addEventListener('click', () =>{
+                navbarLinks.classList.toggle('active');
+                navbar.classList.toggle('active');
+            })
+        }
+    },
 }
 </script>
 
 <style>
-.heading-style{
-    color: #093542;
-    text-decoration: none;
-    /* font-weight: bold; */
-}
-.heading-style:hover{
-    color: #093542;
-    text-decoration: none;
-}
-
-.NavLink{
-    margin-left: 28px;
-    text-decoration: none;
-    color: #093542;
-    font-size: .8rem;
-    /* font-weight: 300; */
-    
-}
-.NavLink:hover{
-    color: #093542;
-    text-decoration: none;
-}
-.NavSign{
-    border: 1px solid #00A99D;
-    padding: 5px 10px;
-    border-radius: 15px;
-    background-color: #00A99D;
-    color: white;
-}
-.NavSign:hover{
-    color: white;
-}
+    :root{
+        --primarycolor: #00A99D;
+    }
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .logo{
+        font-size: 1.5rem;
+        margin: .5rem;
+    }
+    .links ul{
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    .links li{
+        list-style: none;
+    }
+    .links li a{
+        text-decoration: none;
+        color: black;
+        padding: 1rem;
+        display: block;
+    }
+    .links li:hover{
+        background-color: var(--primarycolor);
+        border: 2px var(--primarycolor);
+        border-radius: 5px;
+    }
+    .toggle-button{
+        position: absolute;
+        top: 1.7rem;
+        right: 1rem;
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+    }
+    .bar{
+        height: 3px;
+        width: 100%;
+        background-color: var(--primarycolor);
+        border-radius: 10px;
+    }
+    @media (max-width: 550px) {
+        .toggle-button{
+            display: flex;
+        }
+        .links{
+            display: none;
+            width: 100%;
+        }
+        .navbar{
+            flex-direction: column;
+            align-content: flex-start;
+        }
+        .links ul{
+            width: 100%;
+            flex-direction: column;
+        }
+        .links li{
+            text-align: center;
+        }
+        .links li a{
+        padding: .5rem 1rem;
+        }
+        .navbar.active{
+            border-bottom: 5px solid var(--primarycolor);
+            margin-bottom: 2rem;
+        }
+        .links.active{
+            display: flex;
+        }
+    }
 </style>
