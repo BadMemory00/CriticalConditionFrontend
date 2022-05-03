@@ -6,7 +6,7 @@
 
 <style>
 body{
-  padding-top: 20px;
+      position: relative;
 }
 
 </style>
