@@ -1,17 +1,20 @@
 <template>
   <div class="">
-    <signupform />
+    <NavBar />
+    <SignUpForm />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import signupform from '@/components/signupform.vue'
+import NavBar from '@/components/navbar.vue'
+import SignUpForm from '@/components/signupform.vue'
 
 export default {
   name: 'SignupView',
   components: {
-    signupform,
+    NavBar,
+    SignUpForm,
   }
 }
 </script>

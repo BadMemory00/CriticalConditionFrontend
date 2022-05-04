@@ -1,171 +1,115 @@
 <template>
- <div class="row no-gutters">
-     <Navbar />
-        <div class="col-md-5  no-gutters">
-            <div class="leftside">
-                <SignupPhotoIcon />
-            </div>
+ <div class="page">
+        <div >
+            <SignupPhotoIcon class="image" />
         </div>
-    <div class="col-md-7 no-gutters">
-        <div class="rightside">
+    <div class="">
+        <div class="">
             <div>
                 <h2>Write your Hosptail's details</h2>
             </div>          
-        <div class="row">
-            <div class="col-md-5">
-                    <label for="hospital_name">Hospital name </label><br>
-                                    <input  type="text" name="hostital_name" id="hospital_name"   /><br>
-                            <label for="email" >Email</label><br>
-                                <input  type="email" id="email" name="email"   /><br>
-                            <label for="hospital_pecialty">Hospital Specialty</label><br>
-                                <select class="select" id="hospital_pecialty" name="hospital_pecialty">
-                                        <option value=""></option>                                        
-                                </select><br>
-                            <label for="phone number" >Phone number</label><br>
-                                <input  type="text" id="phone_number" name="phone_number">
-            </div>
-               
-            <div class="col-md-6">
-                    <fieldset class="fieldset">
-                        <p class="legend">Address</p>
-                            <label for="country">Country</label><br>
-                                <input  type="text" name="country" id="country"   /><br>
-                            <label for="state" >State</label><br>
-                                <input  type="text" id="state" name="state"   /><br>
-                            <label for="city">city</label><br>
-                                <input  type="text" id="city" name="city"   /><br>
-                            <label for="street" >Street</label><br>
-                                <input  type="text" id="street" name="street"  >
-                    </fieldset>
-            </div>     
-                    <!----footer ----->
-            <div class="footer">
-                <div>
-                <button class="button"  type="submit" > Sign Up</button><br>
-                <h5 class="l-login">Already a member?<a href="#" style="color: #00a89c ">login</a></h5>
-                </div>  
-            </div>
-                <!---- end og the footer ----->
-
-</div>
-    </div>
-         </div>
+            <div class="">
+                <div class="">
+                        <label for="hospital_name">Hospital name </label><br>
+                                <input v-model="superUser.HospitalName" type="text" name="hostital_name" id="hospital_name"   /><br>
+                        <label for="email" >Email</label><br>
+                            <input v-model="superUser.Email" type="email" id="email" name="email"   /><br>
+                        <label for="password" >Password</label><br>
+                            <input v-model="superUser.Password" type="password" id="password" name="password" /><br>
+                        <label for="hospital_pecialty">Hospital Specialty</label><br>
+                            <select v-model="superUser.HospitalSpeciality" class="select" id="hospital_pecialty" name="hospital_pecialty">
+                                    <option value="Cancer treatment centers">Cancer treatment centers</option>                                        
+                                    <option value="Trauma centers">Trauma centers</option>                                        
+                                    <option value="Psychiatric hospitals">Psychiatric hospitals</option>                                        
+                                    <option value="Oncology hospitals">Oncology hospitals</option>                                        
+                                    <option value="Cardiac hospitals">Cardiac hospitals</option>                                        
+                                    <option value="Children's hospitals">Children's hospitals</option>                                        
+                                    <option value="Women's hospitals">Women's hospitals</option>                                        
+                            </select><br>
+                        <label for="phone number" >Phone number</label><br>
+                            <input v-model="superUser.PhoneNumber" type="number" id="phone_number" name="phone_number">
                 </div>
+                <div class="">
+                        <fieldset class="">
+                            <p class="">Address</p>
+                                <label for="country">Country</label><br>
+                                    <input v-model="superUser.HospitalCountry" type="text" name="country" id="country"   /><br>
+                                <label for="state" >State</label><br>
+                                    <input v-model="superUser.HospitalState" type="text" id="state" name="state"   /><br>
+                                <label for="city">city</label><br>
+                                    <input v-model="superUser.HospitalCity" type="text" id="city" name="city"   /><br>
+                                <label for="street" >Street</label><br>
+                                    <input v-model="superUser.HospitalStreet" type="text" id="street" name="street"  >
+                        </fieldset>
+                </div>     
+                        <!----footer ----->
+                <div class="">
+                    <div>
+                    <button class="" @click.prevent="signUp" > Sign Up</button><br>
+                    <h5 class="">Already a member?<router-link to="/login" style="color: #00a89c ">Login</router-link></h5>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    </template>
+</template>
 
 
 <script>
     import SignupPhotoIcon from './icons/IconSignupPhoto.vue'
-    import Navbar from './navbar.vue'
+    import axios from 'axios';
+
     export default {
         components:{
             SignupPhotoIcon,
-            Navbar
+        },
+        data(){
+			return {
+				superUser:{
+                    Email : "",
+                    Password : "",
+                    PhoneNumber : "",
+                    HospitalName : "",
+                    HospitalSpeciality : "",
+                    HospitalCountry : "",
+                    HospitalState : "",
+                    HospitalCity : "",
+                    HospitalStreet : ""
+				},
+				
+			}
+		},
+        methods:{
+			signUp:function(){
+				axios.post('https://criticalconditionbackend.azurewebsites.net/superuser/register',this.superUser)
+                .then((data) => {
+					console.log(data.data);
+                })
+			}
         }
     }
 </script>
 
 
 <style >
-body{
-    overflow: hidden;
-}
-.leftside , .rightside{
-    height: 50vh;
-    width: 100%;
-}
-
-
-@media screen and (min-width:768px) {
-
-    .leftside ,.rightside{
-        height: 100vh;;
+    .page{
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
     }
-    
-}
-
-
-.leftside{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-size: 100% 100%;
-}
-
-.rightside{
-     background-size: 100% 100%;
-     background-size: cover;
-     background-color: #fdfdfd;
-}
-h2{
-    text-align: center;
-    
-    font-size:30px ;
-    padding-bottom:100px
-}
-.row{
-    display : flex; 
-    justify-content: center;
-   
-}
-label{
-    font-size: 15px;
-    font-weight: 200;
-}
- 
-input{
-    width: 90%;
-    height: 12%;
-    background-color: rgb(245, 246, 248);
-    border: none;
-}
-
-.select{
-width: 90%;
-height: 12%;
-background-color: rgb(245, 246, 248);
-border: none;
-}
- 
-.footer{
-    display: flex;
-    justify-content: center;
-}
-.button{
-    width: 400px ;
-    border-radius : 20px;
-    height: 45px;
-    font-size: 20px;
-    margin-top: 80px;
-    background-color: #00a89c;
-    color: #F8F8FF;
-    border: none;
-}
-.l-login{
-    margin-top: 17px;
-    margin-left: 80px;
-     font-size: 17px;
-}
-.legend{
-    position: absolute;
-    top: -1rem;
-    background-color: #fdfdfd;
-}
-.fieldset{
-    display: block;
-    margin-inline-start: 2px;
-    margin-inline-end: 2px;
-    padding-block-start: 0.35em;
-    padding-inline-start: 0.75em;
-    padding-inline-end: 0.75em;
-    padding-block-end: 0.625em;
-    min-inline-size: min-content;
-    border-width: 2px;
-    border-style: groove;
-    border-color: threedface;
-    border-image: initial;
-    position: relative;
-    padding: 10px;
-}
+    .image{
+        height: 100%;
+        width: 100%;
+    }
+    .select-selected:after{
+        content: "";
+        top: 14px;
+        right: 10px;
+        width: 0;
+        height: 0;
+        border: 6px solid transparent;
+        border-color: #fff transparent transparent transparent;
+    }
 </style>
