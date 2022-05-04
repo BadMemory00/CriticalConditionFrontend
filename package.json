@@ -16,8 +16,13 @@
     "core-js": "^3.6.5",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
+<<<<<<< HEAD
     "vue-axios": "^3.4.1",
     "vue-router": "^3.2.0"
+=======
+    "vue-router": "^3.2.0",
+    "vuex": "^4.0.2"
+>>>>>>> cf1cbf859bfaa0820ee0abb50c442b88c1827f07
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.13",
