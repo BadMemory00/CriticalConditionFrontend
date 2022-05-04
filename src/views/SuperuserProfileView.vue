@@ -15,7 +15,7 @@ import SuperuserNavbar from '@/components/SuperuserNavbar.vue'
  
 
 export default {
-  name: 'SuperuserHomeView',
+  name: 'SuperuserProfileView',
   components: {
     SuperuserSidebar,
     SuperuserProfile,
