@@ -1,55 +1,41 @@
 <template>
- <div class="page">
-        <div >
-            <SignupPhotoIcon class="image" />
+ <div class="row og-row">
+    <div class="col-sm-12 col-lg-4">
+        <SignupPhotoIcon class="image" />
+    </div>
+    <div class="col-sm-12 col-lg-8">
+        <div class="text-center">
+            <p class="hospital-details-text">Write your Hosptail's details</p>
         </div>
-    <div class="">
-        <div class="">
-            <div>
-                <h2>Write your Hosptail's details</h2>
-            </div>          
-            <div class="">
-                <div class="">
-                        <label for="hospital_name">Hospital name </label><br>
-                                <input v-model="superUser.HospitalName" type="text" name="hostital_name" id="hospital_name"   /><br>
-                        <label for="email" >Email</label><br>
-                            <input v-model="superUser.Email" type="email" id="email" name="email"   /><br>
-                        <label for="password" >Password</label><br>
-                            <input v-model="superUser.Password" type="password" id="password" name="password" /><br>
-                        <label for="hospital_pecialty">Hospital Specialty</label><br>
-                            <select v-model="superUser.HospitalSpeciality" class="select" id="hospital_pecialty" name="hospital_pecialty">
-                                    <option value="Cancer treatment centers">Cancer treatment centers</option>                                        
-                                    <option value="Trauma centers">Trauma centers</option>                                        
-                                    <option value="Psychiatric hospitals">Psychiatric hospitals</option>                                        
-                                    <option value="Oncology hospitals">Oncology hospitals</option>                                        
-                                    <option value="Cardiac hospitals">Cardiac hospitals</option>                                        
-                                    <option value="Children's hospitals">Children's hospitals</option>                                        
-                                    <option value="Women's hospitals">Women's hospitals</option>                                        
-                            </select><br>
-                        <label for="phone number" >Phone number</label><br>
-                            <input v-model="superUser.PhoneNumber" type="number" id="phone_number" name="phone_number">
-                </div>
-                <div class="">
-                        <fieldset class="">
-                            <p class="">Address</p>
-                                <label for="country">Country</label><br>
-                                    <input v-model="superUser.HospitalCountry" type="text" name="country" id="country"   /><br>
-                                <label for="state" >State</label><br>
-                                    <input v-model="superUser.HospitalState" type="text" id="state" name="state"   /><br>
-                                <label for="city">city</label><br>
-                                    <input v-model="superUser.HospitalCity" type="text" id="city" name="city"   /><br>
-                                <label for="street" >Street</label><br>
-                                    <input v-model="superUser.HospitalStreet" type="text" id="street" name="street"  >
-                        </fieldset>
-                </div>     
-                        <!----footer ----->
-                <div class="">
-                    <div>
-                    <button class="" @click.prevent="signUp" > Sign Up</button><br>
-                    <h5 class="">Already a member?<router-link to="/login" style="color: #00a89c ">Login</router-link></h5>
-                    </div>  
-                </div>
+        <div class="full-form row ">
+            <div class="col-sm-12 col-lg-6">
+                    <vs-input label="Hospital name" placeholder="write here..." v-model="superUser.HospitalName" color="#00A99D"/>
+                    <vs-input label="Email" placeholder="write here..." v-model="superUser.Email" color="#00A99D"/>
+                    <vs-input type="password" label="Password" placeholder="write here..." v-model="superUser.Password" color="#00A99D"/>
+
+                    <vs-select class="" autocomplete label="Hospital Specialty" v-model="superUser.HospitalSpeciality" color="#00A99D">
+                        <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in hospitalSpecialities" />
+                    </vs-select>
+
+                    <vs-input type="number" label="Phone Number" placeholder="write here..." v-model="superUser.PhoneNumber" color="#00A99D"/>
             </div>
+            <div class="col-sm-12 col-lg-6">
+                    <fieldset class="address-fieldset">
+                        <p class="legend">Address:</p>
+                        <vs-input label="Country" placeholder="write here..." v-model="superUser.HospitalCountry" color="#00A99D"/>
+                        <vs-input label="State" placeholder="write here..." v-model="superUser.HospitalState" color="#00A99D"/>
+                        <vs-input label="city" placeholder="write here..." v-model="superUser.HospitalCity" color="#00A99D"/>
+                        <vs-input label="Street" placeholder="write here..." v-model="superUser.HospitalStreet" color="#00A99D"/>
+                    </fieldset>
+            </div>     
+                    <!----footer ----->
+        </div>
+        <div class="text-center">
+            <div class="">
+                <vs-button class="signup-button" @click.prevent="signUp" @click="openLoadingColor" color="#00A99D">Sign Up</vs-button>
+                <!-- <button class=""  > Sign Up</button><br> -->
+            </div>
+            <p class="member-text">Already a member?<router-link to="/login" style="color: #00a89c ">Login</router-link></p>
         </div>
     </div>
 </div>
@@ -61,12 +47,23 @@
     import SignupPhotoIcon from './icons/IconSignupPhoto.vue'
     import axios from 'axios';
 
+    import Vue from 'vue'
+    import Vuesax from 'vuesax'
+    import 'vuesax/dist/vuesax.css' //Vuesax styles
+    import 'material-icons/iconfont/material-icons.css';
+
+    Vue.use(Vuesax, {
+    // options here
+    })
+
     export default {
         components:{
             SignupPhotoIcon,
         },
         data(){
 			return {
+                colorLoading:'#00A99D',
+                wasLoginSuccessful:false,
 				superUser:{
                     Email : "",
                     Password : "",
@@ -78,14 +75,35 @@
                     HospitalCity : "",
                     HospitalStreet : ""
 				},
-				
+				hospitalSpecialities:[
+                    {text:"Cancer treatment centers",value:"Cancer treatment centers"},
+                    {text:"Trauma centers",value:"Trauma centers"},
+                    {text:"Psychiatric hospitals",value:"Psychiatric hospitals"},
+                    {text:"Oncology hospitals",value:"Oncology hospitals"},
+                    {text:"Cardiac hospitals",value:"Cardiac hospitals"},
+                    {text:"Children's hospitals",value:"Children's hospitals"},
+                    {text:"Women's hospitals",value:"Women's hospitals"},
+                ],
 			}
 		},
         methods:{
+            openLoadingColor(){
+                this.$vs.loading({color:this.colorLoading})
+                setTimeout( ()=> {
+                    this.$vs.loading.close()
+                }, 2500);
+            },
 			signUp:function(){
 				axios.post('https://criticalconditionbackend.azurewebsites.net/superuser/register',this.superUser)
-                .then((data) => {
-					console.log(data.data);
+                .then((response) => {
+					if(response.status == 201){
+                        this.wasLoginSuccessful = true;
+                        this.$router.push('/login');
+                    }
+                })
+                .catch((error) => {
+                    console.log("error occured")
+                    console.log(error.response.data.errors)
                 })
 			}
         }
@@ -94,22 +112,45 @@
 
 
 <style >
-    .page{
-        display: flex;
-        flex-flow: row;
-        justify-content: space-between;
+    p{
+        font-family: 'Segoe UI', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     }
-    .image{
-        height: 100%;
-        width: 100%;
+    .hospital-details-text{
+        font-size: 2rem;
+        font-weight: 700;
     }
-    .select-selected:after{
-        content: "";
-        top: 14px;
-        right: 10px;
-        width: 0;
-        height: 0;
-        border: 6px solid transparent;
-        border-color: #fff transparent transparent transparent;
+    .full-form label{
+        font-size: 1em;
+        font-weight: 600;
+    }
+    .full-form{
+        margin-left: 5%;
+    }
+    .signup-button{
+        width:50%;
+        border-radius: 25px;
+        margin-top: 1rem;
+    }
+    .member-text{
+        margin-top: 1rem;
+    }
+    .address-fieldset{
+        border: .02em solid grey;
+        border-radius: .6em;
+        padding:16px;	
+        position: relative;
+        margin-top: 1em;
+    }
+    .legend{
+        font-size: 1.2em;
+        font-weight: 400;
+        position: absolute;
+        top: -.9em;
+        background-color: white;
+    }
+    @media (max-width: 550px) {
+        .full-form{
+            margin-left: 25%;
+        }
     }
 </style>
