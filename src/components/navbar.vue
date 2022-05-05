@@ -12,7 +12,7 @@
             <ul>
                 <li><router-link to="/subuser">Sub Users</router-link></li>
                 <li><router-link to="/login">Login</router-link></li>
-                <li><router-link to="/signup">Sign Up</router-link></li>
+                <li><router-link class="sign-up-button" to="/signup">Sign Up</router-link></li>
             </ul>
         </div>
     </nav>
@@ -59,17 +59,24 @@ export default {
     }
     .links li{
         list-style: none;
+        transition: background-color 0.6s ease;
+        transition: border-radius 0.3s ease;
     }
     .links li a{
         text-decoration: none;
-        color: black;
+        color: var(--primarycolor);
         padding: 1rem;
+        margin-left: 5px;
         display: block;
+        transition: color .5s ease;
     }
     .links li:hover{
         background-color: var(--primarycolor);
         border: 2px var(--primarycolor);
-        border-radius: 5px;
+        border-radius: 10px;
+    }
+    .links li a:hover{
+        color:white
     }
     .toggle-button{
         position: absolute;
@@ -86,6 +93,19 @@ export default {
         width: 100%;
         background-color: var(--primarycolor);
         border-radius: 10px;
+    }
+    .sign-up-button{
+        color: white !important;
+        border-radius: 10px;
+        background-color: var(--primarycolor);
+        transition: color 5s ease;
+        transition: background-color 5s ease;
+        transition: border 5s ease;
+    }
+    .sign-up-button:hover{
+        color: var(--primarycolor) !important;
+        background-color: white;
+        border: 2px solid var(--primarycolor);
     }
     @media (max-width: 550px) {
         .toggle-button{
