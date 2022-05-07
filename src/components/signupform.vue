@@ -140,6 +140,7 @@
         padding:16px;	
         position: relative;
         margin-top: 1em;
+        width: 15rem;
     }
     .legend{
         font-size: 1.2em;
