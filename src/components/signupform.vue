@@ -35,7 +35,7 @@
                 <vs-button class="signup-button" @click.prevent="signUp" @click="openLoadingColor" color="#00A99D">Sign Up</vs-button>
                 <!-- <button class=""  > Sign Up</button><br> -->
             </div>
-            <p class="member-text">Already a member?<router-link to="/login" style="color: #00a89c ">Login</router-link></p>
+            <p class="member-text">Already a member? <router-link to="/login" style="color: #00a89c; font-weight: 700;">Login</router-link></p>
         </div>
     </div>
 </div>
