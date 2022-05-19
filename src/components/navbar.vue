@@ -127,7 +127,7 @@ export default {
             text-align: center;
         }
         .links li a{
-        padding: .5rem 1rem;
+            padding: .5rem 1rem;
         }
         .navbar.active{
             border-bottom: 5px solid var(--primarycolor);

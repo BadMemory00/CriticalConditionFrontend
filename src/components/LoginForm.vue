@@ -34,7 +34,7 @@
                 <span>Forget password?</span>
 
             </div>
-            <div class="but">
+            <div class="but">   
                 <button>Login</button>
                 <div>Don't have account?<span>Sign up</span></div>
             </div>
