@@ -1,12 +1,9 @@
 <template>
-  <div id="app" class="container">
+  <div id="app" class="">
     <router-view/>
   </div>
 </template>
 
 <style>
-body{
-      position: relative;
-}
 
 </style>
