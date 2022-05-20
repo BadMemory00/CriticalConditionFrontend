@@ -1,6 +1,6 @@
 <template >
     <div>
-    <vs-navbar color="white" class="nabarx">
+    <vs-navbar style="padding:.5rem" color="#f8f9fa" class="nabarx">
       <div slot="title">
         <vs-navbar-title>
             <a href="/"><img src="../assets/LandingLogo.png" height="60rem" /></a>
