@@ -30,7 +30,6 @@
                         <vs-input label="Street" placeholder="write here..." v-model="superUser.HospitalStreet" color="#00A99D"/>
                 </div>
             </div>     
-                    <!----footer ----->
         </div>
         <div class="text-center">
             <div class="">
