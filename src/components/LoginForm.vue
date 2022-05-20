@@ -17,14 +17,14 @@
                             <div class="super-user-form">
                                 <vs-input class="form-content" icon="mail" icon-no-border="true" label="Email" placeholder="write here..." color="#00A99D" v-model="SuperUser.Email"/>
                                 <vs-input class="form-content" icon="lock" icon-no-border="true" type="password" label="Password" placeholder="write here..." color="#00A99D" v-model="SuperUser.Password"/>
-                                <vs-button class="button" color="#00A99D" type="filled">Login</vs-button>
+                                <vs-button class="button" color="#00A99D" type="filled" @click="SuperUserLogin">Login</vs-button>
                                 <p class="text-center sign-up">Don't Have an Account? <router-link to="/signup" style="color: #00a89c; font-weight: 700;">Sign-up</router-link></p>
                             </div>
                         </vs-tab>
                         <vs-tab label="Sub-user" >
                             <div>
                                 <vs-input class="form-content" icon-no-border="true" label="Code" placeholder="write here..." color="#00A99D" v-model="SubUser.Code"/>
-                                <vs-button class="button" color="#00A99D" type="filled">Login</vs-button>
+                                <vs-button class="button" color="#00A99D" type="filled" @click="SubUserLogin">Login</vs-button>
                             </div>
                         </vs-tab>
                     </vs-tabs>
@@ -36,6 +36,8 @@
 </template>
 
 <script>
+
+    import axios from 'axios';
 
     export default {
         data() {
@@ -50,7 +52,12 @@
             }
         },
         methods: {
-            
+            SuperUserLogin(){
+
+            },
+            SubUserLogin(){
+                axios.post
+            },
         },
     }
 </script>
@@ -98,5 +105,6 @@
         width: 40%;
         left: 30%;
         margin-top: 2rem;
+        border-radius: 10px;
     }
 </style>

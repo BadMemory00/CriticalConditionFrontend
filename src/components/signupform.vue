@@ -10,15 +10,15 @@
         <div class="row form">
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="row">
-                    <vs-input label="Hospital name" placeholder="write here..." v-model="superUser.HospitalName" color="#00A99D"/>
-                    <vs-input label="Email" placeholder="write here..." v-model="superUser.Email" color="#00A99D"/>
-                    <vs-input type="password" label="Password" placeholder="write here..." v-model="superUser.Password" color="#00A99D"/>
+                    <vs-input class="form-content" label="Hospital name" placeholder="write here..." v-model="superUser.HospitalName" color="#00A99D"/>
+                    <vs-input class="form-content" label="Email" placeholder="write here..." v-model="superUser.Email" color="#00A99D"/>
+                    <vs-input class="form-content" type="password" label="Password" placeholder="write here..." v-model="superUser.Password" color="#00A99D"/>
 
-                    <vs-select class="" autocomplete label="Hospital Specialty" v-model="superUser.HospitalSpeciality" color="#00A99D">
+                    <vs-select class="form-content" autocomplete label="Hospital Specialty" v-model="superUser.HospitalSpeciality" color="#00A99D">
                         <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in hospitalSpecialities" />
                     </vs-select>
 
-                    <vs-input type="number" label="Phone Number" placeholder="write here..." v-model="superUser.PhoneNumber" color="#00A99D"/>
+                    <vs-input class="form-content" type="number" label="Phone Number" placeholder="write here..." v-model="superUser.PhoneNumber" color="#00A99D"/>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
@@ -33,7 +33,7 @@
         </div>
         <div class="text-center">
             <div class="">
-                <vs-button class="signup-button" @click.prevent="signUp" @click="openLoadingColor" color="#00A99D">Sign Up</vs-button>
+                <vs-button class="signup-button" @click.prevent="signUp" @click="openLoadingColor" color="#00A99D">Create Account</vs-button>
                 <!-- <button class=""  > Sign Up</button><br> -->
             </div>
             <p class="member-text">Already a member? <router-link to="/login" style="color: #00a89c; font-weight: 700;">Login</router-link></p>
@@ -83,7 +83,7 @@
                 this.$vs.loading({color:this.colorLoading})
                 setTimeout( ()=> {
                     this.$vs.loading.close()
-                }, 2500);
+                }, 10000);
             },
 			signUp:function(){
                 this.loading = true
@@ -113,6 +113,10 @@
     p{
         font-family: 'Segoe UI', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     }
+    .form-content{
+        width: 100%;
+        padding: 0 1.6rem 0 1.6rem
+    }
     .image{
         width: 100%;
         height: 100%;
@@ -129,7 +133,7 @@
         font-weight: 600;
     }
     .signup-button{
-        width:50%;
+        width:35%;
         border-radius: 10px;
         margin-top: 1rem;
     }
@@ -141,7 +145,7 @@
         border-radius: .6em;
         padding:16px;	
         position: relative;
-        margin-top: 1em;
+        margin-top: 1.5rem;
     }
     .legend{
         font-size: 1.2em;
