@@ -3,7 +3,7 @@
     <vs-navbar color="white" class="nabarx">
       <div slot="title">
         <vs-navbar-title>
-            <a href="/"><img src="../assets/LandingLogo.png" height="60rem"  /></a>
+            <a href="/"><img src="../assets/LandingLogo.png" height="60rem" /></a>
         </vs-navbar-title>
       </div>
 
