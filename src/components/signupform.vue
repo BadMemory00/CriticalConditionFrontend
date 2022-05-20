@@ -33,7 +33,7 @@
         </div>
         <div class="text-center">
             <div class="">
-                <vs-button class="signup-button" @click.prevent="signUp" @click="openLoadingColor" color="#00A99D">Create Account</vs-button>
+                <vs-button class="signup-button" @click="signUp" color="#00A99D">Create Account</vs-button>
                 <!-- <button class=""  > Sign Up</button><br> -->
             </div>
             <p class="member-text">Already a member? <router-link to="/login" style="color: #00a89c; font-weight: 700;">Login</router-link></p>
@@ -79,30 +79,24 @@
 			}
 		},
         methods:{
-            openLoadingColor(){
-                this.$vs.loading({color:this.colorLoading})
-                setTimeout( ()=> {
-                    this.$vs.loading.close()
-                }, 10000);
-            },
 			signUp:function(){
-                this.loading = true
+                this.$vs.loading({color:this.colorLoading})
 				axios.post('https://criticalconditionbackend.azurewebsites.net/superuser/register',this.superUser)
-                .then((response) => {
-					if(response.status == 201){
-                        this.$vs.notify({title:'Success',text:'Email created successfully, moving you to login page....',color:'success'})
-                        this.wasLoginSuccessful = true;
-                        this.$router.push('/login');
-                    }
-                })
-                .catch((error) => {
-                    this.$vs.notify({title:'ERROR',text:'data is incorrect',color:'danger'})
-                    console.log("error occured")
-                    console.log(error.response.data.errors)
-                })
-                .finally(() =>{
-                    this.$vs.loading.close()
-                })
+                    .then((response) => {
+                        if(response.status == 201){
+                            this.$vs.notify({title:'Success',text:'Email created successfully, moving you to login page....',color:'success'})
+                            this.wasLoginSuccessful = true;
+                            this.$router.push('/login');
+                        }
+                    })
+                    .catch((error) => {
+                        this.$vs.notify({title:'ERROR',text:'data is incorrect',color:'danger'})
+                        console.log("error occured")
+                        console.log(error.response.data.errors)
+                    })
+                    .finally(() =>{
+                        this.$vs.loading.close()
+                    })
 			}
         }
     }

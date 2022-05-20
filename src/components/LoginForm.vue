@@ -42,6 +42,7 @@
     export default {
         data() {
             return {
+                primaryColor: "#00A99D",
                 SuperUser: {
                     Email : "",
                     Password : ""
@@ -53,10 +54,38 @@
         },
         methods: {
             SuperUserLogin(){
-
+                this.$vs.loading({
+                    color: this.primaryColor
+                })
+                axios.post("https://criticalconditionbackend.azurewebsites.net/superuser/login", this.SuperUser)
+                .then(data => {
+                    this.$vs.notify({title:'Success',text:'Email created successfully, moving you to login page....',color:'success'})
+                    console.log(data.status)
+                })
+                .catch(error => {
+                    this.$vs.notify({title:'ERROR',text:'data is incorrect',color:'danger'})
+                    console.log(error)
+                })
+                .finally(() => {
+                    this.$vs.loading.close()
+                })
             },
             SubUserLogin(){
-                axios.post
+                this.$vs.loading({
+                    color: this.primaryColor
+                })
+                axios.post("https://criticalconditionbackend.azurewebsites.net/subuser/login", this.SubUser)
+                    .then(data => {
+                        this.$vs.notify({title:'Success',text:'Email created successfully, moving you to login page....',color:'success'})
+                        console.log(data.status)
+                    })
+                    .catch(error => {
+                        this.$vs.notify({title:'ERROR',text:'data is incorrect',color:'danger'})
+                        console.log(error)
+                    })
+                    .finally(() => {
+                        this.$vs.loading.close()
+                    })
             },
         },
     }
