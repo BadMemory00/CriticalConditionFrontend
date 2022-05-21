@@ -29,13 +29,14 @@ const routes = [{
         path: '/superuser',
         name: 'superuser',
         component: () =>
-            import ('../views/SuperuserHomeView.vue')
+            import ('../views/SuperuserHomeView.vue'),
+        props: true
     },
     {
         path: '/adddevice',
         name: 'AddNewDevice',
-        component:()=>
-        import ('../views/AddNewDevice.vue')
+        component: () =>
+            import ('../views/AddNewDevice.vue')
     },
     {
         path: '/login',
@@ -56,7 +57,7 @@ const routes = [{
         component: () =>
             import ('../views/SuperuserDevicesView.vue')
     },
-    
+
 ]
 
 const router = new VueRouter({

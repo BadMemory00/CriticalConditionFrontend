@@ -58,9 +58,11 @@
                     color: this.primaryColor
                 })
                 axios.post("https://criticalconditionbackend.azurewebsites.net/superuser/login", this.SuperUser)
-                .then(data => {
-                    this.$vs.notify({title:'Success',text:'Email created successfully, moving you to login page....',color:'success'})
-                    console.log(data.status)
+                .then(response => {
+                    this.$vs.notify({title:'Success',text:'login was successfull, moving you to super-user page....',color:'success'})
+                    if(response.status == 201){
+                        this.$router.push('/superuser');
+                    }
                 })
                 .catch(error => {
                     this.$vs.notify({title:'ERROR',text:'data is incorrect',color:'danger'})
@@ -76,12 +78,12 @@
                 })
                 axios.post("https://criticalconditionbackend.azurewebsites.net/subuser/login", this.SubUser)
                     .then(data => {
-                        this.$vs.notify({title:'Success',text:'Email created successfully, moving you to login page....',color:'success'})
+                        this.$vs.notify({title:'Success',text:'login was successfull, moving you to sub-user page....',color:'success'})
                         console.log(data.status)
                     })
                     .catch(error => {
                         this.$vs.notify({title:'ERROR',text:'data is incorrect',color:'danger'})
-                        console.log(error)
+                        console.log(error.data)
                     })
                     .finally(() => {
                         this.$vs.loading.close()
