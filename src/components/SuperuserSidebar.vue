@@ -63,7 +63,7 @@
         this.isScreenSmall();
       },
       isScreenSmall(){
-        if(this.width < 750){
+        if(this.width < this.$smallScreenSize){
           this.active = false;
           this.clickDoNotClose = false;
           this.hiddenBackground = false;

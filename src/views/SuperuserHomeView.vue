@@ -33,8 +33,8 @@ export default {
       this.changePadding()
     },
     changePadding(){
-      if(this.width < 750){
-        this.screenPadding = 'padding: 1rem 0 0 5rem';
+      if(this.width < this.$smallScreenSize){
+        this.screenPadding = 'padding: 1rem 0 0 4rem';
         return;
       }
       this.screenPadding = 'padding: 2rem 0 0 17rem';
