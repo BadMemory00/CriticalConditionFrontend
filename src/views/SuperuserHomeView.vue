@@ -1,7 +1,7 @@
 <template>
   <div class="">
-    <SuperuserSidebar style="position: relative; top: 10px; left: 20px"/>
-    <SuperuserHome style="position: relative; top: 20px; left: 30px"/>
+    <SuperuserSidebar />
+    <SuperuserHome :style="screenPadding"/>
     
   </div>
 </template>
@@ -14,11 +14,40 @@ import SuperuserHome from '@/components/SuperuserHome.vue'
 
 export default {
   name: 'SuperuserHomeView',
-  props: ['title'],
 
   components: {
     SuperuserSidebar,
     SuperuserHome,
-  }
+  },
+
+  data() {
+      return {
+        width: window.innerWidth,
+        screenPadding: 'padding: 2rem 0 0 17rem',
+      }
+    },
+
+  methods: {
+    onResize() {
+      this.width = window.innerWidth;
+      this.changePadding()
+    },
+    changePadding(){
+      if(this.width < 750){
+        this.screenPadding = 'padding: 1rem 0 0 5rem';
+        return;
+      }
+      this.screenPadding = 'padding: 2rem 0 0 17rem';
+    }
+  },
+  beforeMount(){
+    this.changePadding()
+  },
+  created() {
+    window.addEventListener("resize", this.onResize);
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.onResize);
+  },
 }
 </script>

@@ -1,15 +1,16 @@
 <template>
   <div id="parentx">
-    <vs-button @click="active=!active" color="#00A99D" type="filled" icon="list"></vs-button>
-    <vs-sidebar v-model="active"  parent="body" default-index="1" color="#00A99D" class="sidebarx" spacer >
+    <vs-button v-if="smallScreen" @click="active = true" color="#00A99D" type="filled" icon="list" style="margin: 1rem 0 0 1rem"></vs-button>
+
+    <vs-sidebar v-model="active" :hidden-background="hiddenBackground" :click-not-close="clickDoNotClose" parent="body" color="success" default-index="1" class="sidebarx" spacer >
       <div class="header-sidebar" slot="header">
         <img src="../assets/LandingLogo.png" height="40rem" />
       </div>
-      <vs-sidebar-group open title="Application">
-        <vs-sidebar-item index="1" icon="menu" @click="reduce=!reduce">
-         Toggle Sidebar
+      <vs-sidebar-group open title="Main Menu">
+        <vs-sidebar-item to="superuser" index="1" icon="home">
+         Home
         </vs-sidebar-item>
-        <vs-sidebar-item index="5" icon="verified_user">
+        <vs-sidebar-item to="login" index="5" icon="verified_user">
           Configurations
         </vs-sidebar-item>
         <vs-sidebar-group title="Store">
@@ -34,12 +35,6 @@
         </vs-sidebar-item>
       </vs-sidebar-group>
 
-
-      <vs-divider icon="person" position="left">
-        User
-      </vs-divider>
-
-
       <vs-sidebar-item index="6" icon="account_box">
         Profile
       </vs-sidebar-item>
@@ -53,12 +48,47 @@
 </template>
 
 <script>
+
   export default {
     data:()=>({
-      active:false,
-      notExpand: false,
-      reduce: true
-    })
+      width: window.innerWidth,
+      active: true,
+      clickDoNotClose: true,
+      hiddenBackground: true,
+      smallScreen: false,
+    }),
+    methods: {
+      onResize() {
+        this.width = window.innerWidth;
+        this.isScreenSmall();
+      },
+      isScreenSmall(){
+        if(this.width < 750){
+          this.active = false;
+          this.clickDoNotClose = false;
+          this.hiddenBackground = false;
+          this.smallScreen = true;
+          return;
+        }
+
+        this.active = true;
+        this.clickDoNotClose = true;
+        this.hiddenBackground = true;
+        this.smallScreen = false;
+        return;      
+      }
+    },
+
+    beforeMount(){
+      this.isScreenSmall();
+    },
+    created() {
+      window.addEventListener("resize", this.onResize);
+    },
+    destroyed() {
+      window.removeEventListener("resize", this.onResize);
+    },
+
 }
 </script>
 <style>

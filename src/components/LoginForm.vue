@@ -15,8 +15,8 @@
                     <vs-tabs color="#00A99D" class="tabs">
                         <vs-tab label="Super-user">
                             <div class="super-user-form">
-                                <vs-input class="form-content" icon="mail" icon-no-border="true" label="Email" placeholder="write here..." color="#00A99D" v-model="SuperUser.Email"/>
-                                <vs-input class="form-content" icon="lock" icon-no-border="true" type="password" label="Password" placeholder="write here..." color="#00A99D" v-model="SuperUser.Password"/>
+                                <vs-input class="form-content" icon="mail" icon-no-border label="Email" placeholder="write here..." color="#00A99D" v-model="SuperUser.Email"/>
+                                <vs-input class="form-content" icon="lock" icon-no-border type="password" label="Password" placeholder="write here..." color="#00A99D" v-model="SuperUser.Password"/>
                                 <vs-button class="button" color="#00A99D" type="filled" @click="SuperUserLogin">Login</vs-button>
                                 <p class="text-center sign-up">Don't Have an Account? <router-link to="/signup" style="color: #00a89c; font-weight: 700;">Sign-up</router-link></p>
                             </div>
