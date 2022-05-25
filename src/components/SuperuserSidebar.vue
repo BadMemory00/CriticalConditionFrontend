@@ -106,7 +106,4 @@
     flex-direction: column;
     width: 100%;
   }
-  .router-link-active{
-    /* background-color: black; */
-  }
 </style>
