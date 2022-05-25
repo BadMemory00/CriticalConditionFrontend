@@ -14,6 +14,8 @@
         <router-link class="sign-up-button" to="/signup">Sign Up</router-link>
       </vs-navbar-item>
     </vs-navbar>
+  
+  <router-view></router-view>
   </div>
 </template> 
 

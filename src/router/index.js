@@ -7,8 +7,56 @@ Vue.use(VueRouter)
 
 const routes = [{
         path: '/',
-        name: 'home',
-        component: HomeView
+        name: 'navbar',
+        component: () =>
+            import ('../components/navbar.vue'),
+        children: [{
+                path: '/',
+                name: 'home',
+                component: HomeView
+            },
+
+            {
+                path: '/signup',
+                name: 'signup',
+                component: () =>
+                    import ('../views/SignUpView.vue')
+            },
+
+            {
+                path: '/login',
+                name: 'login',
+                component: () =>
+                    import ('../views/LoginView.vue')
+            },
+        ]
+    },
+
+    {
+        path: '/superuser',
+        name: 'SuperuserSidebar',
+        component: () =>
+            import ('../components/SuperuserSidebar.vue'),
+        children: [{
+                path: '/superuser/home',
+                name: 'SuperuserHomeView',
+                component: () =>
+                    import ('../views/SuperuserHomeView.vue'),
+                props: true
+            },
+            {
+                path: '/superuser/devices',
+                name: 'SuperuserDevicesView',
+                component: () =>
+                    import ('../views/SuperuserDevicesView.vue')
+            },
+            {
+                path: '/superuser/profile',
+                name: 'superuserprofile',
+                component: () =>
+                    import ('../views/SuperuserProfileView.vue')
+            },
+        ]
     },
 
     {
@@ -19,45 +67,11 @@ const routes = [{
     },
 
     {
-        path: '/signup',
-        name: 'signup',
+        path: '/subuser/adddevice',
+        name: 'adddevice',
         component: () =>
-            import ('../views/SignUpView.vue')
+            import ('../views/SubuserAddDeviceView.vue')
     },
-
-    {
-        path: '/superuser',
-        name: 'superuser',
-        component: () =>
-            import ('../views/SuperuserHomeView.vue'),
-        props: true
-    },
-    {
-        path: '/adddevice',
-        name: 'AddNewDevice',
-        component: () =>
-            import ('../views/AddNewDevice.vue')
-    },
-    {
-        path: '/login',
-        name: 'login',
-        component: () =>
-            import ('../views/LoginView.vue')
-    },
-
-    {
-        path: '/superuser/profile',
-        name: 'superuserprofile',
-        component: () =>
-            import ('../views/SuperuserProfileView.vue')
-    },
-    {
-        path: '/superuser/devices',
-        name: 'superuserdevices',
-        component: () =>
-            import ('../views/SuperuserDevicesView.vue')
-    },
-
 ]
 
 const router = new VueRouter({

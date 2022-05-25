@@ -6,44 +6,33 @@
       <div class="header-sidebar" slot="header">
         <img src="../assets/LandingLogo.png" height="40rem" />
       </div>
-      <vs-sidebar-group open title="Main Menu">
-        <vs-sidebar-item to="superuser" index="1" icon="home">
-         Home
+        <vs-sidebar-item to="/superuser/home" index="1" icon="home">
+          Home
         </vs-sidebar-item>
-        <vs-sidebar-item to="login" index="5" icon="verified_user">
-          Configurations
+        <vs-sidebar-item to="/superuser/devices" index="2" icon="monitor">
+          Devices
         </vs-sidebar-item>
-        <vs-sidebar-group title="Store">
-          <vs-sidebar-item index="2.1" icon="store">
-            Store
-          </vs-sidebar-item>
-          <vs-sidebar-item index="2.2" icon="nature_people">
-            Nature
-          </vs-sidebar-item>
-          <vs-sidebar-item index="2.3" icon="style">
-            Style
-          </vs-sidebar-item>
-        </vs-sidebar-group>
-        <vs-sidebar-item index="2" icon="gavel">
-          History
+        <vs-sidebar-item to="/superuser/devices" index="3" icon="archive">
+          Archived Devices
         </vs-sidebar-item>
-        <vs-sidebar-item index="3" icon="https">
-          Security
+        <vs-sidebar-item to="login" index="4" icon="people_alt">
+          Sub-users
         </vs-sidebar-item>
-        <vs-sidebar-item index="4" icon="help">
-          Help
+        <vs-sidebar-item to="login" index="5" icon="cloud_sync">
+          Data-share Program
         </vs-sidebar-item>
-      </vs-sidebar-group>
-
-      <vs-sidebar-item index="6" icon="account_box">
-        Profile
-      </vs-sidebar-item>
-
-      <div class="footer-sidebar" slot="footer">
-        <vs-button icon="settings" color="primary" type="border"></vs-button>
-      </div>
-
+        <vs-divider icon="person" position="center">
+          Settings
+        </vs-divider>
+        <vs-sidebar-item to="/superuser/profile" index="6" icon="account_box">
+          Profile
+        </vs-sidebar-item>
+        <vs-sidebar-item index="7" icon="logout">
+          Logout
+        </vs-sidebar-item>
     </vs-sidebar>
+
+    <router-view></router-view>
   </div>
 </template>
 
@@ -57,6 +46,20 @@
       hiddenBackground: true,
       smallScreen: false,
     }),
+    props: {
+      homeActive: {
+        type: String,
+        default: '1'
+      },      
+      devicesActive: {
+        type: String,
+        default: '0'
+      },      
+      archivedDevicesActive: {
+        type: String,
+        default: '0'
+      },
+    },
     methods: {
       onResize() {
         this.width = window.innerWidth;
@@ -103,10 +106,7 @@
     flex-direction: column;
     width: 100%;
   }
-  .footer-sidebar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+  .router-link-active{
+    /* background-color: black; */
   }
 </style>

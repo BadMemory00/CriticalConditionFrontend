@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <SuperuserSidebar />
+    <SuperuserNavbar :style="screenPadding"/>
     <SuperuserHome :style="screenPadding"/>
     
   </div>
@@ -8,16 +8,16 @@
 
 <script>
 // @ is an alias to /src
-import SuperuserSidebar from '@/components/SuperuserSidebar.vue'
 import SuperuserHome from '@/components/SuperuserHome.vue'
+import SuperuserNavbar from '@/components/SuperuserNavbar.vue'
  
 
 export default {
   name: 'SuperuserHomeView',
 
   components: {
-    SuperuserSidebar,
     SuperuserHome,
+    SuperuserNavbar,
   },
 
   data() {

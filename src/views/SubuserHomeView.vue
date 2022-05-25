@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <NavSubuser />
+    <SubUserNavbar />
     <SubUsercontent class="" @open="openModal" />
     <EditDevice class="edit overlay" v-if="false"/>
     <WarningMsg v-if="false"/>
@@ -9,14 +9,16 @@
 </template>
 
 <script>
-import NavSubuser from "@/components/NavSubuser.vue";
+import SubUserNavbar from "@/components/SubUserNavbar.vue";
 import SubUsercontent from "@/components/SubUserContent.vue";
 import EditDevice from "@/components/EditDevice.vue";
 import WarningMsg from "@/components/WarningMsg.vue";
 import QuickEdit from "@/components/QuickEdit.vue";
 export default {
+  name: 'SubuserHomeView',
+
   components: {
-    NavSubuser,
+    SubUserNavbar,
     SubUsercontent,
     WarningMsg,
     EditDevice,
