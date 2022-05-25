@@ -23,7 +23,7 @@ export default {
   data() {
       return {
         width: window.innerWidth,
-        screenPadding: 'padding: 2rem 0 0 17rem',
+        screenPadding: this.$superuserBigScreenPadding,
       }
     },
 
@@ -34,10 +34,10 @@ export default {
     },
     changePadding(){
       if(this.width < this.$smallScreenSize){
-        this.screenPadding = 'padding: 1rem 0 0 4rem';
+        this.screenPadding = this.$superuserSmallScreenPadding;
         return;
       }
-      this.screenPadding = 'padding: 2rem 0 0 17rem';
+      this.screenPadding = this.$superuserBigScreenPadding;
     }
   },
   beforeMount(){

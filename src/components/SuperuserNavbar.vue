@@ -1,30 +1,34 @@
 <template>
-    <nav class="navbar navbar-expand-lg">
-        <a class="Hname" href="#">Hostital name</a>
-  
-            <div class="leftside">  
-                 <span>Hallo,</span><a style=" text-decoration: none; color:black;" href="#">Username
-                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                </svg>
-                    </a>
-            </div>
-    </nav>
+    <div class="navbar">
+        <div class="hospital-name">
+            {{this.$hospitalName}}
+        </div>        
+        <div class="user-name">
+            Hello, 
+            <span>
+                {{this.$superuserName}}
+            </span>
+        </div>
+    </div>
 </template>
 <style>
-.navbar{
-    margin-left: 150px;
-}
-.Hname{
-    font-weight: bold;
-    color:  #00a89c;
-    font-size: 30px;
-    text-decoration: none;
-}
-.leftside{
-    margin-left: 70%;
-    font-weight: bold;
-}
+    :root{
+        --primarycolor: #00A99D;
+    }
+    .navbar{
+        display: flex;
+        flex-flow: nowrap;
+        margin-right: 0.5rem;
+        background-color: whitesmoke;
+    }
+    .hospital-name{
+        color: var(--primarycolor);
+        font-size: 1.5rem;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .user-name{
+        font-size: .9rem;
+        font-weight: 650;
+    }
 </style>
 

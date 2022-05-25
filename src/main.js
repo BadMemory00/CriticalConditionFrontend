@@ -14,9 +14,14 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.config.productionTip = false
 
+// Critical Condition global variables
+Vue.prototype.$smallScreenSize = 800;
+Vue.prototype.$superuserBigScreenPadding = 'padding: 0 0 0 17rem';
+Vue.prototype.$superuserSmallScreenPadding = 'padding: 0 0 0 4rem';
 
-Vue.prototype.$smallScreenSize = 800
-
+Vue.prototype.$hospitalName = 'Hospital Name';
+Vue.prototype.$superuserName = 'Superuser Name';
+//---------------------
 
 new Vue({
     router,
