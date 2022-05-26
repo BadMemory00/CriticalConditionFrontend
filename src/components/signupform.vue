@@ -81,7 +81,7 @@
         methods:{
 			signUp:function(){
                 this.$vs.loading({color:this.colorLoading})
-				axios.post('https://criticalconditionbackend.azurewebsites.net/superuser/register',this.superUser)
+				axios.post(this.$websiteLink + '/superuser/register',this.superUser)
                     .then((response) => {
                         if(response.status == 201){
                             this.$vs.notify({title:'Success',text:'Email created successfully, moving you to login page....',color:'success'})

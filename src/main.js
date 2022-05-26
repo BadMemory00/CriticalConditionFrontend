@@ -21,6 +21,13 @@ Vue.prototype.$superuserSmallScreenPadding = 'padding: 0 0 0 4rem';
 
 Vue.prototype.$hospitalName = 'Hospital Name';
 Vue.prototype.$superuserName = 'Superuser Name';
+
+Vue.prototype.$websiteLink = 'https://criticalconditionbackend.azurewebsites.net';
+
+Vue.prototype.$isSuperuserAuthorized = 'isSuperuserAuthorized';
+Vue.prototype.$superuserToken = 'superuserToken';
+
+
 //---------------------
 
 new Vue({

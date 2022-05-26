@@ -26,6 +26,12 @@ export default {
         screenPadding: this.$superuserBigScreenPadding,
       }
     },
+  props: {
+    superuserToken: {
+      type: String,
+      default: ''
+    },
+  },  
 
   methods: {
     onResize() {

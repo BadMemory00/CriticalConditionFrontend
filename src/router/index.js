@@ -7,7 +7,6 @@ Vue.use(VueRouter)
 
 const routes = [{
         path: '/',
-        name: 'navbar',
         component: () =>
             import ('../components/navbar.vue'),
         children: [{
@@ -42,19 +41,39 @@ const routes = [{
                 name: 'SuperuserHomeView',
                 component: () =>
                     import ('../views/SuperuserHomeView.vue'),
-                props: true
+                beforeEnter: (to, from, next) => {
+                    if (localStorage.getItem('isSuperuserAuthorized') == 'true') {
+                        next();
+                    } else {
+                        next('/login');
+                    }
+                }
             },
             {
                 path: '/superuser/devices',
                 name: 'SuperuserDevicesView',
                 component: () =>
-                    import ('../views/SuperuserDevicesView.vue')
+                    import ('../views/SuperuserDevicesView.vue'),
+                beforeEnter: (to, from, next) => {
+                    if (localStorage.getItem('isSuperuserAuthorized') == 'true') {
+                        next()
+                    } else {
+                        next('/login')
+                    }
+                }
             },
             {
                 path: '/superuser/profile',
-                name: 'superuserprofile',
+                name: 'SuperuserProfileView',
                 component: () =>
-                    import ('../views/SuperuserProfileView.vue')
+                    import ('../views/SuperuserProfileView.vue'),
+                beforeEnter: (to, from, next) => {
+                    if (localStorage.getItem('isSuperuserAuthorized') == 'true') {
+                        next()
+                    } else {
+                        next('/login')
+                    }
+                }
             },
         ]
     },

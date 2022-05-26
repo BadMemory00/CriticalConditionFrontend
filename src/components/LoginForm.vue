@@ -1,10 +1,10 @@
 <template>
 <div>
     <vs-row vs-w="12">
-        <vs-col :key="index" vs-type="flex" vs-justify="center" vs-align="center" vs-lg="6" vs-sm="12" vs-xs="12">
+        <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-lg="6" vs-sm="12" vs-xs="12">
             <img src="../assets/loginphoto.jpg" class="image">
         </vs-col>
-        <vs-col :key="index" vs-type="flex" vs-justify="center" vs-align="center" vs-lg="6" vs-sm="12" vs-xs="12">
+        <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-lg="6" vs-sm="12" vs-xs="12">
             <div class="whole-form">
                 <div class="text-center upper-text">
                     <p class="login-text">Login</p>
@@ -57,16 +57,19 @@
                 this.$vs.loading({
                     color: this.primaryColor
                 })
-                axios.post("https://criticalconditionbackend.azurewebsites.net/superuser/login", this.SuperUser)
+                axios.post(this.$websiteLink + "/superuser/login", this.SuperUser)
                 .then(response => {
                     this.$vs.notify({title:'Success',text:'login was successfull, moving you to super-user page....',color:'success'})
-                    if(response.status == 201){
-                        this.$router.push('/superuser');
+                    if(response.status == 200){
+                        localStorage.setItem(this.$isSuperuserAuthorized, 'true');
+                        localStorage.setItem(this.$superuserToken, 'Bearer '+ response.data);
+                        this.$router.push('/superuser/home');
                     }
                 })
-                .catch(error => {
+                .catch( () => {
+                    localStorage.setItem(this.$isSuperuserAuthorized, '');
+                    localStorage.setItem(this.$superuserToken, '');
                     this.$vs.notify({title:'ERROR',text:'data is incorrect',color:'danger'})
-                    console.log(error)
                 })
                 .finally(() => {
                     this.$vs.loading.close()
@@ -76,10 +79,13 @@
                 this.$vs.loading({
                     color: this.primaryColor
                 })
-                axios.post("https://criticalconditionbackend.azurewebsites.net/subuser/login", this.SubUser)
-                    .then(data => {
+                axios.post(this.$websiteLink + "/subuser/login", this.SubUser)
+                    .then(response => {
                         this.$vs.notify({title:'Success',text:'login was successfull, moving you to sub-user page....',color:'success'})
-                        console.log(data.status)
+                        if(response.status == 200){
+                            this.$router.push('/subuser/home');
+                        }
+                        console.log(response.status)
                     })
                     .catch(error => {
                         this.$vs.notify({title:'ERROR',text:'data is incorrect',color:'danger'})
