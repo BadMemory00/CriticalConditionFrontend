@@ -23,7 +23,7 @@
                         </vs-tab>
                         <vs-tab label="Sub-user" >
                             <div>
-                                <vs-input class="form-content" icon-no-border="true" label="Code" placeholder="write here..." color="#00A99D" v-model="SubUser.Code"/>
+                                <vs-input class="form-content" icon-no-border label="Code" placeholder="write here..." color="#00A99D" v-model="SubUser.Code"/>
                                 <vs-button class="button" color="#00A99D" type="filled" @click="SubUserLogin">Login</vs-button>
                             </div>
                         </vs-tab>

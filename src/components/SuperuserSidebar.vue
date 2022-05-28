@@ -46,20 +46,6 @@
       hiddenBackground: true,
       smallScreen: false,
     }),
-    props: {
-      homeActive: {
-        type: String,
-        default: '1'
-      },      
-      devicesActive: {
-        type: String,
-        default: '0'
-      },      
-      archivedDevicesActive: {
-        type: String,
-        default: '0'
-      },
-    },
     methods: {
       onResize() {
         this.width = window.innerWidth;

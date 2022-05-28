@@ -63,46 +63,5 @@
      
 
 }
-.searchbar{
-    margin-left: 75%;
-    margin-top: 15px;
-    padding-bottom: 20px;
-    
-}
-input{
-     
-    height: 25px;
-    width: 170px;
-    border: none;
-  
-    
-    
-}
-.button{
-    
-    width: 55px;
-    height: 25px;
-    
-    border-radius: 10px;
-    box-shadow: 0 0 4px  rgb(37, 75, 86);
-    background-color: rgb(37, 75, 86) ;
-    margin-right:3px;
-}
-svg{
-        margin-bottom: 7px;
-        color: white;
-}
 
-#child{
-    width: 220px;
-    height: 440px;
-    border-radius: 20px;
-    margin-left: 20px;
-}
-h5{
-    text-align: center;
-}
-span{
-    padding-top:5px;
-}
 </style>
