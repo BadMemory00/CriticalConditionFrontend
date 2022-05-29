@@ -16,8 +16,8 @@ Vue.config.productionTip = false
 
 // Critical Condition global variables
 Vue.prototype.$smallScreenSize = 900;
-Vue.prototype.$superuserBigScreenPadding = 'padding: 0 0 0 17rem';
-Vue.prototype.$superuserSmallScreenPadding = 'padding: 0 0 0 4rem';
+Vue.prototype.$superuserBigScreenPadding = 'padding: 1rem 0 0 17rem';
+Vue.prototype.$superuserSmallScreenPadding = 'padding: 1rem 0 0 4rem';
 
 Vue.prototype.$hospitalName = 'Hospital Name';
 Vue.prototype.$superuserName = 'Superuser Name';

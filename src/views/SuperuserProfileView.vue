@@ -1,6 +1,5 @@
 <template>
   <div class="">
-    <SuperuserNavbar :style="screenPadding" />
     <SuperuserProfile :style="screenPadding" />
     
   </div>
@@ -9,14 +8,12 @@
 <script>
 // @ is an alias to /src
 import SuperuserProfile from '@/components/SuperuserProfile.vue'
-import SuperuserNavbar from '@/components/SuperuserNavbar.vue'
  
 
 export default {
   name: 'SuperuserProfileView',
   components: {
     SuperuserProfile,
-    SuperuserNavbar,
      
   },
 

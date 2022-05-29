@@ -1,6 +1,5 @@
 <template>
   <div class="">
-    <SuperuserNavbar :style="screenPadding" />
     <SuperuserDevices :style="screenPadding" />
   </div>
 </template>
@@ -8,13 +7,11 @@
 <script>
 // @ is an alias to /src
 import SuperuserDevices from '@/components/SuperuserDevices.vue'
-import SuperuserNavbar from '@/components/SuperuserNavbar.vue'
 
 export default {
   name: 'SuperuserDevicesView',
   components: {
     SuperuserDevices,
-    SuperuserNavbar,
   },
   data() {
     return {

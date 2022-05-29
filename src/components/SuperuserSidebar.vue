@@ -15,7 +15,7 @@
         <vs-sidebar-item to="/superuser/devices" index="3" icon="archive" class="sidebar-item">
           Archived Devices
         </vs-sidebar-item>
-        <vs-sidebar-item to="login" index="4" icon="people_alt" class="sidebar-item">
+        <vs-sidebar-item to="login" index="4" icon="diversity_3" class="sidebar-item">
           Sub-users
         </vs-sidebar-item>
         <vs-sidebar-item to="login" index="5" icon="cloud_sync" class="sidebar-item">
