@@ -133,15 +133,12 @@
                 primaryColor: "#00A99D",
                 maximumFMEARiskSccore: 975,
                 highRishDevicesNumber: 0,
-                highRiskDevices: null,
-                subUsers: null,
+                highRiskDevices: [],
+                subUsers: [],
                 createLogs: [],
                 editedLogs: [],
                 archivedLogs: [],
             }
-        },
-        computed: {
-
         },
         
         methods: {

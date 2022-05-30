@@ -1,67 +1,151 @@
 <template>
-      <div class="card" id="parent">
-            <div class="searchbar">
-                <input type="search" name="search" placeholder="Search here..." />   
-                <button type="button" class="button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg>
-            </button>
-            </div>   
-            <div class="row">
-                
-                    <div class="card col-md-4" id="child">
-                        <h5 name="device_name">Device name</h5>
-                        <p style="margin-left: 120px; font-weight:bold;">___ model</p>
-
-                        <span>Type of the service:    Empty          </span>
-                        <span>Utilization Rate:       Limited        </span>
-                        <span>Unavailability:         high           </span>
-                        <span>Safety:                 serious        </span>
-                        <span>Importance:             4              </span>
-                        <span>Financial score:        1              </span>
-                        <span>Detection:            easy to detect   </span>
-                        <span>Age factor:             5              </span>
-                        <span>Entry data:           22/3/200         </span>
-                        <hr/>
-                        <span>RBN Score</span>
-                        <div class="progress">
-                            <div class="progress-bar bg-warning" role="progressbar" style="width: 50% ; border-radius:40px ;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                                <span style="margin-left:10%">250/1000</span>
-                            </div>
-                        </div>
-                            
-                    </div>
-                    <div class="card col-md-4" id="child">
-                        
-                    </div>
-
-                    <div class="card col-md-4" id="child">
-                         
-                    </div>
-
-                    <div class="card col-md-4" id="child">
-                         
-                    </div>
-                     
-                    
-                        
+    <div>
+        <vs-card class="main-card">
+            <div slot="header">
+                <vs-row vs-justify="flex-end">
+                    <vs-input class="search-bar" icon="search" icon-after placeholder="search..." color="#00A99D" v-model="searchQuery"/>
+                </vs-row>   
             </div>
-
-        </div>
+            <div class="device-cards">
+                <vs-card v-for="(device, index) in devicesSearchResults" :key="index" class="device-card" actionable>
+                        <h4 class="text-center">
+                            <i v-if="device.isIoT" style="color: #00A99D" class="material-icons">
+                                connected_tv
+                            </i>
+                            {{device.name}}
+                            <p class="device-model">{{device.model}}</p>
+                        </h4>
+                        <hr class="horizontal-rule" />
+                        <p>Type of Service : <span class="device-data"> {{device.typeOfService}} </span></p>
+                        <p>Utilization Rate : <span class="device-data"> {{device.utilizationRate}} </span></p>
+                        <p>Unavailability : <span class="device-data"> {{device.unavailability}} </span></p>
+                        <p>Safety : <span class="device-data"> {{device.safety}} </span></p>
+                        <p>importance : <span class="device-data"> {{device.importance}} </span></p>
+                        <p>Financial Score : <span class="device-data"> {{device.financialScore}} </span></p>
+                        <p>Detection : <span class="device-data"> {{device.detection}} </span></p>
+                        <p>Age Factor : <span class="device-data"> {{device.ageFactor}} </span></p>
+                        <p>Entry Date : <span class="device-data"> {{format_date(device.addedAt)}} </span></p>
+                        <p v-if="isAcrchived">Archived Date : <span class="device-data"> {{format_date(device.lastEditDate)}} </span></p>
+                        <p>
+                            FMEA Risk Score : <span style="color: #00A99D">{{device.fmeaRiskScore}}</span> / 975
+                            <vs-progress v-if="device.fmeaRiskScore*100/maximumFMEARiskSccore <= 25" :percent="device.fmeaRiskScore*100/maximumFMEARiskSccore" height="10" color="success">%</vs-progress>
+                            <vs-progress v-if="device.fmeaRiskScore*100/maximumFMEARiskSccore <= 70 && device.fmeaRiskScore*100/maximumFMEARiskSccore > 25" :percent="device.fmeaRiskScore*100/maximumFMEARiskSccore" height="10" color="warning">primary</vs-progress>
+                            <vs-progress v-if="device.fmeaRiskScore*100/maximumFMEARiskSccore > 70" :percent="device.fmeaRiskScore*100/maximumFMEARiskSccore" height="10" color="danger">primary</vs-progress>
+                        </p>                       
+                        <p v-if="device.isIoT">
+                            Security Risk Score : <span style="color: #00A99D">{{device.securityRiskScore}}</span>
+                            <vs-progress :percent="device.securityRiskScore" height="8" color="primary">primary</vs-progress>
+                        </p>
+                </vs-card>
+            </div>
+        </vs-card>
+    </div>
 </template>
+
+<script>
+    import axios from 'axios';
+    import moment from 'moment'
+
+    export default {
+        data() {
+            return {
+                primaryColor: "#00A99D",
+                maximumFMEARiskSccore: 975,
+                devices: [],
+                searchQuery:'',
+            }
+        },
+        props: {
+            isAcrchived: {
+                type: Boolean,
+                default: false
+            },
+        },
+        computed: {
+            devicesSearchResults(){
+                return this.devices.filter(device => device.name.toUpperCase().match(this.searchQuery.toUpperCase()))
+            }
+        },
+        
+        methods: {
+            callDataAPIs(){
+                this.DevicesAPI('/superuser/devices?IsArchived='+this.isAcrchived)
+            },
+
+            DevicesAPI(APIEndPoint){
+                this.$vs.loading({
+                    color: this.primaryColor
+                })
+                axios.get(this.$websiteLink + APIEndPoint, {
+                    headers:{
+                        'Authorization': localStorage.getItem(this.$superuserToken)
+                    }
+                })
+                .then(response => {
+                    this.devices = response.data;
+                })
+                .catch(error => {
+                    this.catchAPIError(error)
+                })
+                .finally(() => {
+                    this.$vs.loading.close()
+                })
+            },
+
+            catchAPIError(error){
+                if (error.response.status == 401) {
+                    localStorage.setItem(this.$isSuperuserAuthorized, '');
+                    localStorage.setItem(this.$superuserToken, '');
+                    this.$vs.notify({title:'ERROR',text:'Your Session Expired, Please Login Again',color:'danger'})
+                    this.$router.push('/login');
+                }
+                else{
+                    this.$vs.notify({title:'ERROR',text:'an Error Occured, Please Refresh Your Page',color:'danger'})
+                    console.log(error);
+                }
+            },
+            format_date(value){
+                return moment(String(value)).format('MMMM Do YYYY')
+                // return moment(String(value)).fromNow()
+            },
+        },
+        
+        beforeMount(){
+            this.callDataAPIs();
+        },
+    }
+</script>
+
 <style>
-#parent{
-    margin-left: 170px;
-     height: 600px;
-    border-radius: 20px;
-    background-color: rgb(242, 242, 242);
-    border-style: none;
-    padding-left: 80px;
-    padding-right: 80px;
-     
-     
-
-}
-
+    :root{
+        --primarycolor: #00A99D;
+    }
+    .main-card{
+        background-color: rgb(236, 236, 236);
+    }
+    .search-bar i{
+        color: var(--primarycolor);
+    }
+    .device-cards{
+        display: flex;
+        overflow-x: auto;
+        padding: 0 1rem 0 1rem;
+    }
+    .device-card{
+        min-width: 16rem;
+        margin: .5rem;
+    }
+    .device-model{
+        font-weight: 400;
+        font-size: 1.2rem;
+        padding-left: 5rem;
+    }
+    .horizontal-rule{
+        margin-left: 25%;
+        width: 50%;
+        border: 1px solid var(--primarycolor);
+    }
+    .device-data{
+        color: var(--primarycolor);
+    }
 </style>
