@@ -63,6 +63,19 @@ const routes = [{
                 }
             },
             {
+                path: '/superuser/archiveddevices',
+                name: 'SuperuserArchivedDevicesView',
+                component: () =>
+                    import ('../views/SuperuserArchivedDevicesView.vue'),
+                beforeEnter: (to, from, next) => {
+                    if (localStorage.getItem('isSuperuserAuthorized') == 'true') {
+                        next()
+                    } else {
+                        next('/login')
+                    }
+                }
+            },
+            {
                 path: '/superuser/profile',
                 name: 'SuperuserProfileView',
                 component: () =>

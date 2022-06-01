@@ -228,7 +228,7 @@
                     localStorage.setItem(this.$isSuperuserAuthorized, '');
                     localStorage.setItem(this.$superuserToken, '');
                     this.$vs.notify({title:'ERROR',text:'Your Session Expired, Please Login Again',color:'danger'})
-                    this.$router.push('/login');
+                    this.$router.go('/login');
                 }
                 else{
                     this.$vs.notify({title:'ERROR',text:'an Error Occured, Please Refresh Your Page',color:'danger'})

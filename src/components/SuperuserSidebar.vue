@@ -12,7 +12,7 @@
         <vs-sidebar-item to="/superuser/devices" index="2" icon="monitor" class="sidebar-item">
           Devices
         </vs-sidebar-item>
-        <vs-sidebar-item to="/superuser/devices" index="3" icon="archive" class="sidebar-item">
+        <vs-sidebar-item to="/superuser/archiveddevices" index="3" icon="archive" class="sidebar-item">
           Archived Devices
         </vs-sidebar-item>
         <vs-sidebar-item to="login" index="4" icon="diversity_3" class="sidebar-item">

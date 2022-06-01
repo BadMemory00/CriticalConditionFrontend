@@ -7,7 +7,19 @@
                 </vs-row>   
             </div>
             <div class="device-cards">
-                <vs-card v-for="(device, index) in devicesSearchResults" :key="index" class="device-card" actionable>
+                <vs-card v-for="(device, index) in devicesSearchResults" :key="index" class="device-card">
+                        <vs-dropdown v-if="isAcrchived" class="drob-down" vs-custom-content vs-trigger-click :color="primaryColor" >
+                            <vs-icon :color="primaryColor" icon="more_vert"></vs-icon>
+                            <vs-dropdown-menu class="drob-down-menu">
+                                <p class="text-center" style="font-size: .8rem;">
+                                    Archived By : <span style="color: #00A99D">{{device.lastEditBy}}</span>
+                                </p>
+                                <div class="delete-unarchive">
+                                    <vs-button class="delete-button" color="danger" type="filled">Delete</vs-button>
+                                    <vs-button class="unarchive-button" color="warning" type="filled">Unarchive</vs-button>
+                                </div>
+                            </vs-dropdown-menu>
+                        </vs-dropdown>
                         <h4 class="text-center">
                             <i v-if="device.isIoT" style="color: #00A99D" class="material-icons">
                                 connected_tv
@@ -97,7 +109,7 @@
                     localStorage.setItem(this.$isSuperuserAuthorized, '');
                     localStorage.setItem(this.$superuserToken, '');
                     this.$vs.notify({title:'ERROR',text:'Your Session Expired, Please Login Again',color:'danger'})
-                    this.$router.push('/login');
+                    this.$router.go('/login');
                 }
                 else{
                     this.$vs.notify({title:'ERROR',text:'an Error Occured, Please Refresh Your Page',color:'danger'})
@@ -120,11 +132,15 @@
     :root{
         --primarycolor: #00A99D;
     }
+    .search-bar i{
+        color: var(--primarycolor);
+    }
     .main-card{
         background-color: rgb(236, 236, 236);
     }
-    .search-bar i{
-        color: var(--primarycolor);
+    .drob-down-menu{
+        display: flex;
+        flex-direction: row;
     }
     .device-cards{
         display: flex;
@@ -132,13 +148,14 @@
         padding: 0 1rem 0 1rem;
     }
     .device-card{
+        position: relative;
         min-width: 16rem;
         margin: .5rem;
     }
     .device-model{
         font-weight: 400;
         font-size: 1.2rem;
-        padding-left: 5rem;
+        /* padding-left: 5rem; */
     }
     .horizontal-rule{
         margin-left: 25%;
@@ -147,5 +164,21 @@
     }
     .device-data{
         color: var(--primarycolor);
+    }
+    .delete-unarchive{
+        display: flex; 
+        justify-content: center;
+    }
+    .delete-button{
+        margin: 0 .5rem .5rem 0.5rem;
+        
+    }    
+    .delete-button{
+        margin: 0 .5rem .5rem 0.5rem;
+        border-radius: 10px;
+    }
+    .unarchive-button{
+        margin: 0 .5rem .5rem .5rem;
+        border-radius: 10px;
     }
 </style>
