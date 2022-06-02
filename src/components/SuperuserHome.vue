@@ -35,7 +35,7 @@
                 </vs-card>
             </div>
         </vs-card>
-        <vs-row vs-w="12" vs-justify="space-between">
+        <vs-row vs-w="12">
             <vs-col vs-type="flex" vs-lg="3" vs-sm="12" vs-xs="12" >
                 <vs-card class="subuser-main-card">
                     <div slot="header">
@@ -57,7 +57,7 @@
                     </div>
                 </vs-card>
             </vs-col>
-            <vs-col vs-type="flex" vs-lg="9" vs-sm="12" vs-xs="12" >
+            <vs-col vs-type="flex" vs-justify="flex-start" vs-lg="9" vs-sm="12" vs-xs="12" >
                 <vs-card class="editslog-main-card">
                     <div slot="header">
                         <h4 class="text-center">
@@ -284,12 +284,13 @@
     }
     .subuser-main-card{
         background-color: rgb(236, 236, 236);
-        margin: 1rem;
+        margin-top: 1rem;
+        margin-right: 1rem;
         position: relative;
     }
     .editslog-main-card{
         background-color: rgb(236, 236, 236);
-        margin: 1rem;
+        margin-top: 1rem;
         height: 25rem;
     }
     .editslog-cards{

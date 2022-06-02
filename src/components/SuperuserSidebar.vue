@@ -1,10 +1,14 @@
 <template>
   <div id="parentx">
-    <vs-button v-if="smallScreen" @click="active = true" color="#00A99D" type="filled" icon="list" style="margin: 1rem 0 0 1rem"></vs-button>
+    <!-- <vs-button v-if="smallScreen" @click="active = true" color="#00A99D" type="filled" icon="list" style="margin: 1rem 0 0 1rem"></vs-button> -->
 
-    <vs-sidebar v-model="active" :hidden-background="hiddenBackground" :click-not-close="clickDoNotClose" parent="body" color="success" default-index="1" class="sidebarx" spacer >
+    <vs-sidebar v-model="active" :hidden-background="hiddenBackground" :reduce="reduce" reduce-not-rebound reduce-not-hover-expand parent="body" color="success" default-index="1" class="sidebarx" spacer >
       <div class="header-sidebar" slot="header">
-        <img src="../assets/LandingLogo.png" height="40rem" />
+        <img v-if="!smallLogo" @click="ifOpenedInSmallScreenSwtich" src="../assets/LandingLogo.png" height="40rem" />
+        <!-- <i v-if="smallLogo" @click="openSideBarWhenReduced" style="color: #00A99D; cursor: pointer" class="material-icons"> 
+            menu
+        </i> -->
+        <img v-if="smallLogo" @click="openSideBarWhenReduced" style="cursor: pointer" src="../assets/LandingLogoCut.png" height="40rem" />
       </div>
         <vs-sidebar-item to="/superuser/home" index="1" icon="home" class="sidebar-item">
           Home
@@ -42,40 +46,49 @@
     data:()=>({
       width: window.innerWidth,
       active: true,
-      clickDoNotClose: true,
       hiddenBackground: true,
+      reduce: false,
       smallScreen: false,
+      smallLogo: false,
     }),
     methods: {
-      onResize() {
+      whenResize(){
         this.width = window.innerWidth;
-        this.isScreenSmall();
-      },
-      isScreenSmall(){
+        
         if(this.width < this.$smallScreenSize){
-          this.active = false;
-          this.clickDoNotClose = false;
-          this.hiddenBackground = false;
           this.smallScreen = true;
-          return;
+          this.smallLogo = true;
+          this.reduce = true;
+          this.hiddenBackground = true;
+        } 
+        else{
+          this.smallScreen = false;
+          this.smallLogo = false;
+          this.reduce = false;
+          this.hiddenBackground = true;
+        }  
+      },
+      openSideBarWhenReduced(){
+        this.smallLogo = !this.smallLogo;
+        this.hiddenBackground = !this.hiddenBackground;
+        this.reduce = !this.reduce;
+      },
+      ifOpenedInSmallScreenSwtich(){
+        if (this.smallScreen) {
+          this.smallLogo = !this.smallLogo;
+          this.hiddenBackground = !this.hiddenBackground;
+          this.reduce = !this.reduce;}
         }
-
-        this.active = true;
-        this.clickDoNotClose = true;
-        this.hiddenBackground = true;
-        this.smallScreen = false;
-        return;      
-      }
     },
-
+    
     beforeMount(){
-      this.isScreenSmall();
+      this.whenResize();
     },
     created() {
-      window.addEventListener("resize", this.onResize);
+      window.addEventListener("resize", this.whenResize);
     },
     destroyed() {
-      window.removeEventListener("resize", this.onResize);
+      window.removeEventListener("resize", this.whenResize);
     },
 
 }
