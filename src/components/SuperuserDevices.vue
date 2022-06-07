@@ -15,8 +15,8 @@
                                     Archived By : <span style="color: #00A99D">{{device.lastEditBy}}</span>
                                 </p>
                                 <div class="delete-unarchive">
-                                    <vs-button class="delete-button" color="danger" type="filled">Delete</vs-button>
-                                    <vs-button class="unarchive-button" color="warning" type="filled">Unarchive</vs-button>
+                                    <vs-button class="delete-button" color="danger" type="line">Delete</vs-button>
+                                    <vs-button class="unarchive-button" color="warning" type="line">Unarchive</vs-button>
                                 </div>
                             </vs-dropdown-menu>
                         </vs-dropdown>

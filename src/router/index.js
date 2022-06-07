@@ -76,6 +76,19 @@ const routes = [{
                 }
             },
             {
+                path: '/superuser/subusers',
+                name: 'SuperuserSubuserView',
+                component: () =>
+                    import ('../views/SuperuserSubuserView.vue'),
+                beforeEnter: (to, from, next) => {
+                    if (localStorage.getItem('isSuperuserAuthorized') == 'true') {
+                        next()
+                    } else {
+                        next('/login')
+                    }
+                }
+            },
+            {
                 path: '/superuser/profile',
                 name: 'SuperuserProfileView',
                 component: () =>

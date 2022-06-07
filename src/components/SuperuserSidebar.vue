@@ -19,7 +19,7 @@
         <vs-sidebar-item to="/superuser/archiveddevices" index="3" icon="archive" class="sidebar-item">
           Archived Devices
         </vs-sidebar-item>
-        <vs-sidebar-item to="login" index="4" icon="diversity_3" class="sidebar-item">
+        <vs-sidebar-item to="/superuser/subusers" index="4" icon="diversity_3" class="sidebar-item">
           Sub-users
         </vs-sidebar-item>
         <vs-sidebar-item to="login" index="5" icon="cloud_sync" class="sidebar-item">
@@ -111,4 +111,11 @@
   .logout :hover{
     color: red !important;
   }
+  .vuesax-app-is-ltr .vs-sidebar-success .vs-sidebar-item-active{
+    border-right: 4px solid var(--primarycolor) !important
+  }
+  .vs-sidebar-success .vs-sidebar-item-active a{
+    color: var(--primarycolor) !important;
+  }
+  
 </style>
