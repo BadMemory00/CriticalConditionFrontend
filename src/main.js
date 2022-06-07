@@ -19,8 +19,8 @@ Vue.prototype.$smallScreenSize = 900;
 Vue.prototype.$superuserBigScreenPadding = 'padding: 1rem 0 0 17rem';
 Vue.prototype.$superuserSmallScreenPadding = 'padding: 1rem 0 0 4rem';
 
-// Vue.prototype.$websiteLink = 'https://criticalconditionbackend.azurewebsites.net';
-Vue.prototype.$websiteLink = 'https://localhost:7014';
+Vue.prototype.$websiteLink = 'https://criticalconditionbackend.azurewebsites.net';
+// Vue.prototype.$websiteLink = 'https://localhost:7014';
 
 Vue.prototype.$isSuperuserAuthorized = 'isSuperuserAuthorized';
 Vue.prototype.$superuserToken = 'superuserToken';

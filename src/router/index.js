@@ -101,6 +101,19 @@ const routes = [{
                     }
                 }
             },
+            {
+                path: '/superuser/datashare',
+                name: 'SuperuserDatashareView',
+                component: () =>
+                    import ('../views/SuperuserDatashareView.vue'),
+                beforeEnter: (to, from, next) => {
+                    if (localStorage.getItem('isSuperuserAuthorized') == 'true') {
+                        next()
+                    } else {
+                        next('/login')
+                    }
+                }
+            },
         ]
     },
 

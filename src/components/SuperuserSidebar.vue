@@ -22,7 +22,7 @@
         <vs-sidebar-item to="/superuser/subusers" index="4" icon="diversity_3" class="sidebar-item">
           Sub-users
         </vs-sidebar-item>
-        <vs-sidebar-item to="login" index="5" icon="cloud_sync" class="sidebar-item">
+        <vs-sidebar-item to="/superuser/datashare" index="5" icon="cloud_sync" class="sidebar-item">
           Data-share Program
         </vs-sidebar-item>
         <vs-divider icon="person" position="center">
