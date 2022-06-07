@@ -5,9 +5,6 @@
     <vs-sidebar v-model="active" :hidden-background="hiddenBackground" :reduce="reduce" reduce-not-rebound reduce-not-hover-expand parent="body" color="success" default-index="1" class="sidebarx" spacer >
       <div class="header-sidebar" slot="header">
         <img v-if="!smallLogo" @click="ifOpenedInSmallScreenSwtich" src="../assets/LandingLogo.png" height="40rem" />
-        <!-- <i v-if="smallLogo" @click="openSideBarWhenReduced" style="color: #00A99D; cursor: pointer" class="material-icons"> 
-            menu
-        </i> -->
         <img v-if="smallLogo" @click="openSideBarWhenReduced" style="cursor: pointer" src="../assets/LandingLogoCut.png" height="40rem" />
       </div>
         <vs-sidebar-item to="/superuser/home" index="1" icon="home" class="sidebar-item">
@@ -108,6 +105,9 @@
       --primarycolor: #00A99D;
   }
 
+  .vs-sidebar{
+    z-index: 3000;
+  }
   .header-sidebar{
     display: flex;
     align-items: center;
