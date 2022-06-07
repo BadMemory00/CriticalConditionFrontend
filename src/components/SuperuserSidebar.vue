@@ -28,10 +28,8 @@
         <vs-sidebar-item to="/superuser/profile" index="6" icon="account_box" class="sidebar-item">
           Profile
         </vs-sidebar-item>
-        <div class="footer-sidebar" slot="footer">
-          <vs-button @click="openConfirmLogout()" v-if="!reduce" icon="logout" color="danger" type="line">log out</vs-button>
-          <vs-button @click="openConfirmLogout()" v-if="reduce" icon="logout" color="danger" type="line"></vs-button>
-        </div>
+        <vs-button @click="openConfirmLogout()" v-if="!reduce" icon="logout" color="danger" type="line">log out</vs-button>
+        <vs-button @click="openConfirmLogout()" v-if="reduce" icon="logout" color="danger" type="line" style="margin-left: .7rem"></vs-button>
     </vs-sidebar>
 
     <router-view></router-view>
