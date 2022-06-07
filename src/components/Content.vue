@@ -1,20 +1,18 @@
 <template>
 <div class="">
-    <div class="row mb-5">
-        <div class="col-md-8  text-left ">
+    <div class="row m-3">
+        <div class="first-half col-lg-8 col-md-8 col-sm-12">
             <p class="display-6 heading-txt">Risk and cyber security analysis for medical devices</p>
-            <p class="fw-light content-txt w-50 mb-5">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
-            <a href="#" class=" content-btn ">Mange Your Devices</a>
+            <p class="fw-light content-txt mb-5">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</p>
+            <a href="#" class="content-btn">Mange Your Devices</a>
         </div>
-        <div class="col-md-4">
-            <template>
-                <FirstLandingPhotoIcon />
-            </template>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <FirstLandingPhotoIcon />
         </div>
     </div>
   
     
-    <div class="row mb-5">
+    <div class="row m-3">
         <div class="col-md-6">
             <div class=" box">
                 <h2 class=" fw-bold">Lorem Ipsum</h2>
@@ -31,7 +29,7 @@
         </div>
     </div>
 
-    <div class="row mb-5">
+    <div class="row m-3">
         <div class="col-md-6">
             <p class="display-5 mb-4">Lorem Ipsum</p>
             <p class="txt-card pb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</p>
@@ -45,7 +43,7 @@
         </div>
     </div>
 
-    <div class="row mb-5">
+    <div class="row m-3">
         <div class="col-md-6">
             <ThirdLandingPhotoIcon />
             <!-- <img src="../assets/photo_2022-03-11_16-17-50.jpg" class="img-fluid" alt=""> -->
@@ -75,18 +73,22 @@
 </script>
 
 <style>
+
+.first-half{
+    margin-bottom: 3rem;
+}
 .content-txt{
     font-size: .8rem;
 }
-
 .content-btn{
     color: white;
     padding: 20px 35px;
     border: 1px solid #00A99D;
     background-color: #00A99D;
     text-decoration: none;
-    border-radius: 35px 30px;
+    border-radius: 35px;
     font-size: .7rem;
+    margin: 5rem;
 }
 .content-btn:hover{
     color: white;
