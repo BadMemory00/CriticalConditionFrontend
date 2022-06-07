@@ -25,9 +25,6 @@
         <vs-sidebar-item to="/superuser/datashare" index="5" icon="cloud_sync" class="sidebar-item">
           Data-share Program
         </vs-sidebar-item>
-        <vs-divider icon="person" position="center">
-          Settings
-        </vs-divider>
         <vs-sidebar-item to="/superuser/profile" index="6" icon="account_box" class="sidebar-item">
           Profile
         </vs-sidebar-item>
