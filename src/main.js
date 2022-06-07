@@ -19,9 +19,6 @@ Vue.prototype.$smallScreenSize = 900;
 Vue.prototype.$superuserBigScreenPadding = 'padding: 1rem 0 0 17rem';
 Vue.prototype.$superuserSmallScreenPadding = 'padding: 1rem 0 0 4rem';
 
-Vue.prototype.$hospitalName = 'Hospital Name';
-Vue.prototype.$superuserName = 'Superuser Name';
-
 // Vue.prototype.$websiteLink = 'https://criticalconditionbackend.azurewebsites.net';
 Vue.prototype.$websiteLink = 'https://localhost:7014';
 

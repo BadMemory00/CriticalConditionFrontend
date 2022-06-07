@@ -31,9 +31,10 @@
         <vs-sidebar-item to="/superuser/profile" index="6" icon="account_box" class="sidebar-item">
           Profile
         </vs-sidebar-item>
-        <vs-sidebar-item index="7" icon="logout" class="logout">
-          Logout
-        </vs-sidebar-item>
+        <div class="footer-sidebar" slot="footer">
+          <vs-button @click="openConfirmLogout()" v-if="!reduce" icon="logout" color="danger" type="line">log out</vs-button>
+          <vs-button @click="openConfirmLogout()" v-if="reduce" icon="logout" color="danger" type="line"></vs-button>
+        </div>
     </vs-sidebar>
 
     <router-view></router-view>
@@ -78,7 +79,21 @@
           this.smallLogo = !this.smallLogo;
           this.hiddenBackground = !this.hiddenBackground;
           this.reduce = !this.reduce;}
-        }
+      },
+      openConfirmLogout(){
+        this.$vs.dialog({
+          type:'confirm',
+          color: 'danger',
+          title: 'Logout',
+          text: 'Are you sure you want to logout',
+          accept:this.logOut
+        })
+      },
+      logOut(){
+        localStorage.setItem(this.$isSuperuserAuthorized, '');
+        localStorage.setItem(this.$superuserToken, '');
+        this.$router.go('');
+      }
     },
     
     beforeMount(){
@@ -108,14 +123,14 @@
   .sidebar-item :hover{
     color: var(--primarycolor) !important;
   }
-  .logout :hover{
-    color: red !important;
-  }
   .vuesax-app-is-ltr .vs-sidebar-success .vs-sidebar-item-active{
     border-right: 4px solid var(--primarycolor) !important
   }
   .vs-sidebar-success .vs-sidebar-item-active a{
     color: var(--primarycolor) !important;
   }
-  
+  .con-vs-dialog .vs-dialog{
+    width: 80%; 
+    margin-left: 3rem;
+  }
 </style>

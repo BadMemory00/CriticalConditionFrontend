@@ -112,7 +112,7 @@
                     this.$router.go('/login');
                 }
                 else{
-                    this.$vs.notify({title:'ERROR',text:'an Error Occured, Please Refresh Your Page',color:'danger'})
+                    this.$vs.notify({title:'ERROR',text:'an Error Occured, Please Try Again',color:'danger'})
                     console.log(error);
                 }
             },
