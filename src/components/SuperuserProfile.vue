@@ -1,114 +1,161 @@
 <template>
-<div>
-
-        <div class="card" id="card1">
-            <div class="title">
-                <h4>Hospital information</h4>
-            </div>       
-             <div class="card" id="card2">
-                 <ul class="bar">
-                    <li>
-                        Name
-                        <p class="value">value</p>
-                    </li>
-                    <li> 
-                        Username
-                        <p class="value">value</p></li>
-                    <li>
-                        password
-                        <p class="value">value</p>
-                    </li>
-                    <li>
-                        speciality
-                        <p class="value">value</p>
-                    </li>
-                    <li>
-                        Adress
-                        <p class="value">value</p>
-                    </li>
-                    <li>
-                        Phone number
-                        <p class="value">value</p>
-                    </li>
-
+    <vs-row vs-w="12" vs-type="flex" vs-justify="center" vs-align="center">
+            <div id="card1">
+                <div class="title">
+                    <h4>Hospital information</h4>
+                </div>       
+                <div id="card2">
+                    <ul class="StepProgress">
+                        <li class="StepProgress-item is-done">
+                            <vs-input disabled size="small" label="Hospital Name" class="inputx input-label" placeholder="Hospital Name" v-model="superuser.hospitalName"/>
+                        </li>
+                        <li class="StepProgress-item is-done">
+                            <vs-input disabled size="small" label="E-mail" class="inputx input-label" placeholder="E-mail" v-model="superuser.email"/>
+                        </li>
+                        <li class="StepProgress-item is-done">
+                            <vs-input disabled size="small" label="Phone Number" class="inputx input-label" placeholder="Phone Number" v-model="superuser.phoneNumber"/>
+                        </li>
+                        <li class="StepProgress-item is-done">
+                            <vs-input disabled size="small" label="Speciality" class="inputx input-label" placeholder="Hospital Speciality" v-model="superuser.hospitalSpeciality"/>
+                        </li>
+                        <li class="StepProgress-item is-done">
+                            <vs-input disabled size="small" label="Country" class="inputx input-label" placeholder="Hospital Country" v-model="superuser.hospitalCountry"/>
+                        </li>
+                        <li class="StepProgress-item is-done">
+                            <vs-input disabled size="small" label="State" class="inputx input-label" placeholder="Hospital State" v-model="superuser.hospitalState"/>
+                        </li>
+                        <li class="StepProgress-item is-done">
+                            <vs-input disabled size="small" label="City" class="inputx input-label" placeholder="Hospital City" v-model="superuser.hospitalCity"/>
+                        </li>
+                        <li class="StepProgress-item is-done">
+                            <vs-input disabled size="small" label="Street" class="inputx input-label" placeholder="Hospital Street" v-model="superuser.hospitalStreet"/>
+                        </li>
                     </ul>
-                                        
-                 
-             </div>
-        </div>
-</div>
+                </div>
+            </div>
+    </vs-row>
 </template>
-<style >
-#card1{
-    margin-top: px;
-    margin-left:400px;
-    width: 450px;
-    height: 520px;
-    border-radius: 20px;
-    background-color: rgb(242, 242, 242);
-    border-style: none;
-}
-.title{
-    text-align: center;
-    margin-top: 20px;
-}
-#card2{
-    margin-top: 5px;
-    margin-left:80px;
-    width: 300px;
-    height: 420px;
-    border-radius: 20px;
-    border-style: none;
-    
 
-}
-.bar{
-    margin-top:10px;
-}
-.label{
-     
-    margin-left: 5px;
-    font-weight: bold;
-    
-    
-    
-}
-.value{
-    
-    margin-left: 28px;
-    background-color: rgb(242, 242, 242);
-    border-style: none;
-    width: 170px;
-     
+<script>
+    import axios from 'axios';
 
-}
-.bar {
-  list-style: none;
-}
-.bar >li {
-  position: relative;
-}
-.bar>li:before {
-  content: '\25CF';
-  margin-right: 15px;
-  font-size: 18px;
-  color:  #00a89c ;
-}
-.bar>li:after {
-  position: absolute;
-  left: 0;
-  top: 0;
-  content: '';
-  border-left: 3px solid  #00a89c;
-  margin-left: 5px;
-  height: 100%;
-}
-.bar >li:first-of-type:after {
-  top: 17px;
-}
-.bar >li:last-of-type:after {
-  top: -3px;
-}
+    export default {
+        data() {
+            return {
+                primaryColor: "#00A99D",
+                superuser: [],
+                APIsEndPoints: {
+                    getSuperuser: "/superuser/get",
+                }
+            }
+        },
+        
+        methods: {
+            callDataAPIs(){
+                this.getSubsersAPI(this.APIsEndPoints.getSuperuser)
+            },
+            getSubsersAPI(APIEndPoint){
+                this.$vs.loading({
+                    color: this.primaryColor
+                })
+                axios.get(this.$websiteLink + APIEndPoint, {
+                    headers:{
+                        'Authorization': localStorage.getItem(this.$superuserToken)
+                    }
+                })
+                .then(response => {
+                    this.superuser = response.data;
+                    }
+                )
+                .catch(error => {
+                    this.catchAPIError(error)
+                })
+                .finally(() => {
+                    this.$vs.loading.close()
+                })
+            },
+            catchAPIError(error){
+                if (error.response.status == 401) {
+                    localStorage.setItem(this.$isSuperuserAuthorized, '');
+                    localStorage.setItem(this.$superuserToken, '');
+                    this.$vs.notify({title:'ERROR',text:'Your Session Expired, Please Login Again',color:'danger'})
+                    this.$router.go('/login');
+                }
+                else{
+                    this.$vs.notify({title:'ERROR',text:'an Error Occured, Please Refresh Your Page',color:'danger'})
+                    console.log(error);
+                }
+            },
+        },
+        
+        beforeMount(){
+            this.callDataAPIs();
+        },
+    }
+</script>
 
+<style>
+    :root{
+      --primarycolor: #00A99D;
+    }
+    #card1{
+        width: 26rem;
+        height: 44rem;
+        margin-right: .5rem;
+        border-radius: 10px;
+        background-color: rgb(236, 236, 236);
+    }
+    .title{
+        text-align: center;
+        margin: 1rem;
+    }
+    #card2{
+        margin-left:10%;
+        width: 80%;
+        height: 39rem;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+    }
+    .input-label{
+        width: 80%;
+        color: var(--primarycolor);
+    }
 
+    .StepProgress {
+        position: relative;
+        padding-left: 3rem;
+        list-style: none;
+    }
+    .StepProgress-item {
+        position: relative;
+    }
+    .StepProgress-item:not(:last-child) {
+        padding-bottom: 1.5rem;
+    }
+    .StepProgress-item::before {
+        content: '';
+        position: absolute;
+        top: .5rem;
+        left: -1.5rem;
+        height: 100%;
+    }
+    .StepProgress-item::after {
+        content: '';
+        position: absolute;
+        top: .5rem;
+        left: -1.85rem;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+    .StepProgress-item.is-done::before {
+        border-left: 2px solid var(--primarycolor);
+    }
+    .StepProgress-item.is-done::after {
+        font-size: 10px;
+        color: #FFF;
+        text-align: center;
+        border: 2px solid var(--primarycolor);
+        background-color: var(--primarycolor);
+    }
 </style>
