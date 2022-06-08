@@ -138,6 +138,11 @@
     .main-card{
         background-color: rgb(236, 236, 236);
     }
+    .drob-down{
+        position: absolute;
+        right: .5rem;
+        top: .7rem;
+    }
     .drob-down-menu{
         display: flex;
         flex-direction: row;
@@ -155,7 +160,6 @@
     .device-model{
         font-weight: 400;
         font-size: 1.2rem;
-        /* padding-left: 5rem; */
     }
     .horizontal-rule{
         margin-left: 25%;

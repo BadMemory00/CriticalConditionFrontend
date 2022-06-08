@@ -22,11 +22,14 @@
         <vs-sidebar-item to="/superuser/datashare" index="5" icon="cloud_sync" class="sidebar-item">
           Data-share Program
         </vs-sidebar-item>
+        <vs-divider icon="person" position="center">
+          User
+        </vs-divider>
         <vs-sidebar-item to="/superuser/profile" index="6" icon="account_box" class="sidebar-item">
           Profile
         </vs-sidebar-item>
-        <vs-button @click="openConfirmLogout()" v-if="!reduce" icon="logout" color="danger" type="line">log out</vs-button>
-        <vs-button @click="openConfirmLogout()" v-if="reduce" icon="logout" color="danger" type="line" style="margin-left: .7rem"></vs-button>
+        <vs-button @click="openConfirmLogout()" v-if="!reduce" icon="logout" color="danger" type="flat">log out</vs-button>
+        <vs-button @click="openConfirmLogout()" v-if="reduce" icon="logout" color="danger" type="flat" style="margin-left: .7rem"></vs-button>
     </vs-sidebar>
 
     <router-view></router-view>
