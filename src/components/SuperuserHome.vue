@@ -43,7 +43,6 @@
                             <i style="color: #00A99D" class="material-icons">diversity_3</i>
                             Sub-users
                         </h4>
-                        <!-- TODO : change the router link when you add the sub-users view -->
                         <router-link to="/superuser/subusers" class="view-all-text">View all</router-link>
                     </div>
                     <div class="subuser-cards">

@@ -108,9 +108,6 @@
       --primarycolor: #00A99D;
   }
 
-  .vs-sidebar{
-    z-index: 3000;
-  }
   .header-sidebar{
     display: flex;
     align-items: center;
