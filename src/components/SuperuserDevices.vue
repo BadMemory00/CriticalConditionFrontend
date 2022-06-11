@@ -10,7 +10,7 @@
                 <vs-card v-for="(device, index) in devicesSearchResults" :key="index" class="device-card">
                         <vs-dropdown v-if="isAcrchived" class="drob-down" vs-custom-content vs-trigger-click :color="primaryColor" >
                             <vs-icon :color="primaryColor" icon="more_vert"></vs-icon>
-                            <vs-dropdown-menu class="drob-down-menu">
+                            <vs-dropdown-menu>
                                 <p class="text-center" style="font-size: .8rem;">
                                     Archived By : <span style="color: #00A99D">{{device.lastEditBy}}</span>
                                 </p>
@@ -143,10 +143,6 @@
         right: .5rem;
         top: .7rem;
     }
-    .drob-down-menu{
-        display: flex;
-        flex-direction: row;
-    }
     .device-cards{
         display: flex;
         overflow-x: auto;
@@ -173,10 +169,6 @@
         display: flex; 
         justify-content: center;
     }
-    .delete-button{
-        margin: 0 .5rem .5rem 0.5rem;
-        
-    }    
     .delete-button{
         margin: 0 .5rem .5rem 0.5rem;
         border-radius: 10px;

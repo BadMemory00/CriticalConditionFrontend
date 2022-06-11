@@ -264,7 +264,6 @@
         position: absolute; 
         top: -.6rem; 
         right: 0; 
-        cursor: "pointer";
     }
     .table-text{
         margin: 0 0 .3rem 0 ;
