@@ -109,7 +109,7 @@
         height: 100%;
         background-repeat:no-repeat;
     }
-    .tabs ul{
+    .tabs >>> ul{
         justify-content: space-around;
     }
     .whole-form{
@@ -121,8 +121,9 @@
     }
     .upper-text hr{
         position: relative;
-        left: 32%;
-        width: 40%;
+        left: 25%;
+        width: 50%;
+        color: var(--primarycolor);
     }
     .login-text{
         font-size: 2rem;

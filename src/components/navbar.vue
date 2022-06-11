@@ -29,7 +29,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
     :root{
         --primarycolor: #00A99D;
     }
