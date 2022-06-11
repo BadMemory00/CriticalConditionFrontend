@@ -72,7 +72,7 @@
     }
 </script>
 
-<style>
+<style scoped>
 
 .first-half{
     margin-bottom: 3rem;

@@ -126,6 +126,6 @@
   }
   .con-vs-dialog .vs-dialog{
     width: 80%; 
-    margin-left: 3rem;
+    margin-left: 3.7rem;
   }
 </style>

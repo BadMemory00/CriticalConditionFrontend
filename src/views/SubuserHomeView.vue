@@ -37,7 +37,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .pos-1 {
   position: relative;
   height: 900px;

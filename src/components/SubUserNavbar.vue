@@ -41,47 +41,47 @@ export default {
 };
 </script>
 
-<style>
-.HName {
-  float: left;
-  color: #00a99d;
-  display: flex;
-  font-size: 1.3rem;
-}
-.dDown {
-  position: fixed;
-  right: 10rem;
-}
-.button {
-  background-color: white;
-  color: black;
-  border: 0;
-  position: relative;
-  /* left: 200px; */
-}
-.button:hover {
-  background-color: #00a99d;
-  color: black;
-  border: 0;
-}
-.button:focus {
-  background-color: #00a99d;
-  color: black;
-  border: 0;
-}
-.icon1 {
-  margin-right: 10px;
-  opacity: 0.5;
-}
-.Log:hover > .icon1 {
-  opacity: 1;
-  color: #00a99d;
-}
-.heading-link {
-  text-decoration: none;
-  color: #00a99d;
-}
-.heading-link:hover {
-  color: #00a99d;
-}
+<style scoped>
+  .HName {
+    float: left;
+    color: #00a99d;
+    display: flex;
+    font-size: 1.3rem;
+  }
+  .dDown {
+    position: fixed;
+    right: 10rem;
+  }
+  .button {
+    background-color: white;
+    color: black;
+    border: 0;
+    position: relative;
+    /* left: 200px; */
+  }
+  .button:hover {
+    background-color: #00a99d;
+    color: black;
+    border: 0;
+  }
+  .button:focus {
+    background-color: #00a99d;
+    color: black;
+    border: 0;
+  }
+  .icon1 {
+    margin-right: 10px;
+    opacity: 0.5;
+  }
+  .Log:hover > .icon1 {
+    opacity: 1;
+    color: #00a99d;
+  }
+  .heading-link {
+    text-decoration: none;
+    color: #00a99d;
+  }
+  .heading-link:hover {
+    color: #00a99d;
+  }
 </style>

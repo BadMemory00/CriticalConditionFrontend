@@ -36,7 +36,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .icon-1-position {
   position: relative;
   top: -15px;

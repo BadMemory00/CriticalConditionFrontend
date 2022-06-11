@@ -11,7 +11,7 @@
         </div>
     </div>
 </template>
-<style>
+<style scoped>
     :root{
         --primarycolor: #00A99D;
     }

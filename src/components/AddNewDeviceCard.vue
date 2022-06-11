@@ -42,7 +42,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
 .card-shadow {
   background-color: #f7f9f8;

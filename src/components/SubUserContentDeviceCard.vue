@@ -69,7 +69,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .dDown-2 {
   float: right;
 }

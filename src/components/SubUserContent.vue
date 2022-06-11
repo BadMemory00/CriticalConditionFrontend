@@ -263,7 +263,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .add {
   background-color: #0a3440;
   position: absolute;

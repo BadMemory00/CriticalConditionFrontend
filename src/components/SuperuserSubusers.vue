@@ -59,7 +59,7 @@
 
                         <!-- edit and delete subusers modals -->
                         <!-- edit subuser modal -->
-                        <vs-prompt class="all-modals"
+                        <vs-prompt class=""
                             title="Edit Sub-user"
                             color="warning"
                             button-accept="line"
@@ -85,7 +85,7 @@
         </vs-card>
         
         <!-- add subuser modal -->
-        <vs-prompt class="all-modals"
+        <vs-prompt class=""
             title="Create Sub-user"
             :color="primaryColor"
             button-accept="line"
@@ -238,7 +238,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     :root{
         --primarycolor: #00A99D;
     }
@@ -270,11 +270,6 @@
         margin: 0 0 .3rem 0 ;
         font-size: 1.15rem;
         font-weight: 400;
-    }
-    .all-modals{
-        border-radius: 10px;
-        padding: 2rem;
-        margin: 0 1rem 0 1.5rem;
     }
     .username-input{
         margin-bottom: .5rem;

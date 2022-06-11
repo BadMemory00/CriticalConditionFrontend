@@ -94,7 +94,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     :root{
       --primarycolor: #00A99D;
     }

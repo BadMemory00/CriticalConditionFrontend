@@ -103,7 +103,7 @@
 </script>
 
 
-<style >
+<style scoped>
     p{
         font-family: 'Segoe UI', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     }

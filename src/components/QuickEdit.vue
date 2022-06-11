@@ -41,46 +41,45 @@ export default {
 };
 </script>
 
-<style>
-
-.icon-edit-card {
-  font-weight: 400;
-  opacity: 0.5;
-  margin-right: 10px;
-}
-.edit-title-card {
-  font-weight: 600;
-}
-.quick-edit-info {
-  font-size: 0.9rem;
-  margin-right: 10px;
-}
-.quick-edit-input {
-  border: 0;
-  background-color: #f7f9f8;
-  height: 1.5rem;
-  font-size: 0.9rem;
-}
-.quickEditModel {
-  width: 100%;
-  height: 100%;
-  background-color: rgb(126 87 87 / 49%);
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 5;
-  display: none;
-}
-.to-edit {
-  background-color: white;
-  border-radius: 25px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    padding: 1rem;
-  border-radius: 20px;
-  position: absolute;
-  width: 48%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+<style scoped>
+  .icon-edit-card {
+    font-weight: 400;
+    opacity: 0.5;
+    margin-right: 10px;
+  }
+  .edit-title-card {
+    font-weight: 600;
+  }
+  .quick-edit-info {
+    font-size: 0.9rem;
+    margin-right: 10px;
+  }
+  .quick-edit-input {
+    border: 0;
+    background-color: #f7f9f8;
+    height: 1.5rem;
+    font-size: 0.9rem;
+  }
+  .quickEditModel {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(126 87 87 / 49%);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    display: none;
+  }
+  .to-edit {
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+      padding: 1rem;
+    border-radius: 20px;
+    position: absolute;
+    width: 48%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 </style>
