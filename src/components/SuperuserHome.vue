@@ -75,7 +75,7 @@
                                     </div>
                                     <div v-for="(createLog, index) in createLogs" :key="index">
                                         <p >
-                                            {{createLog.subUserUserName}} <span style="color: #00FA9A">{{createLog.action}}</span> {{createLog.deviceName}}
+                                            {{createLog.subUserUserName}} <span style="color: #00FA9A">{{createLog.action}}</span> {{createLog.deviceName}} <span style="color: #00A99D">{{format_date(createLog.actionDate)}}</span>
                                         </p>
                                         <hr>
                                     </div>
@@ -92,7 +92,7 @@
                                     </div>
                                     <div v-for="(editedLog, index) in editedLogs" :key="index">
                                         <p >
-                                            {{editedLog.subUserUserName}} <span style="color: #C0C0C0">{{editedLog.action}}</span> {{editedLog.deviceName}}
+                                            {{editedLog.subUserUserName}} <span style="color: #C0C0C0">{{editedLog.action}}</span> {{editedLog.deviceName}} <span style="color: #00A99D">{{format_date(editedLog.actionDate)}}</span>
                                         </p>
                                         <hr>
                                     </div>
@@ -109,7 +109,7 @@
                                     </div>
                                     <div v-for="(archivedLog, index) in archivedLogs" :key="index">
                                         <p >
-                                            {{archivedLog.subUserUserName}} <span style="color: #DC143C">{{archivedLog.action}}</span> {{archivedLog.deviceName}}
+                                            {{archivedLog.subUserUserName}} <span style="color: #DC143C">{{archivedLog.action}}</span> {{archivedLog.deviceName}} <span style="color: #00A99D">{{format_date(archivedLog.actionDate)}}</span>
                                         </p>
                                         <hr>
                                     </div>
@@ -125,6 +125,7 @@
 
 <script>
     import axios from 'axios';
+    import moment from 'moment'
 
     export default {
         data() {
@@ -158,7 +159,10 @@
                 })
                 .then(response => {
                     this.highRiskDevices = response.data;
+                    
+                    // sort by FMEA risk score descending (highest score first)
                     this.highRiskDevices.sort((a, b) => b.fmeaRiskScore - a.fmeaRiskScore)
+                    
                     this.highRiskDevices.forEach(potentialyRiskyDevice => {
                         if (potentialyRiskyDevice.fmeaRiskScore > 600 || potentialyRiskyDevice.securityRiskScore > 75) {
                             this.highRishDevicesNumber++
@@ -202,6 +206,9 @@
                     }
                 })
                 .then(response => {
+                    // sort by date descending (newest (biggest) date first)
+                    response.data.sort((a, b) => new Date(b.actionDate) - new Date(a.actionDate))
+
                     response.data.forEach(element => {
                         if (element.action == "Created") {
                             this.createLogs.push(element);
@@ -233,7 +240,11 @@
                     this.$vs.notify({title:'ERROR',text:'an Error Occured, Please Try Again',color:'danger'})
                     console.log(error);
                 }
-            }
+            },
+            format_date(value){
+                // return moment(String(value)).format('MMMM Do YYYY')
+                return moment(String(value)).fromNow()
+            },
         },
         
         beforeMount(){
