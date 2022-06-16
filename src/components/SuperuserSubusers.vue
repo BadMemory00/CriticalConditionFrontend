@@ -38,9 +38,9 @@
                             <vs-icon :color="primaryColor" icon="more_horiz"></vs-icon>
                             <vs-dropdown-menu>
                                 <div class="text-center" style="width: 9rem; padding: .2rem">
-                                    <vs-button @click="isEditSubUserModalActive = true" color="warning" type="line" style="width: 100%; margin: .2rem">Edit Sub-user</vs-button>
+                                    <vs-button @click="openEditSubuserModal(subuser.code, subuser.userName, subuser.role)" color="warning" type="line" style="width: 100%; margin: .2rem">Edit Sub-user</vs-button>
                                     <!-- <span style="color: #00A99D">|</span> -->
-                                    <vs-button color="danger" type="line" style="width: 100%; margin: .2rem">Delete Sub-user</vs-button>
+                                    <vs-button @click="openConfirmDelete(subuser.userName, subuser.code)" color="danger" type="line" style="width: 100%; margin: .2rem">Delete Sub-user</vs-button>
                                 </div>
                             </vs-dropdown-menu>
                         </vs-dropdown>
@@ -56,30 +56,27 @@
                                 <p class="table-text">{{subuser.role}}</p>
                             </vs-col>
                         </vs-row>
-
-                        <!-- edit and delete subusers modals -->
-                        <!-- edit subuser modal -->
-                        <vs-prompt class=""
-                            title="Edit Sub-user"
-                            color="warning"
-                            button-accept="line"
-                            button-cancel="line"
-                            accept-text="Edit"
-                            cancel-text="Close"
-                            @cancel="newSubuser.userName='',newSubuser.role=''"
-                            @accept="acceptSubuserEdit(subuser.userName)"
-                            @close="closeSubuserEdit(subuser.userName)"
-                            :active.sync="isEditSubUserModalActive">
-                            <div class="con-exemple-prompt">
-                                <span class="subuser-form-text">User Name</span>
-                                <vs-input class="username-input" placeholder="Wrtie here..." v-model="newSubuser.userName" :color="primaryColor"/>
-                                <span class="subuser-form-text">Role</span>
-                                <vs-radio class="subuser-form-radio" :color="primaryColor" v-model="newSubuser.role" vs-name="Operator" vs-value="Operator">Operator</vs-radio>
-                                <vs-radio class="subuser-form-radio" :color="primaryColor" v-model="newSubuser.role" vs-name="Technician" vs-value="Technician">Technician</vs-radio>
-                            </div>
-                        </vs-prompt>
-                        <!------------------------------------------------>
                     </div>
+                    <!-- edit subuser modal -->
+                    <vs-prompt class=""
+                        title="Edit Sub-user"
+                        color="warning"
+                        button-accept="line"
+                        button-cancel="line"
+                        accept-text="Edit"
+                        cancel-text="Close"
+                        @cancel="newSubuser.userName='',newSubuser.role=''"
+                        @accept="acceptSubuserEdit(subuser.userName)"
+                        @close="closeSubuserEdit(subuser.userName)"
+                        :active.sync="isEditSubUserModalActive">
+                        <div class="con-exemple-prompt">
+                            <span class="subuser-form-text">User Name</span>
+                            <vs-input class="username-input" placeholder="Wrtie here..." v-model="editSubuser.userName" :color="primaryColor"/>
+                            <span class="subuser-form-text">Role</span>
+                            <vs-radio class="subuser-form-radio" :color="primaryColor" v-model="editSubuser.role" vs-name="Operator" vs-value="Operator">Operator</vs-radio>
+                            <vs-radio class="subuser-form-radio" :color="primaryColor" v-model="editSubuser.role" vs-name="Technician" vs-value="Technician">Technician</vs-radio>
+                        </div>
+                    </vs-prompt>
                 </vs-card>
             </div>
         </vs-card>
@@ -104,7 +101,8 @@
                 <vs-radio class="subuser-form-radio" :color="primaryColor" v-model="newSubuser.role" vs-name="Technician" vs-value="Technician">Technician</vs-radio>
             </div>
         </vs-prompt>
-        <!------------------------------------------------>
+
+
     </div>
 </template>
 
@@ -119,19 +117,28 @@
                 oparators: [],
                 technicians: [],
                 
-                // add, edit, and delete subusers modeals
                 newSubuser: {
                     userName: '',
                     role: ''
                 },
+                editSubuser: {
+                    code: '',
+                    userName: '',
+                    role: ''
+                },
+                
                 isCreateSubUserModalActive: false,
                 isEditSubUserModalActive: false,
-                isDeleteSubUserModalActive: false,
-                // --------------------------------------
+                
+                deleteSubuser: {
+                    code: '',
+                },
 
                 APIsEndPoints: {
                     getSubusers: "/superuser/subusers",
-                    generateSubuser: "/superuser/generateuser"
+                    generateSubuser: "/superuser/generateuser",
+                    editSubuser: "/superuser/subusers/edit",
+                    deleteSubuser: "/superuser/subusers/delete"
                 }
             }
         },
@@ -141,9 +148,13 @@
                 this.getSubsersAPI(this.APIsEndPoints.getSubusers)
             },
             getSubsersAPI(APIEndPoint){
+                this.oparators = []
+                this.technicians = []
+
                 this.$vs.loading({
                     color: this.primaryColor
                 })
+                
                 axios.get(this.$websiteLink + APIEndPoint, {
                     headers:{
                         'Authorization': localStorage.getItem(this.$superuserToken)
@@ -167,6 +178,108 @@
                     this.$vs.loading.close()
                 })
             },
+
+            // add, edit, and delete subusers modeals
+            acceptSubuserCreate(){
+                this.editOrAddSubuser(this.APIsEndPoints.generateSubuser, this.newSubuser, 'Sub-user Generated Successfully')
+            },
+            closeSubuserCreate(){
+                this.$vs.notify({
+                    color:'danger',
+                    title:'you did not generate any sub-users',
+                    text:'you can always change your mind!'
+                })
+            },
+
+            openEditSubuserModal(code, userName, role){
+                this.isEditSubUserModalActive = true;
+
+                this.editSubuser.code = code;
+                this.editSubuser.userName = userName;
+                this.editSubuser.role = role;
+            },
+            acceptSubuserEdit(userName){
+                this.editOrAddSubuser(this.APIsEndPoints.editSubuser, this.editSubuser, '"' + userName + '" Edited Successfully')
+            },
+            closeSubuserEdit(subuserName){
+                this.$vs.notify({
+                    color:'danger',
+                    title: '"' + subuserName + '" was not edited',
+                    text:'you can always change your mind!'
+                })
+            },
+            
+            editOrAddSubuser(endPoint, body, title){
+                this.$vs.loading({
+                    color: this.primaryColor
+                })
+                axios.post(this.$websiteLink + endPoint, body, {
+                    headers:{
+                        'Authorization': localStorage.getItem(this.$superuserToken)
+                    }
+                })
+                .then(response => {
+                    if (response.status == 201 || response.status == 200) {
+                            this.$vs.notify({
+                                color: this.primaryColor,
+                                title: title,
+                                // text:''
+                            })
+
+                            // call the Original API again to repapulate the lists
+                            this.getSubsersAPI(this.APIsEndPoints.getSubusers);
+                        }
+                    }
+                )
+                .catch(error => {
+                    this.catchAPIError(error)
+                })
+                .finally(() => {
+                    this.$vs.loading.close()
+                })
+            },
+            
+            openConfirmDelete(userName, code){
+                this.$vs.dialog({
+                    type:'confirm',
+                    color: 'danger',
+                    title: 'Delete Sub-user',
+                    text: 'Are you sure you want to delete ' + '"' + userName + '"' + " you can't undo that action after pressing accept",
+                    accept: this.delete,
+                })
+
+                this.deleteSubuser.code = code
+            },
+            delete(){
+                this.$vs.loading({
+                    color: this.primaryColor
+                })
+                axios.post(this.$websiteLink + this.APIsEndPoints.deleteSubuser, this.deleteSubuser, {
+                    headers:{
+                        'Authorization': localStorage.getItem(this.$superuserToken)
+                    }
+                })
+                .then(response => {
+                    if (response.status == 200) {
+                            this.$vs.notify({
+                                color: this.primaryColor,
+                                title:'Sub-user Deleted Successfully',
+                                text:'This sub-user Can not be Recovered '
+                            })
+
+                            // call the Original API again to repapulate the lists
+                            this.getSubsersAPI(this.APIsEndPoints.getSubusers)
+                        }
+                    }
+                )
+                .catch(error => {
+                    this.catchAPIError(error)
+                })
+                .finally(() => {
+                    this.$vs.loading.close()
+                })
+            },
+            // -----------------------------------------
             catchAPIError(error){
                 if (error.response.status == 401) {
                     localStorage.setItem(this.$isSuperuserAuthorized, '');
@@ -179,57 +292,6 @@
                     console.log(error);
                 }
             },
-
-            // add, edit, and delete subusers modeals
-            acceptSubuserCreate(){
-                this.$vs.loading({
-                    color: this.primaryColor
-                })
-                axios.post(this.$websiteLink + this.APIsEndPoints.generateSubuser, this.newSubuser, {
-                    headers:{
-                        'Authorization': localStorage.getItem(this.$superuserToken)
-                    }
-                })
-                .then(response => {
-                    if (response.status == 201) {
-                            this.$vs.notify({
-                                color:'success',
-                                title:'sub-user generated successfully',
-                                // text:''
-                            })
-                            this.$router.go(0);
-                        }
-                    }
-                )
-                .catch(error => {
-                    this.catchAPIError(error)
-                })
-                .finally(() => {
-                    this.$vs.loading.close()
-                })
-            },
-            closeSubuserCreate(){
-                this.$vs.notify({
-                    color:'danger',
-                    title:'you did not generate any sub-users',
-                    text:'you can always change your mind!'
-                })
-            },
-            acceptSubuserEdit(subuserName){
-                this.$vs.notify({
-                    color:'success',
-                    title:subuserName + 'was edited successfully',
-                    // text:''
-                })
-            },
-            closeSubuserEdit(subuserName){
-                this.$vs.notify({
-                    color:'danger',
-                    title:subuserName + 'was not edited',
-                    text:'you can always change your mind!'
-                })
-            },
-            // -----------------------------------------
         },
         
         beforeMount(){

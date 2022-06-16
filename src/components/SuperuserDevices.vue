@@ -133,7 +133,7 @@
                     type:'confirm',
                     color: 'danger',
                     title: 'Delete Device',
-                    text: 'Are you sure you want to Unarchive ' + deviceName + " You Can't Undo The Deletion After Pressing Accept",
+                    text: 'Are you sure you want to Delete ' + '"' + deviceName + '"' + " you can't undo that action after pressing accept",
                     accept: this.delete,
                 })
 
