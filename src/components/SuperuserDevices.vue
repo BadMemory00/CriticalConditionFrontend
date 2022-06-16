@@ -15,8 +15,8 @@
                                     Archived By : <span style="color: #00A99D">{{device.lastEditBy}}</span>
                                 </p>
                                 <div class="delete-unarchive">
-                                    <vs-button class="delete-button" color="danger" type="line">Delete</vs-button>
-                                    <vs-button class="unarchive-button" color="warning" type="line">Unarchive</vs-button>
+                                    <vs-button @click="openConfirmDelete(device.name, device.id, index)" class="delete-button" color="danger" type="line">Delete</vs-button>
+                                    <vs-button @click="openConfirmUnarchive(device.name, device.id, index)" class="unarchive-button" color="warning" type="line">Unarchive</vs-button>
                                 </div>
                             </vs-dropdown-menu>
                         </vs-dropdown>
@@ -65,6 +65,11 @@
                 maximumFMEARiskSccore: 975,
                 devices: [],
                 searchQuery:'',
+                unarchiveOrDeleteDevice: {
+                    deviceId : ''
+                },
+                deviceId: '',
+                deviceIndex: -1,
             }
         },
         props: {
@@ -103,6 +108,73 @@
                     this.$vs.loading.close()
                 })
             },
+            openConfirmUnarchive(deviceName, deviceId, deviceIndex){
+                this.$vs.dialog({
+                    type:'confirm',
+                    color: 'warning',
+                    title: 'Unarchive Device',
+                    text: 'Are you sure you want to Unarchive ' + deviceName,
+                    accept: this.unarchive,
+                })
+
+                this.unarchiveOrDeleteDevice.deviceId = deviceId
+                this.deviceIndex = deviceIndex
+            },
+            unarchive(){
+                this.callUnarchiveOrDeleteDeviceAPI(
+                        '/superuser/devices/unarchive',
+                        'Device Unarchived Successfully',
+                        'You can find this devics in the Devices tab',
+                        this.primaryColor
+                    )
+            },
+            openConfirmDelete(deviceName, deviceId, deviceIndex){
+                this.$vs.dialog({
+                    type:'confirm',
+                    color: 'danger',
+                    title: 'Delete Device',
+                    text: 'Are you sure you want to Unarchive ' + deviceName + " You Can't Undo The Deletion After Pressing Accept",
+                    accept: this.delete,
+                })
+
+                this.unarchiveOrDeleteDevice.deviceId = deviceId
+                this.deviceIndex = deviceIndex
+            },
+            delete(){
+                this.callUnarchiveOrDeleteDeviceAPI(
+                        '/superuser/devices/delete',
+                        'Device Deleted Successfully',
+                        'This Device Can not be Recovered',
+                        this.primaryColor
+                    )
+            },
+            callUnarchiveOrDeleteDeviceAPI(endPoint, title, text, color){
+                this.$vs.loading({
+                    color: this.primaryColor
+                });
+
+                axios.post(this.$websiteLink + endPoint, this.unarchiveOrDeleteDevice, {
+                    headers:{
+                        'Authorization': localStorage.getItem(this.$superuserToken)
+                    }
+                })
+                .then(response => {
+                    if (response.status == 200) {
+                        this.$vs.notify({title: title, text: text, color: color})
+
+                        // remove devide from devies list
+                        if (this.deviceIndex > -1) {
+                            this.devices.splice(this.deviceIndex, 1)
+                        }
+                    }
+                })
+                .catch(error => {
+                    this.catchAPIError(error)
+                })
+                .finally(() => {
+                    this.$vs.loading.close()
+                })
+            },
 
             catchAPIError(error){
                 if (error.response.status == 401) {
@@ -116,6 +188,7 @@
                     console.log(error);
                 }
             },
+
             format_date(value){
                 return moment(String(value)).format('MMMM Do YYYY')
                 // return moment(String(value)).fromNow()
