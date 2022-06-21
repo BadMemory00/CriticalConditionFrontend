@@ -83,7 +83,7 @@
                     .then(response => {
                         this.$vs.notify({title:'Success',text:'login was successfull, moving you to sub-user page....',color:'success'})
                         if(response.status == 200){
-                            this.$router.push('/subuser/home');
+                            this.$router.push('/subuser');
                         }
                         console.log(response.status)
                     })

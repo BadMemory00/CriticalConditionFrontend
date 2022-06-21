@@ -1,46 +1,47 @@
 <template>
- <div class="row">
-    <div class="col-lg-4 col-md-12 col-sm-12">
-        <img src="../assets/SignupPhoto.png" class="image"/>
-    </div>
-    <div class="col-lg-8 col-md-12 col-sm-12">
-        <div class="text-center">
-            <p class="hospital-details-text">Write your Hosptail's details</p>
-        </div>
-        <div class="row form">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="row">
-                    <vs-input class="form-content" label="Hospital name" placeholder="write here..." v-model="superUser.HospitalName" color="#00A99D"/>
-                    <vs-input class="form-content" label="Email" placeholder="write here..." v-model="superUser.Email" color="#00A99D"/>
-                    <vs-input class="form-content" type="password" label="Password" placeholder="write here..." v-model="superUser.Password" color="#00A99D"/>
+    <vs-row vs-w=12>
+        <vs-col vs-type="flex" vs-justify="center" vs-align="center" vs-lg=4 vs-sm=12>
+            <img src="../assets/SignupPhoto.png" class="image"/>
+        </vs-col>
+        <vs-col vs-lg=8 vs-sm=12>
+            <div>
+                <div class="text-center">
+                    <p class="hospital-details-text">Write your Hosptail's details</p>
+                </div>
+                <vs-row vs-w=12>
+                    <vs-col vs-lg=6 vs-sm=6 vs-xs=12>
+                        <div class="form-left-side">
+                            <vs-input class="form-content" label="Hospital name" placeholder="write here..." v-model="superUser.HospitalName" color="#00A99D"/>
+                            <vs-input class="form-content" label="Email" placeholder="write here..." v-model="superUser.Email" color="#00A99D"/>
+                            <vs-input class="form-content" type="password" label="Password" placeholder="write here..." v-model="superUser.Password" color="#00A99D"/>
 
-                    <vs-select class="form-content" autocomplete label="Hospital Specialty" v-model="superUser.HospitalSpeciality" color="#00A99D">
-                        <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in hospitalSpecialities" />
-                    </vs-select>
+                            <vs-select class="form-content" autocomplete label="Hospital Specialty" v-model="superUser.HospitalSpeciality" color="#00A99D">
+                                <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="item,index in hospitalSpecialities" />
+                            </vs-select>
 
-                    <vs-input class="form-content" type="number" label="Phone Number" placeholder="write here..." v-model="superUser.PhoneNumber" color="#00A99D"/>
+                            <vs-input class="form-content" type="number" label="Phone Number" placeholder="write here..." v-model="superUser.PhoneNumber" color="#00A99D"/>
+                        </div>
+                    </vs-col>
+                    <vs-col vs-lg=6 vs-sm=6 vs-xs=12>
+                        <div class="form-right-side address-fieldset">
+                            <p class="legend">Address</p>
+                            <vs-input class="form-content" label="Country" placeholder="write here..." v-model="superUser.HospitalCountry" color="#00A99D"/>
+                            <vs-input class="form-content" label="State" placeholder="write here..." v-model="superUser.HospitalState" color="#00A99D"/>
+                            <vs-input class="form-content" label="city" placeholder="write here..." v-model="superUser.HospitalCity" color="#00A99D"/>
+                            <vs-input class="form-content" label="Street" placeholder="write here..." v-model="superUser.HospitalStreet" color="#00A99D"/>
+                        </div>
+                    </vs-col>     
+                </vs-row>
+                <div class="text-center">
+                    <div class="">
+                        <vs-button class="signup-button" @click="signUp" color="#00A99D">Create Account</vs-button>
+                        <!-- <button class=""  > Sign Up</button><br> -->
+                    </div>
+                    <p class="member-text">Already a member? <router-link to="/login" style="color: #00a89c; font-weight: 700;">Login</router-link></p>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="row address-fieldset">
-                        <p class="legend">Address:</p>
-                        <vs-input label="Country" placeholder="write here..." v-model="superUser.HospitalCountry" color="#00A99D"/>
-                        <vs-input label="State" placeholder="write here..." v-model="superUser.HospitalState" color="#00A99D"/>
-                        <vs-input label="city" placeholder="write here..." v-model="superUser.HospitalCity" color="#00A99D"/>
-                        <vs-input label="Street" placeholder="write here..." v-model="superUser.HospitalStreet" color="#00A99D"/>
-                </div>
-            </div>     
-        </div>
-        <div class="text-center">
-            <div class="">
-                <vs-button class="signup-button" @click="signUp" color="#00A99D">Create Account</vs-button>
-                <!-- <button class=""  > Sign Up</button><br> -->
-            </div>
-            <p class="member-text">Already a member? <router-link to="/login" style="color: #00a89c; font-weight: 700;">Login</router-link></p>
-        </div>
-    </div>
-</div>
-
+        </vs-col>
+    </vs-row>
 </template>
 
 
@@ -107,10 +108,6 @@
     p{
         font-family: 'Segoe UI', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     }
-    .form-content{
-        width: 100%;
-        padding: 0 1.6rem 0 1.6rem
-    }
     .image{
         width: 100%;
         height: 100%;
@@ -118,36 +115,46 @@
     .hospital-details-text{
         font-size: 2rem;
         font-weight: 700;
+    
     }
-    .form{
-        margin: 1rem;
+    .form-content{
+        padding: 0 1.6rem 0 1.6rem;
+        width: 100%;
     }
-    .full-form label{
-        font-size: 1em;
-        font-weight: 600;
+    .form-left-side{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    .signup-button{
-        width:35%;
-        border-radius: 10px;
-        margin-top: 1rem;
-    }
-    .member-text{
-        margin-top: 1rem;
+    .form-right-side{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 85%;
+        margin-left: 7.5%;
     }
     .address-fieldset{
-        border: .02em solid grey;
+        border: .02em solid rgb(192, 192, 192);
         border-radius: .6em;
-        padding:16px;	
+        padding: 1rem 0 1rem 0;	
         position: relative;
-        margin-top: 1.5rem;
+        margin-top: 1.7rem;
     }
     .legend{
         font-size: 1.2em;
         font-weight: 400;
         position: absolute;
         top: -.9em;
+        left: 2rem;
         background-color: white;
-        width: 20%;
+        color: #00a89c;
     }
-    
+    .signup-button{
+        width:35%;
+        border-radius: 10px;
+        margin-top: 2rem;
+    }
+    .member-text{
+        margin-top: 1rem;
+    }
 </style>
