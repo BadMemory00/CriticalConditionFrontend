@@ -104,7 +104,7 @@
                                 <vs-card class="">
                                     <div slot="header">
                                         <h5 style="color: #DC143C">
-                                            Deleted
+                                            Archived
                                         </h5>
                                     </div>
                                     <div v-for="(archivedLog, index) in archivedLogs" :key="index">

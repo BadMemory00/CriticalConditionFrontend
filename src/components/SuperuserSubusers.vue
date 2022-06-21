@@ -12,7 +12,7 @@
                         <h6 style="padding-left:3rem">{{technicians.length}}</h6>
                     </vs-col>
                     <vs-col vs-lg="5" vs-sm="12" vs-type="flex" vs-justify="flex-end">
-                        <vs-button @click="isCreateSubUserModalActive = true" :color="primaryColor" icon="group_add" type="line" class="add-subusers-button">Add Sub-users</vs-button>
+                        <vs-button @click="isCreateSubUserModalActive = true; newSubuser.userName = ''; newSubuser.role = ''" :color="primaryColor" icon="group_add" type="line" class="add-subusers-button">Add Sub-users</vs-button>
                     </vs-col>
                 </vs-row>
             </div>
@@ -38,7 +38,7 @@
                             <vs-icon :color="primaryColor" icon="more_horiz"></vs-icon>
                             <vs-dropdown-menu>
                                 <div class="text-center" style="width: 9rem; padding: .2rem">
-                                    <vs-button @click="openEditSubuserModal(subuser.code, subuser.userName, subuser.role)" color="warning" type="line" style="width: 100%; margin: .2rem">Edit Sub-user</vs-button>
+                                    <vs-button @click="openEditSubuserModal(subuser.code, subuser.userName, subuser.role)" color="#C0C0C0" type="line" style="width: 100%; margin: .2rem">Edit Sub-user</vs-button>
                                     <!-- <span style="color: #00A99D">|</span> -->
                                     <vs-button @click="openConfirmDelete(subuser.userName, subuser.code)" color="danger" type="line" style="width: 100%; margin: .2rem">Delete Sub-user</vs-button>
                                 </div>
@@ -57,26 +57,6 @@
                             </vs-col>
                         </vs-row>
                     </div>
-                    <!-- edit subuser modal -->
-                    <vs-prompt class=""
-                        title="Edit Sub-user"
-                        color="warning"
-                        button-accept="line"
-                        button-cancel="line"
-                        accept-text="Edit"
-                        cancel-text="Close"
-                        @cancel="newSubuser.userName='',newSubuser.role=''"
-                        @accept="acceptSubuserEdit(subuser.userName)"
-                        @close="closeSubuserEdit(subuser.userName)"
-                        :active.sync="isEditSubUserModalActive">
-                        <div class="con-exemple-prompt">
-                            <span class="subuser-form-text">User Name</span>
-                            <vs-input class="username-input" placeholder="Wrtie here..." v-model="editSubuser.userName" :color="primaryColor"/>
-                            <span class="subuser-form-text">Role</span>
-                            <vs-radio class="subuser-form-radio" :color="primaryColor" v-model="editSubuser.role" vs-name="Operator" vs-value="Operator">Operator</vs-radio>
-                            <vs-radio class="subuser-form-radio" :color="primaryColor" v-model="editSubuser.role" vs-name="Technician" vs-value="Technician">Technician</vs-radio>
-                        </div>
-                    </vs-prompt>
                 </vs-card>
             </div>
         </vs-card>
@@ -101,8 +81,26 @@
                 <vs-radio class="subuser-form-radio" :color="primaryColor" v-model="newSubuser.role" vs-name="Technician" vs-value="Technician">Technician</vs-radio>
             </div>
         </vs-prompt>
-
-
+        <!-- edit subuser modal -->
+        <vs-prompt class=""
+            title="Edit Sub-user"
+            color="#C0C0C0"
+            button-accept="line"
+            button-cancel="line"
+            accept-text="Edit"
+            cancel-text="Close"
+            @cancel="newSubuser.userName='',newSubuser.role=''"
+            @accept="acceptSubuserEdit()"
+            @close="closeSubuserEdit()"
+            :active.sync="isEditSubUserModalActive">
+            <div class="con-exemple-prompt">
+                <span class="subuser-form-text">User Name</span>
+                <vs-input class="username-input" placeholder="Wrtie here..." v-model="editSubuser.userName" :color="primaryColor"/>
+                <span class="subuser-form-text">Role</span>
+                <vs-radio class="subuser-form-radio" :color="primaryColor" v-model="editSubuser.role" vs-name="Operator" vs-value="Operator">Operator</vs-radio>
+                <vs-radio class="subuser-form-radio" :color="primaryColor" v-model="editSubuser.role" vs-name="Technician" vs-value="Technician">Technician</vs-radio>
+            </div>
+        </vs-prompt>
     </div>
 </template>
 
@@ -198,13 +196,13 @@
                 this.editSubuser.userName = userName;
                 this.editSubuser.role = role;
             },
-            acceptSubuserEdit(userName){
-                this.editOrAddSubuser(this.APIsEndPoints.editSubuser, this.editSubuser, '"' + userName + '" Edited Successfully')
+            acceptSubuserEdit(){
+                this.editOrAddSubuser(this.APIsEndPoints.editSubuser, this.editSubuser, '"' + this.editSubuser.userName + '" Edited Successfully')
             },
-            closeSubuserEdit(subuserName){
+            closeSubuserEdit(){
                 this.$vs.notify({
                     color:'danger',
-                    title: '"' + subuserName + '" was not edited',
+                    title: '"' + this.editSubuser.userName + '" was not edited',
                     text:'you can always change your mind!'
                 })
             },
@@ -245,6 +243,7 @@
                     color: 'danger',
                     title: 'Delete Sub-user',
                     text: 'Are you sure you want to delete ' + '"' + userName + '"' + " you can't undo that action after pressing accept",
+                    style: 'z-index: 50000;',
                     accept: this.delete,
                 })
 

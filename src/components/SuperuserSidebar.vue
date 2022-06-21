@@ -4,8 +4,14 @@
 
     <vs-sidebar v-model="active" :hidden-background="hiddenBackground" :reduce="reduce" reduce-not-rebound reduce-not-hover-expand parent="body" color="success" default-index="1" class="sidebarx" spacer >
       <div class="header-sidebar" slot="header">
-        <img v-if="!smallLogo" @click="ifOpenedInSmallScreenSwtich" src="../assets/LandingLogo.png" height="40rem" />
-        <img v-if="smallLogo" @click="openSideBarWhenReduced" style="cursor: pointer" src="../assets/LandingLogoCut.png" height="40rem" />
+        <i v-if="smallScreen && smallLogo" @click="openSideBarWhenReduced" class="material-icons sidebar-arrow text-center"> 
+          keyboard_double_arrow_right
+        </i>
+        <i v-if="smallScreen && !smallLogo" @click="ifOpenedInSmallScreenSwtich" class="material-icons sidebar-arrow"> 
+          keyboard_double_arrow_left
+        </i>
+        <img v-if="!smallLogo" src="../assets/LandingLogo.png" height="40rem" />
+        <img v-if="smallLogo" src="../assets/LandingLogoCut.png" height="40rem" />
       </div>
         <vs-sidebar-item to="/superuser/home" index="1" icon="home" class="sidebar-item">
           Home
@@ -113,7 +119,16 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
+    position: relative;
+  }
+  .sidebar-arrow{
+    position: absolute;
+    right: -1.2rem;
+    top: .48rem;
+    color: var(--primarycolor);
+    background-color: #f0eeee;
+    border-radius: 50%;
+    cursor: pointer;
   }
   .sidebar-item :hover{
     color: var(--primarycolor) !important;
@@ -124,8 +139,7 @@
   .vs-sidebar-success .vs-sidebar-item-active a{
     color: var(--primarycolor) !important;
   }
-  .con-vs-dialog .vs-dialog{
-    width: 80%; 
-    margin-left: 3.7rem;
-  }
+  .con-vs-dialog{
+    z-index: 50000;
+  } 
 </style>
