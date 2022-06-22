@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="HomeButton">
-      <router-link to="/subuser" class="HomeButton-btn"><font-awesome-icon icon="fa-solid fa-house" class="HomeButton-btnIcon"/>Home</router-link>
+      <router-link to="home" class="HomeButton-btn"><font-awesome-icon icon="fa-solid fa-house" class="HomeButton-btnIcon"/>Home</router-link>
     </div>
   </div>
 </template>

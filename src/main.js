@@ -25,6 +25,10 @@ Vue.prototype.$websiteLink = 'https://criticalconditionbackend.azurewebsites.net
 Vue.prototype.$isSuperuserAuthorized = 'isSuperuserAuthorized';
 Vue.prototype.$superuserToken = 'superuserToken';
 
+Vue.prototype.$isSubuserAuthorized = 'isSubuserAuthorized';
+Vue.prototype.$subuserToken = 'subuserToken';
+
+Vue.prototype.$subuserUserName = 'sub user name';
 
 //---------------------
 

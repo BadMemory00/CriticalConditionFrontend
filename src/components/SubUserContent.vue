@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-6 card-container position-relative py-4">
         <span class="container-icon position-absolute">
-          <router-link to="/adddevice">
+          <router-link to="/subuser/adddevice">
             <font-awesome-icon icon="fa-solid fa-plus" class="plus-icon" />
           </router-link>
         </span>
@@ -35,174 +35,17 @@
           <span class="bg-dark text-white p-1 rounded-3"> 6 of 7 </span>
         </div>
       </div>
-
-      <div class="col-md-6" id="box1">
-        test
-        <!-- 
-     <div class="card card-3">
-          <div class="card-body pb-4">
-            <div class="card-title color-txt-2 text-center">
-              {{ DeviceName }}
-              <SubUserContentDropDown class="bg-color" />
-              <br />
-              <span class="iammodel-2"> {{ Model }}</span>
-              <hr />
-            </div>
-            <div class="card">
-              <div class="card-body d-flex">
-                <p class="card-title card-title-2 me-5">General Info</p>
-                <div class="d-flex">
-                  <div class="General-Info">
-                    <span class="General-Info-text">Brand</span>
-                    <div class="About">
-                      <label class="search3">{{ label1 }}</label>
-                    </div>
-                  </div>
-                  <div class="General-Info">
-                    <span class="General-Info-text">Type of services</span>
-                    <div class="About">
-                      <label class="search3">{{ label2 }}</label>
-                    </div>
-                  </div>
-                  <div class="General-Info">
-                    <span class="General-Info-text">Purashse Date</span>
-                    <div class="About">
-                      <label class="search3"
-                        ><font-awesome-icon
-                          icon="fa-solid fa-calendar"
-                          class="calender"
-                        />{{ label3 }}</label
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card marginTop">
-              <div class="card-body d-flex">
-                <p class="card-title card-title-2 me-5">Probability Info</p>
-                <div class="d-flex">
-                  <div class="General-Info">
-                    <span class="General-Info-text">Working Days</span>
-                    <div class="About">
-                      <label class="search3">{{ label4 }}</label>
-                      <span class="little">per year</span>
-                    </div>
-                  </div>
-                  <div class="General-Info">
-                    <span class="General-Info-text">No.Failures</span>
-                    <div class="About">
-                      <label class="search3">{{ label5 }}</label>
-                      <span class="little">times</span>
-                    </div>
-                  </div>
-                  <div class="General-Info">
-                    <span class="General-Info-text">Downtime</span>
-                    <div class="About">
-                      <label class="search3">{{ label6 }}</label>
-                      <span class="little">days</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card marginTop">
-              <div class="card-body d-flex">
-                <p class="card-title card-title-2 me-5">Severity Info</p>
-                <div class="d-flex">
-                  <div class="General-Info">
-                    <span class="General-Info-text">Safety</span>
-                    <div class="About">
-                      <label class="search3">{{ label7 }}</label>
-                    </div>
-                  </div>
-                  <div class="General-Info">
-                    <span class="General-Info-text">Function</span>
-                    <div class="About">
-                      <label class="search3">{{ label8 }}</label>
-                    </div>
-                  </div>
-                  <div class="General-Info">
-                    <span class="General-Info-text">Area</span>
-                    <div class="About">
-                      <label class="search3">{{ label9 }}</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body d-flex card-edit">
-                <p class="card-title card-title-2 me-5">Severity Info</p>
-                <div class="d-flex">
-                  <div class="General-Info">
-                    <span class="General-Info-text">Service cost</span>
-                    <div class="About">
-                      <label class="search3">{{ label10 }}</label>
-                    </div>
-                  </div>
-                  <div class="General-Info">
-                    <span class="General-Info-text">Operation cost</span>
-                    <div class="About">
-                      <label class="search3">{{ label11 }}</label>
-                    </div>
-                  </div>
-                  <div class="General-Info">
-                    <span class="General-Info-text">Purashse cost</span>
-                    <div class="About">
-                      <label class="search3">{{ label12 }}</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card card-4 marginTop">
-              <div class="card-body d-flex">
-                <p class="card-title card-title-2 me-5">Detectability Info</p>
-                <div class="d-flex">
-                  <div class="General-Info">
-                    <span class="General-Info-text">Detection</span>
-                    <div class="About">
-                      <label for="" class="search3">{{ label13 }}</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card card-4 marginTop">
-              <div class="card-body d-flex">
-                <p class="card-title card-title-2 me-5">Risk Info</p>
-                <div class="d-flex">
-                  <div class="General-Info">
-                    <span class="General-Info-text">Detection</span>
-                    <form class="About-range">
-                      <input
-                        type="range"
-                        min="0"
-                        max="710"
-                        value="250"
-                        class="search5"
-                      />
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-       -->
-      </div>
     </div>
   </div>
 </template>
 
 <script>
 import SubUserContentDeviceCard from "./SubUserContentDeviceCard.vue";
-// import SubUserContentDropDown from "./SubUserContentDropDown.vue";
 
 export default {
   name: "SubUsercontent",
   components: {
     SubUserContentDeviceCard,
-    // SubUserContentDropDown,
   },
   data() {
     return {

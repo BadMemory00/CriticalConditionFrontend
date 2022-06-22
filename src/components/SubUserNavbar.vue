@@ -1,87 +1,59 @@
-<template>
-  <div class="fixedNav py-4">
-    <div class="HName text-start">
-      <router-link to="/" class="fw-bold heading-link">{{
-        hospitalName
-      }}</router-link>
-    </div>
-    <div class="dDown text-end">
-      <button
-        class="btn btn-transparent dropdown-toggle"
-        type="button"
-        id="dropdownMenuButton1"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Hello, <span>{{ userName }}</span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li>
-          <router-link class="dropdown-item Log" to="/"
-            ><font-awesome-icon
-              class="icon1"
-              icon="fa-solid fa-right-from-bracket"
-            />LogOut</router-link
-          >
-        </li>
-      </ul>
-    </div>
+<template >
+  <div>
+    <vs-navbar style="padding:0 1rem 0.2rem 1rem" color="#f8f9fa" class="nabarx">
+      <div slot="title">
+        <vs-navbar-title>
+          <!-- <router-link to="home">  -->
+            <img src="../assets/LandingLogo.png" height="60rem" style="padding: .4rem 0 0 0;" />
+          <!-- </router-link> -->
+        </vs-navbar-title>
+      </div>
+        <vs-navbar-item index="0">
+            <vs-button @click="openConfirmLogout()" icon="logout" color="danger" type="flat">log out</vs-button>
+        </vs-navbar-item>
+    </vs-navbar>
+
+    <router-view></router-view>
   </div>
-</template>
+</template> 
 
 <script>
+
+
 export default {
-  name: "navbar",
-  data() {
-    return {
-      hospitalName: "HospitalName",
-      userName: "UserName",
-    };
-  },
-};
+  data:()=>({
+    
+  }),
+  methods: {
+      openConfirmLogout(){
+        this.$vs.dialog({
+          type:'confirm',
+          color: 'danger',
+          title: 'Logout',
+          text: 'Are you sure you want to logout',
+          accept:this.logOut
+        })
+      },
+      logOut(){
+        localStorage.setItem(this.$isSubuserAuthorized, '');
+        localStorage.setItem(this.$subuserToken, '');
+        this.$router.go('/');
+      }
+    },
+}
 </script>
 
-<style scoped>
-  .HName {
-    float: left;
-    color: #00a99d;
-    display: flex;
-    font-size: 1.3rem;
+<style>
+  :root{
+    --primarycolor: #00A99D;
   }
-  .dDown {
-    position: fixed;
-    right: 10rem;
-  }
-  .button {
-    background-color: white;
+
+  .drob-down-for-logout a{
     color: black;
-    border: 0;
-    position: relative;
-    /* left: 200px; */
-  }
-  .button:hover {
-    background-color: #00a99d;
-    color: black;
-    border: 0;
-  }
-  .button:focus {
-    background-color: #00a99d;
-    color: black;
-    border: 0;
-  }
-  .icon1 {
-    margin-right: 10px;
-    opacity: 0.5;
-  }
-  .Log:hover > .icon1 {
-    opacity: 1;
-    color: #00a99d;
-  }
-  .heading-link {
     text-decoration: none;
-    color: #00a99d;
   }
-  .heading-link:hover {
-    color: #00a99d;
+  .drob-down-for-logout span{
+    color: #00A99D;
   }
+
 </style>
