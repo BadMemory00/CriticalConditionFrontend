@@ -9,7 +9,7 @@
         </vs-navbar-title>
       </div>
         <vs-navbar-item index="0">
-            <vs-button @click="openConfirmLogout()" icon="logout" color="danger" type="flat">log out</vs-button>
+            <vs-button @click="openConfirmLogout()" icon="logout" color="danger" type="gradient">log out</vs-button>
         </vs-navbar-item>
     </vs-navbar>
 
@@ -21,9 +21,7 @@
 
 
 export default {
-  data:()=>({
-    
-  }),
+
   methods: {
       openConfirmLogout(){
         this.$vs.dialog({
@@ -54,6 +52,15 @@ export default {
   }
   .drob-down-for-logout span{
     color: #00A99D;
+  }
+  
+  /* 
+    ugly practice,, since this component styles are not Scoped, 
+    i put this style in here to show the select options, 
+    because i counldn't do it in the original component which is SubUserContent
+  */
+  .vs-select--options{
+    z-index: 50001;
   }
 
 </style>

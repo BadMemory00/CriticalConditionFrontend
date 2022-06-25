@@ -35,3 +35,19 @@ export default({
   },
 })
 </script>
+<style>
+  ::-webkit-scrollbar {
+    width: 10px;                              /* width of the entire scrollbar */
+  }
+
+  ::-webkit-scrollbar-track {
+    /*background: #f7f9f8;*/                  /* color of the tracking area */
+    border: 1px solid var(--primarycolor);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primarycolor);    /* color of the scroll thumb */
+    border-radius: 10px;                      /* roundness of the scroll thumb */
+  } 
+</style>

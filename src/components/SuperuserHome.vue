@@ -103,13 +103,13 @@
                             <div>
                                 <vs-card class="">
                                     <div slot="header">
-                                        <h5 style="color: #DC143C">
+                                        <h5 style="color: rgb(255,186,0)">
                                             Archived
                                         </h5>
                                     </div>
                                     <div v-for="(archivedLog, index) in archivedLogs" :key="index">
                                         <p >
-                                            {{archivedLog.subUserUserName}} <span style="color: #DC143C">{{archivedLog.action}}</span> {{archivedLog.deviceName}} <span style="color: #00A99D">{{format_date(archivedLog.actionDate)}}</span>
+                                            {{archivedLog.subUserUserName}} <span style="color: rgb(255,186,0)">{{archivedLog.action}}</span> {{archivedLog.deviceName}} <span style="color: #00A99D">{{format_date(archivedLog.actionDate)}}</span>
                                         </p>
                                         <hr>
                                     </div>
@@ -234,7 +234,7 @@
                     localStorage.setItem(this.$isSuperuserAuthorized, '');
                     localStorage.setItem(this.$superuserToken, '');
                     this.$vs.notify({title:'ERROR',text:'Your Session Expired, Please Login Again',color:'danger'})
-                    this.$router.go('/login');
+                    setTimeout(() => this.$router.go('/login'), 2500);
                 }
                 else{
                     this.$vs.notify({title:'ERROR',text:'an Error Occured, Please Try Again',color:'danger'})
