@@ -31,6 +31,11 @@
     </div>
     <div class="right-down-side">
       <div v-if="openSingleDevice" class="device-main-card">
+        <div @click="openSingleDevice = false" class="x-sign">
+          <i class="material-icons">
+              close
+          </i>
+        </div>
         <div class="device-main-card-drobdown">
           <vs-dropdown vs-custom-content vs-trigger-click>
             <vs-icon style="font-size: 35px" color="#00A99D" icon="more_vert"></vs-icon>
@@ -39,8 +44,8 @@
               <div class="drobdown-buttons">
                 <vs-button @click="quickEditModalOpen(singleDecive)" color="#CCCCCC" type="border">Quick Edit</vs-button>
                 <hr>
-                <vs-button  color="#C0C0C0" type="border">Edit</vs-button>
-                <vs-button  color="warning" type="border">Archive</vs-button>
+                <vs-button @click="editModalOpen(singleDecive)" color="#C0C0C0" type="border">Edit</vs-button>
+                <vs-button @click="archiveModalOpen()" color="warning" type="border">Archive</vs-button>
               </div>
             </vs-dropdown-menu>
           </vs-dropdown>
@@ -104,7 +109,10 @@
     </div>
 
     <!-- Add, Quick Edit, Edit, Archive MODALS -->
+    
+    <!-- Add Device -->
     <vs-prompt
+      class="add-device-modal"
       :color="primaryColor"
       title='Add Device'
       @accept="acceptDeviceCreate"
@@ -156,8 +164,9 @@
               <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in DetectionValues" />
             </vs-select>
           </div>
-     </vs-prompt>
+    </vs-prompt>
 
+    <!-- Quick Edit Device -->
     <vs-prompt
       color="#CCCCCC"
       title='Quick Edit'
@@ -170,8 +179,63 @@
         <vs-input class="input-item" :color="primaryColor" type="number" label="No. of Failures (Last Year)" placeholder="" v-model="quickEditDevice.numberOfFailures"/>
         <vs-input class="input-item" :color="primaryColor" type="number" label="Down Time (Last Year)" placeholder="" v-model="quickEditDevice.downTime"/>
       </div>
-          
     </vs-prompt>
+
+    <!-- Edit Device -->
+    <vs-prompt
+      class="add-device-modal"
+      color="#C0C0C0"
+      title='Add Device'
+      @accept="acceptDeviceEdit"
+      @close="closeDeviceEdit"
+      accept-text="Edit"
+      button-accept="line"
+      :active.sync="editDeviceModalActive">
+          <h4 class="text-center">Edit Device</h4>
+          <div class="info-card">
+            <div class="legend">
+              <p>General Info</p>
+            </div>
+            <vs-input class="input-item" :color="primaryColor" type="text" label="Name" placeholder="Write here.." v-model="editedDevice.name"/>
+            <vs-input class="input-item" :color="primaryColor" type="text" label="Model" placeholder="Write here.." v-model="editedDevice.model"/>
+            <vs-input class="input-item" :color="primaryColor" type="text" label="Brand" placeholder="Write here.." v-model="editedDevice.brand"/>
+            <vs-input class="input-item" :color="primaryColor" type="text" label="Type of Service" placeholder="Write here.." v-model="editedDevice.typeOfService"/>
+            <vs-input class="input-item" :color="primaryColor" type="date" label="Prchasing Data" v-model="editedDevice.purchaseDate" icon="calendar_today"/>
+          </div>
+          <div class="info-card">
+            <div class="legend">
+              <p>Probability Info</p>
+            </div>
+            <vs-input class="input-item" :color="primaryColor" type="number" min=0 label="No. of Working Days (Yearly)" placeholder="Write here.." v-model="editedDevice.numberOfWorkingDays"/>
+            <vs-input class="input-item" :color="primaryColor" type="number" label="No. of Failures (Last Year)" placeholder="Write here.." v-model="editedDevice.numberOfFailures"/>
+            <vs-input class="input-item" :color="primaryColor" type="number" label="Down Time (Last Year)" placeholder="Write here.." v-model="editedDevice.downTime"/>
+          </div>
+          <div class="info-card">
+            <div class="legend">
+              <p>Severity Info</p>
+            </div>
+            <vs-select class="input-item" :color="primaryColor" autocomplete label="Safety" v-model="editedDevice.safety">
+              <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in SafeyValues" />
+            </vs-select>
+            <vs-select class="input-item" :color="primaryColor" autocomplete label="Function" v-model="editedDevice.function">
+              <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in FunctionValues" />
+            </vs-select>
+            <vs-select class="input-item" :color="primaryColor" autocomplete label="Area" v-model="editedDevice.area">
+              <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in AreaValues" />
+            </vs-select>
+            <vs-input class="input-item" :color="primaryColor" type="number" label="Service Cost" placeholder="Write here.." v-model="editedDevice.serviceCost" icon="attach_money"/>
+            <vs-input class="input-item" :color="primaryColor" type="number" label="Operational Cost" placeholder="Write here.." v-model="editedDevice.operationCost" icon="attach_money"/>
+            <vs-input class="input-item" :color="primaryColor" type="number" label="Prchasing Cost" placeholder="Write here.." v-model="editedDevice.purchasingCost" icon="attach_money"/>
+          </div>
+          <div class="info-card">
+            <div class="legend">
+              <p>Detection Info</p>
+            </div>
+            <vs-select class="input-item" :color="primaryColor" autocomplete label="Detection" v-model="editedDevice.detection">
+              <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in DetectionValues" />
+            </vs-select>
+          </div>
+     </vs-prompt>
 
 
     <!-- -------------------------------- -->
@@ -193,6 +257,8 @@
             getsingleDevice: '/subuser/viewdevices/',
             addDevice: '/subuser/device/add',
             quickEditDevice: '/subuser/device/quickedit',
+            editDevice: '/subuser/device/edit',
+            archiveDevice: '/subuser/device/archive',
           },
 
           maximumFMEARiskSccore: 975,
@@ -239,7 +305,7 @@
             {text:'Micekkes',value:'Micekkes'},
           ],
           AreaValues:[
-            {text:'OR',value:'OR'},
+            {text:'OR',value:'OR'}, 
             {text:'Emergency ICU',value:'EmergencyICU'},
             {text:'Radiology Labs',value:'RadiologyLabs'},
             {text:'Internal Units',value:'InternalUnits'},
@@ -252,6 +318,8 @@
             {text:'High Chance',value:'HighChance'},
             {text:'Easy to Detect',value:'EasyToDetect'},
           ],
+
+          // add
           addDeviceModalActive: false,
           newDevice: {
             "name": "",
@@ -270,11 +338,39 @@
             "purchasingCost": null,
             "detection": "",
           },
+
+          // quick edit
           quickEditModelActive: false,
           quickEditDevice: {
             "deviceId": null,
             "numberOfFailures": null,
             "downTime": null,
+          },
+
+          // edit
+          editDeviceModalActive: false,
+          editedDevice: {
+            "deviceId": "",
+            "name": "",
+            "brand": "",
+            "model": "",
+            "typeOfService": "",
+            "purchaseDate": "",
+            "numberOfWorkingDays": null,
+            "numberOfFailures": null,
+            "downTime": null,
+            "safety": "",
+            "function": "",
+            "area": "",
+            "serviceCost": null,
+            "operationCost": null,
+            "purchasingCost": null,
+            "detection": "",
+          },
+
+          // archive
+          deviceToArchive: {
+            "deviceId": "",
           },
           // ----------------------------------
         }
@@ -345,6 +441,7 @@
       },
 
       // Add, Quick Edit, Edit, Archive FUNCTIONS
+      // add
       acceptDeviceCreate(){
         this.postRequest(this.APIEndPoints.addDevice, this.newDevice, 'Device Created Successfully');
         this.newDevice = ''
@@ -357,6 +454,7 @@
           })
       },
 
+      // quick edit
       quickEditModalOpen(device){
         this.quickEditModelActive = true
 
@@ -377,6 +475,64 @@
               text:'you can always change your mind!'
           })
       },
+
+      // edit
+      editModalOpen(device){
+        this.editDeviceModalActive = true
+
+        this.editedDevice.deviceId = device.id
+        this.editedDevice.name = device.name
+        this.editedDevice.brand = device.brand
+        this.editedDevice.model = device.model
+        this.editedDevice.typeOfService = device.typeOfService
+        this.editedDevice.purchaseDate = device.purchaseDate
+        this.editedDevice.numberOfWorkingDays = device.numberOfWorkingDays
+        this.editedDevice.numberOfFailures = device.numberOfFailures
+        this.editedDevice.downTime = device.downTime
+        this.editedDevice.safety = device.safety
+        this.editedDevice.function = device.function.split(' ').join('')
+        this.editedDevice.area = device.area
+        this.editedDevice.serviceCost = device.serviceCost
+        this.editedDevice.operationCost = device.operationCost
+        this.editedDevice.purchasingCost = device.purchasingCost
+        this.editedDevice.detection = device.detection
+      },
+      acceptDeviceEdit(){
+        this.postRequest(this.APIEndPoints.editDevice, this.editedDevice, 'Device Edited Successfully');
+
+        this.openSingleDevice = false
+        setTimeout(() => this.callOpenSingleDeviceAPI(this.editedDevice.deviceId), 1000);
+      },
+      closeDeviceEdit(){
+          this.$vs.notify({
+              color:'danger',
+              title:'you did not edit the device',
+              text:'you can always change your mind!'
+          })
+      },
+
+      // archive
+      archiveModalOpen(){
+        this.deviceToArchive.deviceId = this.singleDecive.id;
+
+        this.$vs.dialog({
+          class:"my-class",
+          type:'confirm',
+          color: 'warning',
+          title: `Archive Deivce`,
+          text: 'Are you sure you want to archive this device? Once archived only your Super-user can unarchive it',
+          accept:this.acceptDeviceArchive
+        })
+      },
+      acceptDeviceArchive(){
+        this.postRequest(this.APIEndPoints.archiveDevice, this.deviceToArchive, 'Device Archived Successfully');
+        
+        this.DevicesAPI(this.APIEndPoints.getAllDevices)
+
+        this.openSingleDevice = false
+      },
+
+      //----
 
       postRequest(endPoint, body, title){
         this.$vs.loading({
@@ -471,6 +627,7 @@
     top: -1.25rem;
     left: 45%;
     cursor: pointer;
+    box-shadow: 0px 0px 8px #256143;
   }
   .add-device-plus-sign i{
     color: white;
@@ -540,15 +697,31 @@
     top: -1.1rem;
     left: 3rem;
     font-weight: 500;
-    text-shadow: 0px 0px 8px #b4b4b4;
+    text-shadow: 0px 0px 20px #b4b4b4;
   }
   .device-main-card-drobdown{
     position: absolute;
     right: .5rem;
     top: .5rem;
   }
+  .x-sign{
+    position: absolute;
+    left: .8rem;
+    top: .8rem;
+    cursor: pointer;
+  }
+  .x-sign i{
+    color: rgb(255, 0, 0); 
+    border: 2px solid #ff7f7f; 
+    border-radius: 50%;
+    transition: background-color .4s;
+  }
+  .x-sign i:hover{
+    background-color: #ff7f7f73;
+  }
   .drobdown-menu{
     width: 8rem; 
+    z-index: 20000;
   }
   .drobdown-buttons{
     display: flex;
@@ -561,15 +734,14 @@
     color: var(--primarycolor);
     border: 1px solid var(--primarycolor);
   }
-  .con-vs-dialog{
-    z-index: 50000;
+  .add-device-modal{
     align-items: flex-start;
     overflow-y: auto;
   }
-  .con-vs-dialog >>> .vs-dialog{
+  .add-device-modal >>> .vs-dialog{
     max-width: 100%;
     width: auto;
-    margin-top: 3rem;
+    margin-top: 4rem;
   }
   .quick-edit-form{
     display: flex;
@@ -611,8 +783,9 @@
     .input-item{
       padding: 0 2rem;
     }
-    .con-vs-dialog >>> .vs-dialog{
-      margin-top: 5rem;
+    .add-device-modal >>> .vs-dialog-dark{
+      position:fixed;
+      height: 100%;
     }
   }
 </style>
