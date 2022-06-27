@@ -1,20 +1,20 @@
 <template>
   <div class="">
     <LandingContent />
-    <LandingFooter />
+    <!-- <LandingFooter /> -->
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import LandingContent from '@/components/Content.vue'
-import LandingFooter from '@/components/Footer.vue'
+// import LandingFooter from '@/components/Footer.vue'
 
 export default {
   name: 'HomeView',
   components: {
     LandingContent,
-    LandingFooter
+    // LandingFooter
   }
 }
 </script>

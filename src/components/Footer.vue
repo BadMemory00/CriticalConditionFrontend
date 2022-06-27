@@ -5,7 +5,6 @@
             <p class="fw-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
             <p class="fw-light">© 2022 CriticalCondition Inc. All rights reserved</p>
         </div>
-        <!-- <div class="col-1"></div> -->
         <div class="col-md-2 mx-4">
             <p class="fw-bold mb-3">Navigation</p>
             <p class="fw-light mb-3"><a href="#" class="link-footer">Home</a></p>
