@@ -3,8 +3,8 @@
     <div style="padding: 1rem" class="row m-3">
         <div class="first-half col-lg-8 col-md-8 col-sm-12">
             <p class="display-6 heading-txt">Risk and cyber security analysis for medical devices</p>
-            <p class="fw-light content-txt mb-5">Take control and take your devices health into your own hands!</p>
-            <a href="#/signup" class="content-btn">Mange Your Devices</a>
+            <p class="fw-light content-txt mb-5">Take control and take your device's health into your own hands!</p>
+            <a href="#/signup" class="content-btn">Manage Your Devices</a>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
             <FirstLandingPhotoIcon />
@@ -28,8 +28,8 @@
             <div class=" box">
                 <h2 style="color: #00a99ec2" class=" fw-bold">Future Proof</h2>
                 <p class=" txt-card">
-                    In Critical Condition we are not only intersted in assigning a risk score for the device at the moment the device hits our database,
-                    we make sure that the score is kept up-to-date with weekly auto-calculation of the FMEA risk score and on-demand re-calculation for security score.
+                    In Critical Condition we are not only interested  in assigning a risk score for the device at the moment the device hits our database,
+                    but we also make sure that the score is kept up-to-date with weekly auto-calculation of the FMEA risk score and on-demand re-calculation for security score.
                 </p>
                 <a href="#" class="link-card">learn more →</a>
             </div>
@@ -40,8 +40,8 @@
         <div style="padding: 1rem 2rem" class="col-md-7">
             <h2 style="color: #00a99ec2" class="mb-3">No Time? No Problem</h2>
             <p class="txt-card pb-4">
-                Did your hospital just went throught a big expansion and made it that much harder to track and monitor all of your sensitive devices? 
-                well.. you are in luck! Critical Condition just made that easy for you, in fact it's so easy you can just press one button and see all you 
+                Did your hospital just go through a big expansion and made it that much harder to track and monitor all of your sensitive devices? 
+                well.. you are in luck! Critical Condition just made that easy for you, it's so easy you can just press one button and see all your 
                 connected devices in one place, along with risk scores that give you very important feedback for the health of your device. 
             </p>
             <a href="#" class="content2-btn">Learn More</a>
@@ -50,19 +50,17 @@
             <template>
                 <SecondLandingPhotoIcon />
             </template>
-            <!-- <img src="../assets/photo_2022-03-11_16-17-50.jpg" class="img-fluid" alt=""> -->
         </div>
     </div>
 
     <div style="padding: 1rem" class="row m-3">
         <div class="col-md-5" style="">
             <ThirdLandingPhotoIcon />
-            <!-- <img src="../assets/photo_2022-03-11_16-17-50.jpg" class="img-fluid" alt=""> -->
         </div>
         <div style="padding: 1rem 2rem" class="col-md-7">
             <h2 style="color: #00a99ec2" class="mb-3">Latest Tech and Best Recommendations</h2>
             <p class="txt-card pb-4">
-                Critical Conition yealds state-of-the-are, bleeding-edge technologies that, combined with our revolutionary recommendations system, 
+                Critical Condition yields state-of-the-are, bleeding-edge technologies that, combined with our revolutionary recommendations system, 
                 you can rest assured that no matter the type or quantity of your devices, you are always being served with the best the current tech has to offer
             </p>
             <a href="#" class="content2-btn">Learn More</a>
