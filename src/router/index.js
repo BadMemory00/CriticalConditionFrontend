@@ -123,32 +123,18 @@ const routes = [{
         component: () =>
             import ('../components/SubUserNavbar.vue'),
         children: [{
-                path: '/subuser/home',
-                name: 'subuser',
-                component: () =>
-                    import ('../views/SubuserHomeView.vue'),
-                beforeEnter: (to, from, next) => {
-                    if (localStorage.getItem('isSubuserAuthorized') == 'true') {
-                        next();
-                    } else {
-                        next('/login');
-                    }
+            path: '/subuser/home',
+            name: 'subuser',
+            component: () =>
+                import ('../views/SubuserHomeView.vue'),
+            beforeEnter: (to, from, next) => {
+                if (localStorage.getItem('isSubuserAuthorized') == 'true') {
+                    next();
+                } else {
+                    next('/login');
                 }
-            },
-            {
-                path: '/subuser/adddevice',
-                name: 'adddevice',
-                component: () =>
-                    import ('../views/SubuserAddDeviceView.vue'),
-                beforeEnter: (to, from, next) => {
-                    if (localStorage.getItem('isSubuserAuthorized') == 'true') {
-                        next();
-                    } else {
-                        next('/login');
-                    }
-                }
-            },
-        ]
+            }
+        }, ]
     },
 ]
 
