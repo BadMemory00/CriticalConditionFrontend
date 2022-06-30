@@ -69,13 +69,19 @@
                     HospitalStreet : ""
 				},
 				hospitalSpecialities:[
+                    {text:"Anesthesiology",value:"Anesthesiology"},
                     {text:"Cancer treatment centers",value:"Cancer treatment centers"},
-                    {text:"Trauma centers",value:"Trauma centers"},
-                    {text:"Psychiatric hospitals",value:"Psychiatric hospitals"},
-                    {text:"Oncology hospitals",value:"Oncology hospitals"},
                     {text:"Cardiac hospitals",value:"Cardiac hospitals"},
                     {text:"Children's hospitals",value:"Children's hospitals"},
-                    {text:"Women's hospitals",value:"Women's hospitals"},
+                    {text:"Clinical Chemistry",value:"Clinical Chemistry"},
+                    {text:"General Hospital",value:"General Hospital"},
+                    {text:"Microbiology",value:"Microbiology"},
+                    {text:"Oncology hospitals",value:"Oncology hospitals"},
+                    {text:"Physical Medicine",value:"Physical Medicine"},
+                    {text:"Psychiatric hospitals",value:"Psychiatric hospitals"},
+                    {text:"Radiology",value:"Radiology"},
+                    {text:"Trauma centers",value:"Trauma centers"},
+                    {text:"Othe",value:"Other"},
                 ],
 			}
 		},
