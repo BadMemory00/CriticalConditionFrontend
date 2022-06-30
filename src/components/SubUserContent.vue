@@ -136,8 +136,8 @@
               <p>Probability Info</p>
             </div>
             <vs-input class="input-item" :color="primaryColor" type="number" min=0 label="No. of Working Days (Yearly)" placeholder="Write here.." v-model="newDevice.numberOfWorkingDays"/>
-            <vs-input class="input-item" :color="primaryColor" type="number" label="No. of Failures (Last Year)" placeholder="Write here.." v-model="newDevice.numberOfFailures"/>
-            <vs-input class="input-item" :color="primaryColor" type="number" label="Down Time (Last Year)" placeholder="Write here.." v-model="newDevice.downTime"/>
+            <vs-input class="input-item" :color="primaryColor" type="number" label="No. of Failures" placeholder="Write here.." v-model="newDevice.numberOfFailures"/>
+            <vs-input class="input-item" :color="primaryColor" type="number" label="Down Time" placeholder="Write here.." v-model="newDevice.downTime"/>
           </div>
           <div class="info-card">
             <div class="legend">
@@ -207,8 +207,8 @@
               <p>Probability Info</p>
             </div>
             <vs-input class="input-item" :color="primaryColor" type="number" min=0 label="No. of Working Days (Yearly)" placeholder="Write here.." v-model="editedDevice.numberOfWorkingDays"/>
-            <vs-input class="input-item" :color="primaryColor" type="number" label="No. of Failures (Last Year)" placeholder="Write here.." v-model="editedDevice.numberOfFailures"/>
-            <vs-input class="input-item" :color="primaryColor" type="number" label="Down Time (Last Year)" placeholder="Write here.." v-model="editedDevice.downTime"/>
+            <vs-input class="input-item" :color="primaryColor" type="number" label="No. of Failures" placeholder="Write here.." v-model="editedDevice.numberOfFailures"/>
+            <vs-input class="input-item" :color="primaryColor" type="number" label="Down Time" placeholder="Write here.." v-model="editedDevice.downTime"/>
           </div>
           <div class="info-card">
             <div class="legend">
