@@ -1,5 +1,8 @@
 # Critical Condition Front-end Repo
 
+### instructions for running the project locally are are at the very bottom of the readme
+
+
 ## Project setup
 ```
 npm install
