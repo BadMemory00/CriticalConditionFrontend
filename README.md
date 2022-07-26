@@ -2,7 +2,7 @@
 
 ### instructions for running the project locally are are at the very bottom of the readme
 
-![](images/landing.png)
+![](Images/landing.png)
 
 ## Project setup
 ```
