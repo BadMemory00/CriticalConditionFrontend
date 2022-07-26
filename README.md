@@ -1,4 +1,4 @@
-# critical-condition-frontend
+# Critical Condition Front-end Repo
 
 ## Project setup
 ```
